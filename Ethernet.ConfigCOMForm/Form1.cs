@@ -162,7 +162,7 @@ namespace Ethernet.ConfigCOMForm
                 {
 
 
-                    byte[] data = { 3,3,1, Convert.ToByte(txtBye1.Text), Convert.ToByte(txtBye2.Text), Convert.ToByte(txtBye3.Text, Convert.ToByte(txtBye4.Text)) };
+                    byte[] data = { 3,3,1, Convert.ToByte(txtBye1.Text), Convert.ToByte(txtBye2.Text), Convert.ToByte(txtBye3.Text), Convert.ToByte(txtBye4.Text) };
                     _port.Write(data, 0, data.Length);
 
 
