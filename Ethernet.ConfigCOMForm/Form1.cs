@@ -19,7 +19,8 @@ namespace Ethernet.ConfigCOMForm
     public partial class Form1 : MetroForm
     {
         static SerialPort _port;
-        delegate void SetTextDeleg(string text);
+        delegate void SetTextDeleg(byte[] trama);
+        string evento = "";
 
         public Form1()
         {
@@ -66,23 +67,30 @@ namespace Ethernet.ConfigCOMForm
         private void port_DataReceived(object sender,
                     SerialDataReceivedEventArgs e)
         {
-            //Thread.Sleep(500);
+            Thread.Sleep(500);
             //string data = _port.ReadLine();
-            byte[] data = new byte[1024];
-            int bytesRead = _port.Read(data, 0, data.Length);
-            var _message = Encoding.ASCII.GetString(data, 0, bytesRead);
+            //byte[] data = new byte[1024];
+            //int bytesRead = _port.Read(data, 0, data.Length);
+            //var _message = Encoding.ASCII.GetString(data, 0, bytesRead);
+
+            byte[] data = new byte[_port.BytesToRead];
+            _port.Read(data, 0, data.Length);
+
             // Invokes the delegate on the UI thread, and sends the data that was received to the invoked method.  
             // ---- The "si_DataReceived" method will be executed on the UI thread which allows populating of the textbox.  
-            this.BeginInvoke(new SetTextDeleg(drawer), new object[] { _message });
+            this.BeginInvoke(new SetTextDeleg(drawer), new object[] { data });
         }
-        private void drawer(string txt)
+        private void drawer(byte[] trama)
         {
 
-            if (txt.Substring(0, 2) == "OK")
+            if (trama[0]==1)
             {
-                MessageBox.Show(" Dirección IP Cambiada!!");
-            }
-            else if (txt.Substring(0, 9) == "CONECTADO") {
+
+                txtBye1.Text = trama[1].ToString();
+                txtBye2.Text = trama[2].ToString();
+                txtBye3.Text = trama[3].ToString();
+                txtBye4.Text = trama[4].ToString();
+
 
                 btnCambiarIP.Enabled = true;
                 btnDesconectarEthernet.Enabled = true;
@@ -93,9 +101,12 @@ namespace Ethernet.ConfigCOMForm
                 txtBye4.Enabled = true;
 
                 MessageBox.Show(" Dispositivo conectado");
+            }else if (trama[0]==2)
+            {
+                  MessageBox.Show(" Dirección IP Cambiada!!");
 
             }
-            else if (txt.Substring(0, 11) == "DESCONECTADO")
+            else if (trama[0] == 3)
             {
                 btnCambiarIP.Enabled = false;
                 btnDesconectarEthernet.Enabled = false;
@@ -109,10 +120,42 @@ namespace Ethernet.ConfigCOMForm
 
             }
 
-            if (txt.Contains("Baud Rate"))
-            {
-                MessageBox.Show(txt);
-            }
+
+            //if (txt.Substring(0, 2) == "OK")
+            //{
+            //    MessageBox.Show(" Dirección IP Cambiada!!");
+            //}
+            //else if (txt.Substring(0, 9) == "CONECTADO") {
+
+            //    btnCambiarIP.Enabled = true;
+            //    btnDesconectarEthernet.Enabled = true;
+            //    btnConectarEthernet.Enabled = false;
+            //    txtBye1.Enabled = true;
+            //    txtBye2.Enabled = true;
+            //    txtBye3.Enabled = true;
+            //    txtBye4.Enabled = true;
+
+            //    MessageBox.Show(" Dispositivo conectado");
+
+            //}
+            //else if (txt.Substring(0, 11) == "DESCONECTADO")
+            //{
+            //    btnCambiarIP.Enabled = false;
+            //    btnDesconectarEthernet.Enabled = false;
+            //    btnConectarEthernet.Enabled = true;
+            //    txtBye1.Enabled = false;
+            //    txtBye2.Enabled = false;
+            //    txtBye3.Enabled = false;
+            //    txtBye4.Enabled = false;
+
+            //    MessageBox.Show(" Dispositivo desconectado");
+
+            //}
+
+            //if (txt.Contains("Baud Rate"))
+            //{
+            //    MessageBox.Show(txt);
+            //}
 
         }
         private void btnDesconectar_Click(object sender, EventArgs e)
@@ -156,11 +199,13 @@ namespace Ethernet.ConfigCOMForm
 
         private void btnCambiarIP_Click(object sender, EventArgs e)
         {
+            evento = "CambiarIP";
+
             if (IsAddressValid(txtBye1.Text+"."+ txtBye2.Text + "." + txtBye3.Text + "." + txtBye4.Text))
             {
                 if (_port != null)
                 {
-
+                    //GUSTAVO
 
                     byte[] data = { 3,3,2, Convert.ToByte(txtBye1.Text), Convert.ToByte(txtBye2.Text), Convert.ToByte(txtBye3.Text), Convert.ToByte(txtBye4.Text) };
                     _port.Write(data, 0, data.Length);
@@ -188,7 +233,7 @@ namespace Ethernet.ConfigCOMForm
 
         private void btnConectarEthernet_Click(object sender, EventArgs e)
         {
-
+            evento = "ConectarEthernet";
             byte[] data = { 3, 3, 1 };
             _port.Write(data, 0, data.Length);
             //btnCambiarIP.Enabled = true;
@@ -203,6 +248,8 @@ namespace Ethernet.ConfigCOMForm
 
         private void btnDesconectarEthernet_Click(object sender, EventArgs e)
         {
+            evento = "DesconectarEthernet";
+
             byte[] data = { 3, 3, 3 };
             _port.Write(data, 0, data.Length);
             //btnCambiarIP.Enabled = false;
