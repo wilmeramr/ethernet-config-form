@@ -162,7 +162,7 @@ namespace Ethernet.ConfigCOMForm
                 {
 
 
-                    byte[] data = { 3,3,1, Convert.ToByte(txtBye1.Text), Convert.ToByte(txtBye2.Text), Convert.ToByte(txtBye3.Text), Convert.ToByte(txtBye4.Text) };
+                    byte[] data = { 3,3,2, Convert.ToByte(txtBye1.Text), Convert.ToByte(txtBye2.Text), Convert.ToByte(txtBye3.Text), Convert.ToByte(txtBye4.Text) };
                     _port.Write(data, 0, data.Length);
 
 
@@ -203,7 +203,7 @@ namespace Ethernet.ConfigCOMForm
 
         private void btnDesconectarEthernet_Click(object sender, EventArgs e)
         {
-            byte[] data = { 3, 3, 2 };
+            byte[] data = { 3, 3, 3 };
             _port.Write(data, 0, data.Length);
             //btnCambiarIP.Enabled = false;
             //btnDesconectarEthernet.Enabled = false;
