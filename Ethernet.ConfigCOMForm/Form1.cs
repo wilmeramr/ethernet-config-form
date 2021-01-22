@@ -160,7 +160,7 @@ namespace Ethernet.ConfigCOMForm
             {
                 if (_port != null)
                 {
-
+                    //GUSTAVO
 
                     byte[] data = { 3,3,2, Convert.ToByte(txtBye1.Text), Convert.ToByte(txtBye2.Text), Convert.ToByte(txtBye3.Text), Convert.ToByte(txtBye4.Text) };
                     _port.Write(data, 0, data.Length);
