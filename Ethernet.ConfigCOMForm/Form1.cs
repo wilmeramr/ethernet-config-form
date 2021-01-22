@@ -57,7 +57,6 @@ namespace Ethernet.ConfigCOMForm
             _port.DataReceived += new
              SerialDataReceivedEventHandler(port_DataReceived);
             _port.Open();
-            _port.Open();
 
             btnConectar.Enabled = false;
             btnConectar.Style = MetroColorStyle.Green;
@@ -67,11 +66,14 @@ namespace Ethernet.ConfigCOMForm
         private void port_DataReceived(object sender,
                     SerialDataReceivedEventArgs e)
         {
-            Thread.Sleep(500);
-            string data = _port.ReadLine();
+            //Thread.Sleep(500);
+            //string data = _port.ReadLine();
+            byte[] data = new byte[1024];
+            int bytesRead = _port.Read(data, 0, data.Length);
+            var _message = Encoding.ASCII.GetString(data, 0, bytesRead);
             // Invokes the delegate on the UI thread, and sends the data that was received to the invoked method.  
             // ---- The "si_DataReceived" method will be executed on the UI thread which allows populating of the textbox.  
-            this.BeginInvoke(new SetTextDeleg(drawer), new object[] { data });
+            this.BeginInvoke(new SetTextDeleg(drawer), new object[] { _message });
         }
         private void drawer(string txt)
         {
