@@ -19,8 +19,34 @@ namespace Ethernet.ConfigCOMForm
     public partial class Form1 : MetroForm
     {
         static SerialPort _port;
+        private Queue<byte> recievedData = new Queue<byte>();
         delegate void SetTextDeleg(byte[] trama);
         string evento = "";
+
+        SortedDictionary<String, int> userCombx = new SortedDictionary<string, int>
+        {
+            { "Sin Cambios",0 },
+            { "Desactivada por timepo",1 },
+              { "Activada por Reloj",4 },
+              { "Desactivada por Reloj",5 },
+
+
+        };
+        SortedDictionary<String, int> dias = new SortedDictionary<string, int>
+        {
+           {"Domingo",0 },
+          {"Lunes",1 },
+          {"Martes" ,2},
+          {"Miercoles",3 },
+          {"Jueves" ,4},
+          {"Viernes" ,5},
+          {"Sabado" ,6},
+          {"Todos los dias" ,7},
+
+
+
+        };
+   
 
         public Form1()
         {
@@ -67,7 +93,7 @@ namespace Ethernet.ConfigCOMForm
         private void port_DataReceived(object sender,
                     SerialDataReceivedEventArgs e)
         {
-            Thread.Sleep(500);
+           // Thread.Sleep(8000);
             //string data = _port.ReadLine();
             //byte[] data = new byte[1024];
             //int bytesRead = _port.Read(data, 0, data.Length);
@@ -76,12 +102,53 @@ namespace Ethernet.ConfigCOMForm
             byte[] data = new byte[_port.BytesToRead];
             _port.Read(data, 0, data.Length);
 
+            data.ToList().ForEach(b=>recievedData.Enqueue(b));
+            processData();
             // Invokes the delegate on the UI thread, and sends the data that was received to the invoked method.  
             // ---- The "si_DataReceived" method will be executed on the UI thread which allows populating of the textbox.  
-            this.BeginInvoke(new SetTextDeleg(drawer), new object[] { data });
+      
         }
+
+        private void processData()
+        {
+
+            if (recievedData.Count==85)
+            {
+                  this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
+
+
+                //txtBye1.Text = recievedData.ElementAt(1).ToString();
+                //        txtBye2.Text = recievedData.ElementAt(2).ToString();
+                //       txtBye3.Text = recievedData.ElementAt(3).ToString();
+                //        txtBye4.Text = recievedData.ElementAt(4).ToString();
+
+
+                //        btnCambiarIP.Enabled = true;
+                //        btnDesconectarEthernet.Enabled = true;
+                //        btnConectarEthernet.Enabled = false;
+                //        txtBye1.Enabled = true;
+                //        txtBye2.Enabled = true;
+                //        txtBye3.Enabled = true;
+                //        txtBye4.Enabled = true;
+
+                //        MessageBox.Show(" Dispositivo conectado");
+                
+                 //7   MessageBox.Show(recievedData.Count.ToString());
+               // recievedData.Clear();
+
+            }
+
+        }
+
         private void drawer(byte[] trama)
         {
+            metroComboBox1.DataSource = new BindingSource(userCombx,null);
+            metroComboBox1.DisplayMember = "Key";
+            metroComboBox1.ValueMember = "Value";
+
+            metroComboBox9.DataSource = new BindingSource(dias, null);
+            metroComboBox9.DisplayMember = "Key";
+            metroComboBox9.ValueMember = "Value";
 
             if (trama[0]==1)
             {
@@ -99,6 +166,13 @@ namespace Ethernet.ConfigCOMForm
                 txtBye2.Enabled = true;
                 txtBye3.Enabled = true;
                 txtBye4.Enabled = true;
+                metroComboBox1.SelectedValue = (int)trama[5];
+                metroTextBox1.Text = trama[13].ToString();
+                metroTextBox4.Text = trama[29].ToString();
+                metroTextBox3.Text = trama[30].ToString();
+                metroComboBox9.SelectedValue = (int)trama[31];
+
+
 
                 MessageBox.Show(" Dispositivo conectado");
             }else if (trama[0]==2)
