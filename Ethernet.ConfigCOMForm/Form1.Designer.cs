@@ -43,100 +43,129 @@ namespace Ethernet.ConfigCOMForm
             this.btnDesconectarEthernet = new MetroFramework.Controls.MetroButton();
             this.btnConectarEthernet = new MetroFramework.Controls.MetroButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.metroTextBox36 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox38 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox39 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox40 = new MetroFramework.Controls.MetroTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.metroComboBox8 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox31 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox33 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox34 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox35 = new MetroFramework.Controls.MetroTextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.metroComboBox7 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox26 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox28 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox29 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox30 = new MetroFramework.Controls.MetroTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.metroComboBox6 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox21 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox23 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox24 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox25 = new MetroFramework.Controls.MetroTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox16 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox18 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox19 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox20 = new MetroFramework.Controls.MetroTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox11 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox13 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox14 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox15 = new MetroFramework.Controls.MetroTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox9 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox10 = new MetroFramework.Controls.MetroTextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.chckTiempoSalida8 = new System.Windows.Forms.CheckBox();
+            this.chckTiempoSalida7 = new System.Windows.Forms.CheckBox();
+            this.chckTiempoSalida6 = new System.Windows.Forms.CheckBox();
+            this.chckTiempoSalida5 = new System.Windows.Forms.CheckBox();
+            this.chckTiempoSalida4 = new System.Windows.Forms.CheckBox();
+            this.chckTiempoSalida3 = new System.Windows.Forms.CheckBox();
+            this.chckTiempoSalida2 = new System.Windows.Forms.CheckBox();
+            this.chckTiempoSalida1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox9 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox10 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox7 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox12 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox17 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox22 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox27 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox32 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox37 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox41 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox42 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox43 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox44 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox45 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox46 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox47 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox48 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox49 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox50 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox51 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox52 = new MetroFramework.Controls.MetroTextBox();
+            this.txtTiempoSalida1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtTiempoSalida8 = new MetroFramework.Controls.MetroTextBox();
+            this.txtTiempoSalida2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtTiempoSalida3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtTiempoSalida7 = new MetroFramework.Controls.MetroTextBox();
+            this.txtTiempoSalida4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtTiempoSalida5 = new MetroFramework.Controls.MetroTextBox();
+            this.txtTiempoSalida6 = new MetroFramework.Controls.MetroTextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.chckDesactivadasSalida8 = new System.Windows.Forms.CheckBox();
+            this.chckDesactivadasSalida7 = new System.Windows.Forms.CheckBox();
+            this.chckDesactivadasSalida6 = new System.Windows.Forms.CheckBox();
+            this.chckDesactivadasSalida5 = new System.Windows.Forms.CheckBox();
+            this.chckDesactivadasSalida4 = new System.Windows.Forms.CheckBox();
+            this.chckDesactivadasSalida3 = new System.Windows.Forms.CheckBox();
+            this.chckDesactivadasSalida2 = new System.Windows.Forms.CheckBox();
+            this.chckDesactivadasSalida1 = new System.Windows.Forms.CheckBox();
+            this.cmbDiaDesactivaSalida8 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaDesactivaSalida7 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaDesactivaSalida6 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaDesactivaSalida5 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaDesactivaSalida4 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaDesactivaSalida3 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaDesactivaSalida2 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaDesactivaSalida1 = new MetroFramework.Controls.MetroComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.txtHoraDesactivaSalida1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinDesactivaSalida1 = new MetroFramework.Controls.MetroTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.metroTextBox53 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox54 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraDesactivaSalida2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinDesactivaSalida2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraDesactivaSalida3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinDesactivaSalida3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraDesactivaSalida4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinDesactivaSalida4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraDesactivaSalida5 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinDesactivaSalida5 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraDesactivaSalida6 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinDesactivaSalida6 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraDesactivaSalida7 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinDesactivaSalida7 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraDesactivaSalida8 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinDesactivaSalida8 = new MetroFramework.Controls.MetroTextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chckActivadasSalida8 = new System.Windows.Forms.CheckBox();
+            this.chckActivadasSalida7 = new System.Windows.Forms.CheckBox();
+            this.chckActivadasSalida6 = new System.Windows.Forms.CheckBox();
+            this.chckActivadasSalida5 = new System.Windows.Forms.CheckBox();
+            this.chckActivadasSalida4 = new System.Windows.Forms.CheckBox();
+            this.chckActivadasSalida3 = new System.Windows.Forms.CheckBox();
+            this.chckActivadasSalida2 = new System.Windows.Forms.CheckBox();
+            this.chckActivadasSalida1 = new System.Windows.Forms.CheckBox();
+            this.cmbDiaActivaSalida8 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaActivaSalida7 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaActivaSalida6 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaActivaSalida5 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaActivaSalida4 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaActivaSalida3 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbDiaActivaSalida2 = new MetroFramework.Controls.MetroComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtHoraActivaSalida1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinActivaSalida1 = new MetroFramework.Controls.MetroTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtHoraActivaSalida2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinActivaSalida2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraActivaSalida3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinActivaSalida3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraActivaSalida4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinActivaSalida4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraActivaSalida5 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinActivaSalida5 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraActivaSalida6 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinActivaSalida6 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraActivaSalida7 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinActivaSalida7 = new MetroFramework.Controls.MetroTextBox();
+            this.txtHoraActivaSalida8 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMinActivaSalida8 = new MetroFramework.Controls.MetroTextBox();
+            this.cmbDiaActivaSalida1 = new MetroFramework.Controls.MetroComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGrabarSalidas = new MetroFramework.Controls.MetroButton();
+            this.lblCOMEvent = new System.Windows.Forms.Label();
+            this.lblEthernetEvent = new System.Windows.Forms.Label();
+            this.picLoading = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.lblCOMEvent);
             this.groupBox1.Controls.Add(this.btnDesconectar);
             this.groupBox1.Controls.Add(this.btnConectar);
             this.groupBox1.Controls.Add(this.cmbPorts);
-            this.groupBox1.Location = new System.Drawing.Point(158, 24);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.groupBox1.Location = new System.Drawing.Point(211, 30);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(445, 135);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(593, 166);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puerto COM";
@@ -145,20 +174,21 @@ namespace Ethernet.ConfigCOMForm
             // btnDesconectar
             // 
             this.btnDesconectar.Enabled = false;
-            this.btnDesconectar.Location = new System.Drawing.Point(290, 32);
-            this.btnDesconectar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDesconectar.Location = new System.Drawing.Point(387, 39);
+            this.btnDesconectar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(82, 28);
+            this.btnDesconectar.Size = new System.Drawing.Size(109, 34);
             this.btnDesconectar.TabIndex = 7;
             this.btnDesconectar.Text = "Desconectar";
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
             // btnConectar
             // 
-            this.btnConectar.Location = new System.Drawing.Point(202, 32);
-            this.btnConectar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConectar.Highlight = true;
+            this.btnConectar.Location = new System.Drawing.Point(269, 39);
+            this.btnConectar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new System.Drawing.Size(65, 28);
+            this.btnConectar.Size = new System.Drawing.Size(87, 34);
             this.btnConectar.TabIndex = 6;
             this.btnConectar.Text = "Conectar";
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
@@ -166,23 +196,24 @@ namespace Ethernet.ConfigCOMForm
             // cmbPorts
             // 
             this.cmbPorts.FormattingEnabled = true;
-            this.cmbPorts.ItemHeight = 23;
-            this.cmbPorts.Location = new System.Drawing.Point(89, 35);
-            this.cmbPorts.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbPorts.ItemHeight = 24;
+            this.cmbPorts.Location = new System.Drawing.Point(119, 43);
+            this.cmbPorts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPorts.Name = "cmbPorts";
-            this.cmbPorts.Size = new System.Drawing.Size(92, 29);
+            this.cmbPorts.Size = new System.Drawing.Size(121, 30);
             this.cmbPorts.TabIndex = 5;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblEthernetEvent);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.btnDesconectarEthernet);
             this.groupBox2.Controls.Add(this.btnConectarEthernet);
-            this.groupBox2.Location = new System.Drawing.Point(607, 24);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(809, 30);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(445, 135);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(593, 166);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Configuracion Ethernet";
@@ -194,11 +225,11 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox3.Controls.Add(this.txtBye2);
             this.groupBox3.Controls.Add(this.txtBye1);
             this.groupBox3.Controls.Add(this.btnCambiarIP);
-            this.groupBox3.Location = new System.Drawing.Point(30, 61);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Location = new System.Drawing.Point(40, 75);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(396, 63);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(528, 78);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DIreccion IP";
@@ -206,37 +237,37 @@ namespace Ethernet.ConfigCOMForm
             // txtBye4
             // 
             this.txtBye4.Enabled = false;
-            this.txtBye4.Location = new System.Drawing.Point(158, 18);
-            this.txtBye4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBye4.Location = new System.Drawing.Point(211, 22);
+            this.txtBye4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBye4.Name = "txtBye4";
-            this.txtBye4.Size = new System.Drawing.Size(28, 22);
+            this.txtBye4.Size = new System.Drawing.Size(37, 27);
             this.txtBye4.TabIndex = 13;
             // 
             // txtBye3
             // 
             this.txtBye3.Enabled = false;
-            this.txtBye3.Location = new System.Drawing.Point(125, 18);
-            this.txtBye3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBye3.Location = new System.Drawing.Point(167, 22);
+            this.txtBye3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBye3.Name = "txtBye3";
-            this.txtBye3.Size = new System.Drawing.Size(28, 22);
+            this.txtBye3.Size = new System.Drawing.Size(37, 27);
             this.txtBye3.TabIndex = 12;
             // 
             // txtBye2
             // 
             this.txtBye2.Enabled = false;
-            this.txtBye2.Location = new System.Drawing.Point(92, 18);
-            this.txtBye2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBye2.Location = new System.Drawing.Point(123, 22);
+            this.txtBye2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBye2.Name = "txtBye2";
-            this.txtBye2.Size = new System.Drawing.Size(28, 22);
+            this.txtBye2.Size = new System.Drawing.Size(37, 27);
             this.txtBye2.TabIndex = 11;
             // 
             // txtBye1
             // 
             this.txtBye1.Enabled = false;
-            this.txtBye1.Location = new System.Drawing.Point(59, 18);
-            this.txtBye1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBye1.Location = new System.Drawing.Point(79, 22);
+            this.txtBye1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBye1.Name = "txtBye1";
-            this.txtBye1.Size = new System.Drawing.Size(28, 22);
+            this.txtBye1.Size = new System.Drawing.Size(37, 27);
             this.txtBye1.TabIndex = 10;
             this.txtBye1.Click += new System.EventHandler(this.txtBye1_Click);
             this.txtBye1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBye1_KeyDown);
@@ -244,10 +275,10 @@ namespace Ethernet.ConfigCOMForm
             // btnCambiarIP
             // 
             this.btnCambiarIP.Enabled = false;
-            this.btnCambiarIP.Location = new System.Drawing.Point(326, 12);
-            this.btnCambiarIP.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCambiarIP.Location = new System.Drawing.Point(435, 15);
+            this.btnCambiarIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCambiarIP.Name = "btnCambiarIP";
-            this.btnCambiarIP.Size = new System.Drawing.Size(65, 28);
+            this.btnCambiarIP.Size = new System.Drawing.Size(87, 34);
             this.btnCambiarIP.TabIndex = 9;
             this.btnCambiarIP.Text = "Cambiar";
             this.btnCambiarIP.Click += new System.EventHandler(this.btnCambiarIP_Click);
@@ -255,836 +286,1104 @@ namespace Ethernet.ConfigCOMForm
             // btnDesconectarEthernet
             // 
             this.btnDesconectarEthernet.Enabled = false;
-            this.btnDesconectarEthernet.Location = new System.Drawing.Point(361, 8);
-            this.btnDesconectarEthernet.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDesconectarEthernet.Location = new System.Drawing.Point(481, 10);
+            this.btnDesconectarEthernet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDesconectarEthernet.Name = "btnDesconectarEthernet";
-            this.btnDesconectarEthernet.Size = new System.Drawing.Size(80, 28);
+            this.btnDesconectarEthernet.Size = new System.Drawing.Size(107, 34);
             this.btnDesconectarEthernet.TabIndex = 9;
             this.btnDesconectarEthernet.Text = "Desconectar";
             this.btnDesconectarEthernet.Click += new System.EventHandler(this.btnDesconectarEthernet_Click);
             // 
             // btnConectarEthernet
             // 
-            this.btnConectarEthernet.Location = new System.Drawing.Point(290, 8);
-            this.btnConectarEthernet.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConectarEthernet.Enabled = false;
+            this.btnConectarEthernet.Location = new System.Drawing.Point(387, 10);
+            this.btnConectarEthernet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConectarEthernet.Name = "btnConectarEthernet";
-            this.btnConectarEthernet.Size = new System.Drawing.Size(65, 28);
+            this.btnConectarEthernet.Size = new System.Drawing.Size(87, 34);
             this.btnConectarEthernet.TabIndex = 8;
             this.btnConectarEthernet.Text = "Conectar";
             this.btnConectarEthernet.Click += new System.EventHandler(this.btnConectarEthernet_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.metroComboBox10);
-            this.groupBox4.Controls.Add(this.metroTextBox2);
-            this.groupBox4.Controls.Add(this.metroTextBox5);
-            this.groupBox4.Controls.Add(this.metroTextBox7);
-            this.groupBox4.Controls.Add(this.metroTextBox12);
-            this.groupBox4.Controls.Add(this.metroTextBox17);
-            this.groupBox4.Controls.Add(this.metroTextBox22);
-            this.groupBox4.Controls.Add(this.metroTextBox27);
-            this.groupBox4.Controls.Add(this.metroTextBox32);
-            this.groupBox4.Controls.Add(this.metroTextBox37);
-            this.groupBox4.Controls.Add(this.metroTextBox41);
-            this.groupBox4.Controls.Add(this.metroTextBox42);
-            this.groupBox4.Controls.Add(this.metroTextBox43);
-            this.groupBox4.Controls.Add(this.metroTextBox44);
-            this.groupBox4.Controls.Add(this.metroTextBox45);
-            this.groupBox4.Controls.Add(this.metroTextBox46);
-            this.groupBox4.Controls.Add(this.metroTextBox47);
-            this.groupBox4.Controls.Add(this.metroTextBox48);
-            this.groupBox4.Controls.Add(this.metroTextBox49);
-            this.groupBox4.Controls.Add(this.metroTextBox50);
-            this.groupBox4.Controls.Add(this.metroTextBox51);
-            this.groupBox4.Controls.Add(this.metroTextBox52);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.metroTextBox53);
-            this.groupBox4.Controls.Add(this.metroTextBox54);
-            this.groupBox4.Controls.Add(this.metroComboBox9);
-            this.groupBox4.Controls.Add(this.metroTextBox36);
-            this.groupBox4.Controls.Add(this.metroTextBox38);
-            this.groupBox4.Controls.Add(this.metroTextBox39);
-            this.groupBox4.Controls.Add(this.metroTextBox40);
+            this.groupBox4.Controls.Add(this.btnGrabarSalidas);
+            this.groupBox4.Controls.Add(this.groupBox7);
+            this.groupBox4.Controls.Add(this.groupBox6);
+            this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.metroComboBox8);
-            this.groupBox4.Controls.Add(this.metroTextBox31);
-            this.groupBox4.Controls.Add(this.metroTextBox33);
-            this.groupBox4.Controls.Add(this.metroTextBox34);
-            this.groupBox4.Controls.Add(this.metroTextBox35);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.metroComboBox7);
-            this.groupBox4.Controls.Add(this.metroTextBox26);
-            this.groupBox4.Controls.Add(this.metroTextBox28);
-            this.groupBox4.Controls.Add(this.metroTextBox29);
-            this.groupBox4.Controls.Add(this.metroTextBox30);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.metroComboBox6);
-            this.groupBox4.Controls.Add(this.metroTextBox21);
-            this.groupBox4.Controls.Add(this.metroTextBox23);
-            this.groupBox4.Controls.Add(this.metroTextBox24);
-            this.groupBox4.Controls.Add(this.metroTextBox25);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.metroComboBox5);
-            this.groupBox4.Controls.Add(this.metroTextBox16);
-            this.groupBox4.Controls.Add(this.metroTextBox18);
-            this.groupBox4.Controls.Add(this.metroTextBox19);
-            this.groupBox4.Controls.Add(this.metroTextBox20);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.metroComboBox4);
-            this.groupBox4.Controls.Add(this.metroTextBox11);
-            this.groupBox4.Controls.Add(this.metroTextBox13);
-            this.groupBox4.Controls.Add(this.metroTextBox14);
-            this.groupBox4.Controls.Add(this.metroTextBox15);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.metroComboBox3);
-            this.groupBox4.Controls.Add(this.metroTextBox6);
-            this.groupBox4.Controls.Add(this.metroTextBox8);
-            this.groupBox4.Controls.Add(this.metroTextBox9);
-            this.groupBox4.Controls.Add(this.metroTextBox10);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.metroComboBox2);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.metroTextBox3);
-            this.groupBox4.Controls.Add(this.metroTextBox4);
-            this.groupBox4.Controls.Add(this.metroTextBox1);
-            this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.metroComboBox1);
-            this.groupBox4.Location = new System.Drawing.Point(27, 195);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Location = new System.Drawing.Point(36, 240);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(1006, 332);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(1341, 409);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Configuracion de Salidas";
             // 
-            // metroTextBox36
-            // 
-            this.metroTextBox36.Enabled = false;
-            this.metroTextBox36.Location = new System.Drawing.Point(444, 281);
-            this.metroTextBox36.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox36.Name = "metroTextBox36";
-            this.metroTextBox36.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox36.TabIndex = 71;
-            // 
-            // metroTextBox38
-            // 
-            this.metroTextBox38.Enabled = false;
-            this.metroTextBox38.Location = new System.Drawing.Point(370, 281);
-            this.metroTextBox38.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox38.Name = "metroTextBox38";
-            this.metroTextBox38.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox38.TabIndex = 69;
-            // 
-            // metroTextBox39
-            // 
-            this.metroTextBox39.Enabled = false;
-            this.metroTextBox39.Location = new System.Drawing.Point(337, 281);
-            this.metroTextBox39.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox39.Name = "metroTextBox39";
-            this.metroTextBox39.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox39.TabIndex = 67;
-            // 
-            // metroTextBox40
-            // 
-            this.metroTextBox40.Enabled = false;
-            this.metroTextBox40.Location = new System.Drawing.Point(240, 281);
-            this.metroTextBox40.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox40.Name = "metroTextBox40";
-            this.metroTextBox40.Size = new System.Drawing.Size(57, 22);
-            this.metroTextBox40.TabIndex = 68;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 285);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
-            this.label12.TabIndex = 66;
-            this.label12.Text = "SALIDA 8";
-            // 
-            // metroComboBox8
-            // 
-            this.metroComboBox8.FormattingEnabled = true;
-            this.metroComboBox8.ItemHeight = 23;
-            this.metroComboBox8.Location = new System.Drawing.Point(79, 278);
-            this.metroComboBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox8.Name = "metroComboBox8";
-            this.metroComboBox8.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox8.TabIndex = 65;
-            // 
-            // metroTextBox31
-            // 
-            this.metroTextBox31.Enabled = false;
-            this.metroTextBox31.Location = new System.Drawing.Point(444, 248);
-            this.metroTextBox31.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox31.Name = "metroTextBox31";
-            this.metroTextBox31.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox31.TabIndex = 64;
-            // 
-            // metroTextBox33
-            // 
-            this.metroTextBox33.Enabled = false;
-            this.metroTextBox33.Location = new System.Drawing.Point(370, 248);
-            this.metroTextBox33.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox33.Name = "metroTextBox33";
-            this.metroTextBox33.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox33.TabIndex = 62;
-            // 
-            // metroTextBox34
-            // 
-            this.metroTextBox34.Enabled = false;
-            this.metroTextBox34.Location = new System.Drawing.Point(337, 248);
-            this.metroTextBox34.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox34.Name = "metroTextBox34";
-            this.metroTextBox34.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox34.TabIndex = 60;
-            // 
-            // metroTextBox35
-            // 
-            this.metroTextBox35.Enabled = false;
-            this.metroTextBox35.Location = new System.Drawing.Point(240, 248);
-            this.metroTextBox35.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox35.Name = "metroTextBox35";
-            this.metroTextBox35.Size = new System.Drawing.Size(57, 22);
-            this.metroTextBox35.TabIndex = 61;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 252);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 13);
-            this.label11.TabIndex = 59;
-            this.label11.Text = "SALIDA 7";
-            // 
-            // metroComboBox7
-            // 
-            this.metroComboBox7.FormattingEnabled = true;
-            this.metroComboBox7.ItemHeight = 23;
-            this.metroComboBox7.Location = new System.Drawing.Point(79, 245);
-            this.metroComboBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox7.Name = "metroComboBox7";
-            this.metroComboBox7.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox7.TabIndex = 58;
-            // 
-            // metroTextBox26
-            // 
-            this.metroTextBox26.Enabled = false;
-            this.metroTextBox26.Location = new System.Drawing.Point(444, 215);
-            this.metroTextBox26.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox26.Name = "metroTextBox26";
-            this.metroTextBox26.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox26.TabIndex = 57;
-            // 
-            // metroTextBox28
-            // 
-            this.metroTextBox28.Enabled = false;
-            this.metroTextBox28.Location = new System.Drawing.Point(370, 215);
-            this.metroTextBox28.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox28.Name = "metroTextBox28";
-            this.metroTextBox28.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox28.TabIndex = 55;
-            // 
-            // metroTextBox29
-            // 
-            this.metroTextBox29.Enabled = false;
-            this.metroTextBox29.Location = new System.Drawing.Point(337, 215);
-            this.metroTextBox29.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox29.Name = "metroTextBox29";
-            this.metroTextBox29.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox29.TabIndex = 53;
-            // 
-            // metroTextBox30
-            // 
-            this.metroTextBox30.Enabled = false;
-            this.metroTextBox30.Location = new System.Drawing.Point(240, 215);
-            this.metroTextBox30.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox30.Name = "metroTextBox30";
-            this.metroTextBox30.Size = new System.Drawing.Size(57, 22);
-            this.metroTextBox30.TabIndex = 54;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 219);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 13);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "SALIDA 6";
-            // 
-            // metroComboBox6
-            // 
-            this.metroComboBox6.FormattingEnabled = true;
-            this.metroComboBox6.ItemHeight = 23;
-            this.metroComboBox6.Location = new System.Drawing.Point(79, 212);
-            this.metroComboBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox6.Name = "metroComboBox6";
-            this.metroComboBox6.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox6.TabIndex = 51;
-            // 
-            // metroTextBox21
-            // 
-            this.metroTextBox21.Enabled = false;
-            this.metroTextBox21.Location = new System.Drawing.Point(444, 182);
-            this.metroTextBox21.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox21.Name = "metroTextBox21";
-            this.metroTextBox21.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox21.TabIndex = 50;
-            // 
-            // metroTextBox23
-            // 
-            this.metroTextBox23.Enabled = false;
-            this.metroTextBox23.Location = new System.Drawing.Point(370, 182);
-            this.metroTextBox23.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox23.Name = "metroTextBox23";
-            this.metroTextBox23.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox23.TabIndex = 48;
-            // 
-            // metroTextBox24
-            // 
-            this.metroTextBox24.Enabled = false;
-            this.metroTextBox24.Location = new System.Drawing.Point(337, 182);
-            this.metroTextBox24.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox24.Name = "metroTextBox24";
-            this.metroTextBox24.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox24.TabIndex = 46;
-            // 
-            // metroTextBox25
-            // 
-            this.metroTextBox25.Enabled = false;
-            this.metroTextBox25.Location = new System.Drawing.Point(240, 182);
-            this.metroTextBox25.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox25.Name = "metroTextBox25";
-            this.metroTextBox25.Size = new System.Drawing.Size(57, 22);
-            this.metroTextBox25.TabIndex = 47;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 186);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 45;
-            this.label8.Text = "SALIDA 5";
-            // 
-            // metroComboBox5
-            // 
-            this.metroComboBox5.FormattingEnabled = true;
-            this.metroComboBox5.ItemHeight = 23;
-            this.metroComboBox5.Location = new System.Drawing.Point(79, 179);
-            this.metroComboBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox5.Name = "metroComboBox5";
-            this.metroComboBox5.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox5.TabIndex = 44;
-            // 
-            // metroTextBox16
-            // 
-            this.metroTextBox16.Enabled = false;
-            this.metroTextBox16.Location = new System.Drawing.Point(444, 149);
-            this.metroTextBox16.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox16.Name = "metroTextBox16";
-            this.metroTextBox16.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox16.TabIndex = 43;
-            // 
-            // metroTextBox18
-            // 
-            this.metroTextBox18.Enabled = false;
-            this.metroTextBox18.Location = new System.Drawing.Point(370, 149);
-            this.metroTextBox18.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox18.Name = "metroTextBox18";
-            this.metroTextBox18.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox18.TabIndex = 41;
-            // 
-            // metroTextBox19
-            // 
-            this.metroTextBox19.Enabled = false;
-            this.metroTextBox19.Location = new System.Drawing.Point(337, 149);
-            this.metroTextBox19.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox19.Name = "metroTextBox19";
-            this.metroTextBox19.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox19.TabIndex = 39;
-            // 
-            // metroTextBox20
-            // 
-            this.metroTextBox20.Enabled = false;
-            this.metroTextBox20.Location = new System.Drawing.Point(240, 149);
-            this.metroTextBox20.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox20.Name = "metroTextBox20";
-            this.metroTextBox20.Size = new System.Drawing.Size(57, 22);
-            this.metroTextBox20.TabIndex = 40;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 153);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "SALIDA 4";
-            // 
-            // metroComboBox4
-            // 
-            this.metroComboBox4.FormattingEnabled = true;
-            this.metroComboBox4.ItemHeight = 23;
-            this.metroComboBox4.Location = new System.Drawing.Point(79, 146);
-            this.metroComboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox4.TabIndex = 37;
-            // 
-            // metroTextBox11
-            // 
-            this.metroTextBox11.Enabled = false;
-            this.metroTextBox11.Location = new System.Drawing.Point(444, 116);
-            this.metroTextBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox11.Name = "metroTextBox11";
-            this.metroTextBox11.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox11.TabIndex = 36;
-            // 
-            // metroTextBox13
-            // 
-            this.metroTextBox13.Enabled = false;
-            this.metroTextBox13.Location = new System.Drawing.Point(370, 116);
-            this.metroTextBox13.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox13.Name = "metroTextBox13";
-            this.metroTextBox13.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox13.TabIndex = 34;
-            // 
-            // metroTextBox14
-            // 
-            this.metroTextBox14.Enabled = false;
-            this.metroTextBox14.Location = new System.Drawing.Point(337, 116);
-            this.metroTextBox14.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox14.Name = "metroTextBox14";
-            this.metroTextBox14.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox14.TabIndex = 32;
-            // 
-            // metroTextBox15
-            // 
-            this.metroTextBox15.Enabled = false;
-            this.metroTextBox15.Location = new System.Drawing.Point(240, 116);
-            this.metroTextBox15.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox15.Name = "metroTextBox15";
-            this.metroTextBox15.Size = new System.Drawing.Size(57, 22);
-            this.metroTextBox15.TabIndex = 33;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 120);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "SALIDA 3";
-            // 
-            // metroComboBox3
-            // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 23;
-            this.metroComboBox3.Location = new System.Drawing.Point(79, 113);
-            this.metroComboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox3.TabIndex = 30;
-            // 
-            // metroTextBox6
-            // 
-            this.metroTextBox6.Enabled = false;
-            this.metroTextBox6.Location = new System.Drawing.Point(444, 83);
-            this.metroTextBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox6.Name = "metroTextBox6";
-            this.metroTextBox6.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox6.TabIndex = 29;
-            // 
-            // metroTextBox8
-            // 
-            this.metroTextBox8.Enabled = false;
-            this.metroTextBox8.Location = new System.Drawing.Point(370, 83);
-            this.metroTextBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox8.Name = "metroTextBox8";
-            this.metroTextBox8.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox8.TabIndex = 26;
-            // 
-            // metroTextBox9
-            // 
-            this.metroTextBox9.Enabled = false;
-            this.metroTextBox9.Location = new System.Drawing.Point(337, 83);
-            this.metroTextBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox9.Name = "metroTextBox9";
-            this.metroTextBox9.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox9.TabIndex = 23;
-            // 
-            // metroTextBox10
-            // 
-            this.metroTextBox10.Enabled = false;
-            this.metroTextBox10.Location = new System.Drawing.Point(240, 83);
-            this.metroTextBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox10.Name = "metroTextBox10";
-            this.metroTextBox10.Size = new System.Drawing.Size(57, 22);
-            this.metroTextBox10.TabIndex = 24;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 87);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "SALIDA 2";
-            // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(79, 80);
-            this.metroComboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox2.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(471, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "DIA";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(337, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "HORA/MIN";
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.chckTiempoSalida8);
+            this.groupBox7.Controls.Add(this.chckTiempoSalida7);
+            this.groupBox7.Controls.Add(this.chckTiempoSalida6);
+            this.groupBox7.Controls.Add(this.chckTiempoSalida5);
+            this.groupBox7.Controls.Add(this.chckTiempoSalida4);
+            this.groupBox7.Controls.Add(this.chckTiempoSalida3);
+            this.groupBox7.Controls.Add(this.chckTiempoSalida2);
+            this.groupBox7.Controls.Add(this.chckTiempoSalida1);
+            this.groupBox7.Controls.Add(this.label3);
+            this.groupBox7.Controls.Add(this.txtTiempoSalida1);
+            this.groupBox7.Controls.Add(this.txtTiempoSalida8);
+            this.groupBox7.Controls.Add(this.txtTiempoSalida2);
+            this.groupBox7.Controls.Add(this.txtTiempoSalida3);
+            this.groupBox7.Controls.Add(this.txtTiempoSalida7);
+            this.groupBox7.Controls.Add(this.txtTiempoSalida4);
+            this.groupBox7.Controls.Add(this.txtTiempoSalida5);
+            this.groupBox7.Controls.Add(this.txtTiempoSalida6);
+            this.groupBox7.Location = new System.Drawing.Point(144, 18);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(280, 377);
+            this.groupBox7.TabIndex = 101;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Desactivar por Tiempo";
+            // 
+            // chckTiempoSalida8
+            // 
+            this.chckTiempoSalida8.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckTiempoSalida8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckTiempoSalida8.Location = new System.Drawing.Point(40, 328);
+            this.chckTiempoSalida8.Name = "chckTiempoSalida8";
+            this.chckTiempoSalida8.Size = new System.Drawing.Size(39, 27);
+            this.chckTiempoSalida8.TabIndex = 108;
+            this.chckTiempoSalida8.UseVisualStyleBackColor = true;
+            // 
+            // chckTiempoSalida7
+            // 
+            this.chckTiempoSalida7.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckTiempoSalida7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckTiempoSalida7.Location = new System.Drawing.Point(39, 287);
+            this.chckTiempoSalida7.Name = "chckTiempoSalida7";
+            this.chckTiempoSalida7.Size = new System.Drawing.Size(39, 27);
+            this.chckTiempoSalida7.TabIndex = 107;
+            this.chckTiempoSalida7.UseVisualStyleBackColor = true;
+            // 
+            // chckTiempoSalida6
+            // 
+            this.chckTiempoSalida6.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckTiempoSalida6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckTiempoSalida6.Location = new System.Drawing.Point(40, 247);
+            this.chckTiempoSalida6.Name = "chckTiempoSalida6";
+            this.chckTiempoSalida6.Size = new System.Drawing.Size(39, 27);
+            this.chckTiempoSalida6.TabIndex = 106;
+            this.chckTiempoSalida6.UseVisualStyleBackColor = true;
+            // 
+            // chckTiempoSalida5
+            // 
+            this.chckTiempoSalida5.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckTiempoSalida5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckTiempoSalida5.Location = new System.Drawing.Point(40, 206);
+            this.chckTiempoSalida5.Name = "chckTiempoSalida5";
+            this.chckTiempoSalida5.Size = new System.Drawing.Size(39, 27);
+            this.chckTiempoSalida5.TabIndex = 105;
+            this.chckTiempoSalida5.UseVisualStyleBackColor = true;
+            // 
+            // chckTiempoSalida4
+            // 
+            this.chckTiempoSalida4.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckTiempoSalida4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckTiempoSalida4.Location = new System.Drawing.Point(40, 165);
+            this.chckTiempoSalida4.Name = "chckTiempoSalida4";
+            this.chckTiempoSalida4.Size = new System.Drawing.Size(39, 27);
+            this.chckTiempoSalida4.TabIndex = 104;
+            this.chckTiempoSalida4.UseVisualStyleBackColor = true;
+            // 
+            // chckTiempoSalida3
+            // 
+            this.chckTiempoSalida3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckTiempoSalida3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckTiempoSalida3.Location = new System.Drawing.Point(40, 125);
+            this.chckTiempoSalida3.Name = "chckTiempoSalida3";
+            this.chckTiempoSalida3.Size = new System.Drawing.Size(39, 27);
+            this.chckTiempoSalida3.TabIndex = 103;
+            this.chckTiempoSalida3.UseVisualStyleBackColor = true;
+            this.chckTiempoSalida3.CheckedChanged += new System.EventHandler(this.chckTiempoAll_CheckedChanged);
+            // 
+            // chckTiempoSalida2
+            // 
+            this.chckTiempoSalida2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckTiempoSalida2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckTiempoSalida2.Location = new System.Drawing.Point(40, 84);
+            this.chckTiempoSalida2.Name = "chckTiempoSalida2";
+            this.chckTiempoSalida2.Size = new System.Drawing.Size(39, 27);
+            this.chckTiempoSalida2.TabIndex = 102;
+            this.chckTiempoSalida2.UseVisualStyleBackColor = true;
+            this.chckTiempoSalida2.CheckedChanged += new System.EventHandler(this.chckTiempoAll_CheckedChanged);
+            // 
+            // chckTiempoSalida1
+            // 
+            this.chckTiempoSalida1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckTiempoSalida1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckTiempoSalida1.Location = new System.Drawing.Point(40, 47);
+            this.chckTiempoSalida1.Name = "chckTiempoSalida1";
+            this.chckTiempoSalida1.Size = new System.Drawing.Size(39, 27);
+            this.chckTiempoSalida1.TabIndex = 101;
+            this.chckTiempoSalida1.UseVisualStyleBackColor = true;
+            this.chckTiempoSalida1.CheckedChanged += new System.EventHandler(this.chckTiempoAll_CheckedChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(232, 29);
+            this.label3.Location = new System.Drawing.Point(73, 18);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(99, 17);
             this.label3.TabIndex = 15;
             this.label3.Text = "TIEMPO (Seg)";
             // 
-            // metroTextBox3
+            // txtTiempoSalida1
             // 
-            this.metroTextBox3.Enabled = false;
-            this.metroTextBox3.Location = new System.Drawing.Point(370, 47);
-            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox3.TabIndex = 15;
+            this.txtTiempoSalida1.Enabled = false;
+            this.txtTiempoSalida1.Location = new System.Drawing.Point(84, 47);
+            this.txtTiempoSalida1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTiempoSalida1.Name = "txtTiempoSalida1";
+            this.txtTiempoSalida1.Size = new System.Drawing.Size(76, 27);
+            this.txtTiempoSalida1.TabIndex = 14;
             // 
-            // metroTextBox4
+            // txtTiempoSalida8
             // 
-            this.metroTextBox4.Enabled = false;
-            this.metroTextBox4.Location = new System.Drawing.Point(337, 47);
-            this.metroTextBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox4.TabIndex = 14;
+            this.txtTiempoSalida8.Enabled = false;
+            this.txtTiempoSalida8.Location = new System.Drawing.Point(84, 328);
+            this.txtTiempoSalida8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTiempoSalida8.Name = "txtTiempoSalida8";
+            this.txtTiempoSalida8.Size = new System.Drawing.Size(76, 27);
+            this.txtTiempoSalida8.TabIndex = 68;
             // 
-            // metroTextBox1
+            // txtTiempoSalida2
             // 
-            this.metroTextBox1.Enabled = false;
-            this.metroTextBox1.Location = new System.Drawing.Point(240, 47);
-            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(57, 22);
-            this.metroTextBox1.TabIndex = 14;
+            this.txtTiempoSalida2.Enabled = false;
+            this.txtTiempoSalida2.Location = new System.Drawing.Point(84, 84);
+            this.txtTiempoSalida2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTiempoSalida2.Name = "txtTiempoSalida2";
+            this.txtTiempoSalida2.Size = new System.Drawing.Size(76, 27);
+            this.txtTiempoSalida2.TabIndex = 24;
             // 
-            // label2
+            // txtTiempoSalida3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(128, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "MODO ";
+            this.txtTiempoSalida3.Enabled = false;
+            this.txtTiempoSalida3.Location = new System.Drawing.Point(84, 125);
+            this.txtTiempoSalida3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTiempoSalida3.Name = "txtTiempoSalida3";
+            this.txtTiempoSalida3.Size = new System.Drawing.Size(76, 27);
+            this.txtTiempoSalida3.TabIndex = 33;
             // 
-            // label1
+            // txtTiempoSalida7
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "SALIDA 1";
+            this.txtTiempoSalida7.Enabled = false;
+            this.txtTiempoSalida7.Location = new System.Drawing.Point(84, 287);
+            this.txtTiempoSalida7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTiempoSalida7.Name = "txtTiempoSalida7";
+            this.txtTiempoSalida7.Size = new System.Drawing.Size(76, 27);
+            this.txtTiempoSalida7.TabIndex = 61;
             // 
-            // metroComboBox1
+            // txtTiempoSalida4
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(79, 44);
-            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox1.TabIndex = 5;
+            this.txtTiempoSalida4.Enabled = false;
+            this.txtTiempoSalida4.Location = new System.Drawing.Point(84, 165);
+            this.txtTiempoSalida4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTiempoSalida4.Name = "txtTiempoSalida4";
+            this.txtTiempoSalida4.Size = new System.Drawing.Size(76, 27);
+            this.txtTiempoSalida4.TabIndex = 40;
             // 
-            // metroComboBox9
+            // txtTiempoSalida5
             // 
-            this.metroComboBox9.FormattingEnabled = true;
-            this.metroComboBox9.ItemHeight = 23;
-            this.metroComboBox9.Location = new System.Drawing.Point(422, 44);
-            this.metroComboBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox9.Name = "metroComboBox9";
-            this.metroComboBox9.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox9.TabIndex = 9;
+            this.txtTiempoSalida5.Enabled = false;
+            this.txtTiempoSalida5.Location = new System.Drawing.Point(84, 206);
+            this.txtTiempoSalida5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTiempoSalida5.Name = "txtTiempoSalida5";
+            this.txtTiempoSalida5.Size = new System.Drawing.Size(76, 27);
+            this.txtTiempoSalida5.TabIndex = 47;
             // 
-            // metroComboBox10
+            // txtTiempoSalida6
             // 
-            this.metroComboBox10.FormattingEnabled = true;
-            this.metroComboBox10.ItemHeight = 23;
-            this.metroComboBox10.Location = new System.Drawing.Point(729, 44);
-            this.metroComboBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox10.Name = "metroComboBox10";
-            this.metroComboBox10.Size = new System.Drawing.Size(146, 29);
-            this.metroComboBox10.TabIndex = 72;
+            this.txtTiempoSalida6.Enabled = false;
+            this.txtTiempoSalida6.Location = new System.Drawing.Point(84, 247);
+            this.txtTiempoSalida6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTiempoSalida6.Name = "txtTiempoSalida6";
+            this.txtTiempoSalida6.Size = new System.Drawing.Size(76, 27);
+            this.txtTiempoSalida6.TabIndex = 54;
             // 
-            // metroTextBox2
+            // groupBox6
             // 
-            this.metroTextBox2.Enabled = false;
-            this.metroTextBox2.Location = new System.Drawing.Point(751, 281);
-            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox2.TabIndex = 97;
+            this.groupBox6.Controls.Add(this.chckDesactivadasSalida8);
+            this.groupBox6.Controls.Add(this.chckDesactivadasSalida7);
+            this.groupBox6.Controls.Add(this.chckDesactivadasSalida6);
+            this.groupBox6.Controls.Add(this.chckDesactivadasSalida5);
+            this.groupBox6.Controls.Add(this.chckDesactivadasSalida4);
+            this.groupBox6.Controls.Add(this.chckDesactivadasSalida3);
+            this.groupBox6.Controls.Add(this.chckDesactivadasSalida2);
+            this.groupBox6.Controls.Add(this.chckDesactivadasSalida1);
+            this.groupBox6.Controls.Add(this.cmbDiaDesactivaSalida8);
+            this.groupBox6.Controls.Add(this.cmbDiaDesactivaSalida7);
+            this.groupBox6.Controls.Add(this.cmbDiaDesactivaSalida6);
+            this.groupBox6.Controls.Add(this.cmbDiaDesactivaSalida5);
+            this.groupBox6.Controls.Add(this.cmbDiaDesactivaSalida4);
+            this.groupBox6.Controls.Add(this.cmbDiaDesactivaSalida3);
+            this.groupBox6.Controls.Add(this.cmbDiaDesactivaSalida2);
+            this.groupBox6.Controls.Add(this.cmbDiaDesactivaSalida1);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.txtHoraDesactivaSalida1);
+            this.groupBox6.Controls.Add(this.txtMinDesactivaSalida1);
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Controls.Add(this.txtHoraDesactivaSalida2);
+            this.groupBox6.Controls.Add(this.txtMinDesactivaSalida2);
+            this.groupBox6.Controls.Add(this.txtHoraDesactivaSalida3);
+            this.groupBox6.Controls.Add(this.txtMinDesactivaSalida3);
+            this.groupBox6.Controls.Add(this.txtHoraDesactivaSalida4);
+            this.groupBox6.Controls.Add(this.txtMinDesactivaSalida4);
+            this.groupBox6.Controls.Add(this.txtHoraDesactivaSalida5);
+            this.groupBox6.Controls.Add(this.txtMinDesactivaSalida5);
+            this.groupBox6.Controls.Add(this.txtHoraDesactivaSalida6);
+            this.groupBox6.Controls.Add(this.txtMinDesactivaSalida6);
+            this.groupBox6.Controls.Add(this.txtHoraDesactivaSalida7);
+            this.groupBox6.Controls.Add(this.txtMinDesactivaSalida7);
+            this.groupBox6.Controls.Add(this.txtHoraDesactivaSalida8);
+            this.groupBox6.Controls.Add(this.txtMinDesactivaSalida8);
+            this.groupBox6.Location = new System.Drawing.Point(846, 18);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(378, 386);
+            this.groupBox6.TabIndex = 99;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "DESACTIVADAS";
             // 
-            // metroTextBox5
+            // chckDesactivadasSalida8
             // 
-            this.metroTextBox5.Enabled = false;
-            this.metroTextBox5.Location = new System.Drawing.Point(677, 281);
-            this.metroTextBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox5.TabIndex = 96;
+            this.chckDesactivadasSalida8.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckDesactivadasSalida8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckDesactivadasSalida8.Location = new System.Drawing.Point(1, 321);
+            this.chckDesactivadasSalida8.Name = "chckDesactivadasSalida8";
+            this.chckDesactivadasSalida8.Size = new System.Drawing.Size(39, 27);
+            this.chckDesactivadasSalida8.TabIndex = 116;
+            this.chckDesactivadasSalida8.UseVisualStyleBackColor = true;
             // 
-            // metroTextBox7
+            // chckDesactivadasSalida7
             // 
-            this.metroTextBox7.Enabled = false;
-            this.metroTextBox7.Location = new System.Drawing.Point(644, 281);
-            this.metroTextBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox7.Name = "metroTextBox7";
-            this.metroTextBox7.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox7.TabIndex = 95;
+            this.chckDesactivadasSalida7.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckDesactivadasSalida7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckDesactivadasSalida7.Location = new System.Drawing.Point(1, 280);
+            this.chckDesactivadasSalida7.Name = "chckDesactivadasSalida7";
+            this.chckDesactivadasSalida7.Size = new System.Drawing.Size(39, 27);
+            this.chckDesactivadasSalida7.TabIndex = 115;
+            this.chckDesactivadasSalida7.UseVisualStyleBackColor = true;
             // 
-            // metroTextBox12
+            // chckDesactivadasSalida6
             // 
-            this.metroTextBox12.Enabled = false;
-            this.metroTextBox12.Location = new System.Drawing.Point(751, 248);
-            this.metroTextBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox12.Name = "metroTextBox12";
-            this.metroTextBox12.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox12.TabIndex = 94;
+            this.chckDesactivadasSalida6.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckDesactivadasSalida6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckDesactivadasSalida6.Location = new System.Drawing.Point(1, 240);
+            this.chckDesactivadasSalida6.Name = "chckDesactivadasSalida6";
+            this.chckDesactivadasSalida6.Size = new System.Drawing.Size(39, 27);
+            this.chckDesactivadasSalida6.TabIndex = 114;
+            this.chckDesactivadasSalida6.UseVisualStyleBackColor = true;
             // 
-            // metroTextBox17
+            // chckDesactivadasSalida5
             // 
-            this.metroTextBox17.Enabled = false;
-            this.metroTextBox17.Location = new System.Drawing.Point(677, 248);
-            this.metroTextBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox17.Name = "metroTextBox17";
-            this.metroTextBox17.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox17.TabIndex = 93;
+            this.chckDesactivadasSalida5.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckDesactivadasSalida5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckDesactivadasSalida5.Location = new System.Drawing.Point(1, 199);
+            this.chckDesactivadasSalida5.Name = "chckDesactivadasSalida5";
+            this.chckDesactivadasSalida5.Size = new System.Drawing.Size(39, 27);
+            this.chckDesactivadasSalida5.TabIndex = 113;
+            this.chckDesactivadasSalida5.UseVisualStyleBackColor = true;
             // 
-            // metroTextBox22
+            // chckDesactivadasSalida4
             // 
-            this.metroTextBox22.Enabled = false;
-            this.metroTextBox22.Location = new System.Drawing.Point(644, 248);
-            this.metroTextBox22.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox22.Name = "metroTextBox22";
-            this.metroTextBox22.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox22.TabIndex = 92;
+            this.chckDesactivadasSalida4.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckDesactivadasSalida4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckDesactivadasSalida4.Location = new System.Drawing.Point(1, 158);
+            this.chckDesactivadasSalida4.Name = "chckDesactivadasSalida4";
+            this.chckDesactivadasSalida4.Size = new System.Drawing.Size(39, 27);
+            this.chckDesactivadasSalida4.TabIndex = 112;
+            this.chckDesactivadasSalida4.UseVisualStyleBackColor = true;
             // 
-            // metroTextBox27
+            // chckDesactivadasSalida3
             // 
-            this.metroTextBox27.Enabled = false;
-            this.metroTextBox27.Location = new System.Drawing.Point(751, 215);
-            this.metroTextBox27.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox27.Name = "metroTextBox27";
-            this.metroTextBox27.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox27.TabIndex = 91;
+            this.chckDesactivadasSalida3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckDesactivadasSalida3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckDesactivadasSalida3.Location = new System.Drawing.Point(1, 118);
+            this.chckDesactivadasSalida3.Name = "chckDesactivadasSalida3";
+            this.chckDesactivadasSalida3.Size = new System.Drawing.Size(39, 27);
+            this.chckDesactivadasSalida3.TabIndex = 111;
+            this.chckDesactivadasSalida3.UseVisualStyleBackColor = true;
             // 
-            // metroTextBox32
+            // chckDesactivadasSalida2
             // 
-            this.metroTextBox32.Enabled = false;
-            this.metroTextBox32.Location = new System.Drawing.Point(677, 215);
-            this.metroTextBox32.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox32.Name = "metroTextBox32";
-            this.metroTextBox32.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox32.TabIndex = 90;
+            this.chckDesactivadasSalida2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckDesactivadasSalida2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckDesactivadasSalida2.Location = new System.Drawing.Point(1, 77);
+            this.chckDesactivadasSalida2.Name = "chckDesactivadasSalida2";
+            this.chckDesactivadasSalida2.Size = new System.Drawing.Size(39, 27);
+            this.chckDesactivadasSalida2.TabIndex = 110;
+            this.chckDesactivadasSalida2.UseVisualStyleBackColor = true;
             // 
-            // metroTextBox37
+            // chckDesactivadasSalida1
             // 
-            this.metroTextBox37.Enabled = false;
-            this.metroTextBox37.Location = new System.Drawing.Point(644, 215);
-            this.metroTextBox37.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox37.Name = "metroTextBox37";
-            this.metroTextBox37.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox37.TabIndex = 89;
+            this.chckDesactivadasSalida1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckDesactivadasSalida1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckDesactivadasSalida1.Location = new System.Drawing.Point(1, 40);
+            this.chckDesactivadasSalida1.Name = "chckDesactivadasSalida1";
+            this.chckDesactivadasSalida1.Size = new System.Drawing.Size(39, 27);
+            this.chckDesactivadasSalida1.TabIndex = 109;
+            this.chckDesactivadasSalida1.UseVisualStyleBackColor = true;
+            this.chckDesactivadasSalida1.CheckedChanged += new System.EventHandler(this.chckDesactivadasAll_CheckedChanged);
             // 
-            // metroTextBox41
+            // cmbDiaDesactivaSalida8
             // 
-            this.metroTextBox41.Enabled = false;
-            this.metroTextBox41.Location = new System.Drawing.Point(751, 182);
-            this.metroTextBox41.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox41.Name = "metroTextBox41";
-            this.metroTextBox41.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox41.TabIndex = 88;
+            this.cmbDiaDesactivaSalida8.FormattingEnabled = true;
+            this.cmbDiaDesactivaSalida8.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida8.Location = new System.Drawing.Point(161, 316);
+            this.cmbDiaDesactivaSalida8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaDesactivaSalida8.Name = "cmbDiaDesactivaSalida8";
+            this.cmbDiaDesactivaSalida8.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaDesactivaSalida8.TabIndex = 86;
             // 
-            // metroTextBox42
+            // cmbDiaDesactivaSalida7
             // 
-            this.metroTextBox42.Enabled = false;
-            this.metroTextBox42.Location = new System.Drawing.Point(677, 182);
-            this.metroTextBox42.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox42.Name = "metroTextBox42";
-            this.metroTextBox42.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox42.TabIndex = 87;
+            this.cmbDiaDesactivaSalida7.FormattingEnabled = true;
+            this.cmbDiaDesactivaSalida7.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida7.Location = new System.Drawing.Point(161, 275);
+            this.cmbDiaDesactivaSalida7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaDesactivaSalida7.Name = "cmbDiaDesactivaSalida7";
+            this.cmbDiaDesactivaSalida7.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaDesactivaSalida7.TabIndex = 85;
             // 
-            // metroTextBox43
+            // cmbDiaDesactivaSalida6
             // 
-            this.metroTextBox43.Enabled = false;
-            this.metroTextBox43.Location = new System.Drawing.Point(644, 182);
-            this.metroTextBox43.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox43.Name = "metroTextBox43";
-            this.metroTextBox43.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox43.TabIndex = 86;
+            this.cmbDiaDesactivaSalida6.FormattingEnabled = true;
+            this.cmbDiaDesactivaSalida6.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida6.Location = new System.Drawing.Point(161, 233);
+            this.cmbDiaDesactivaSalida6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaDesactivaSalida6.Name = "cmbDiaDesactivaSalida6";
+            this.cmbDiaDesactivaSalida6.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaDesactivaSalida6.TabIndex = 84;
             // 
-            // metroTextBox44
+            // cmbDiaDesactivaSalida5
             // 
-            this.metroTextBox44.Enabled = false;
-            this.metroTextBox44.Location = new System.Drawing.Point(751, 149);
-            this.metroTextBox44.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox44.Name = "metroTextBox44";
-            this.metroTextBox44.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox44.TabIndex = 85;
+            this.cmbDiaDesactivaSalida5.FormattingEnabled = true;
+            this.cmbDiaDesactivaSalida5.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida5.Location = new System.Drawing.Point(161, 194);
+            this.cmbDiaDesactivaSalida5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaDesactivaSalida5.Name = "cmbDiaDesactivaSalida5";
+            this.cmbDiaDesactivaSalida5.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaDesactivaSalida5.TabIndex = 83;
             // 
-            // metroTextBox45
+            // cmbDiaDesactivaSalida4
             // 
-            this.metroTextBox45.Enabled = false;
-            this.metroTextBox45.Location = new System.Drawing.Point(677, 149);
-            this.metroTextBox45.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox45.Name = "metroTextBox45";
-            this.metroTextBox45.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox45.TabIndex = 84;
+            this.cmbDiaDesactivaSalida4.FormattingEnabled = true;
+            this.cmbDiaDesactivaSalida4.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida4.Location = new System.Drawing.Point(161, 157);
+            this.cmbDiaDesactivaSalida4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaDesactivaSalida4.Name = "cmbDiaDesactivaSalida4";
+            this.cmbDiaDesactivaSalida4.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaDesactivaSalida4.TabIndex = 82;
             // 
-            // metroTextBox46
+            // cmbDiaDesactivaSalida3
             // 
-            this.metroTextBox46.Enabled = false;
-            this.metroTextBox46.Location = new System.Drawing.Point(644, 149);
-            this.metroTextBox46.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox46.Name = "metroTextBox46";
-            this.metroTextBox46.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox46.TabIndex = 83;
+            this.cmbDiaDesactivaSalida3.FormattingEnabled = true;
+            this.cmbDiaDesactivaSalida3.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida3.Location = new System.Drawing.Point(161, 116);
+            this.cmbDiaDesactivaSalida3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaDesactivaSalida3.Name = "cmbDiaDesactivaSalida3";
+            this.cmbDiaDesactivaSalida3.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaDesactivaSalida3.TabIndex = 81;
             // 
-            // metroTextBox47
+            // cmbDiaDesactivaSalida2
             // 
-            this.metroTextBox47.Enabled = false;
-            this.metroTextBox47.Location = new System.Drawing.Point(751, 116);
-            this.metroTextBox47.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox47.Name = "metroTextBox47";
-            this.metroTextBox47.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox47.TabIndex = 82;
+            this.cmbDiaDesactivaSalida2.FormattingEnabled = true;
+            this.cmbDiaDesactivaSalida2.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida2.Location = new System.Drawing.Point(161, 76);
+            this.cmbDiaDesactivaSalida2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaDesactivaSalida2.Name = "cmbDiaDesactivaSalida2";
+            this.cmbDiaDesactivaSalida2.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaDesactivaSalida2.TabIndex = 80;
             // 
-            // metroTextBox48
+            // cmbDiaDesactivaSalida1
             // 
-            this.metroTextBox48.Enabled = false;
-            this.metroTextBox48.Location = new System.Drawing.Point(677, 116);
-            this.metroTextBox48.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox48.Name = "metroTextBox48";
-            this.metroTextBox48.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox48.TabIndex = 81;
-            // 
-            // metroTextBox49
-            // 
-            this.metroTextBox49.Enabled = false;
-            this.metroTextBox49.Location = new System.Drawing.Point(644, 116);
-            this.metroTextBox49.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox49.Name = "metroTextBox49";
-            this.metroTextBox49.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox49.TabIndex = 80;
-            // 
-            // metroTextBox50
-            // 
-            this.metroTextBox50.Enabled = false;
-            this.metroTextBox50.Location = new System.Drawing.Point(751, 83);
-            this.metroTextBox50.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox50.Name = "metroTextBox50";
-            this.metroTextBox50.Size = new System.Drawing.Size(83, 22);
-            this.metroTextBox50.TabIndex = 79;
-            // 
-            // metroTextBox51
-            // 
-            this.metroTextBox51.Enabled = false;
-            this.metroTextBox51.Location = new System.Drawing.Point(677, 83);
-            this.metroTextBox51.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox51.Name = "metroTextBox51";
-            this.metroTextBox51.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox51.TabIndex = 78;
-            // 
-            // metroTextBox52
-            // 
-            this.metroTextBox52.Enabled = false;
-            this.metroTextBox52.Location = new System.Drawing.Point(644, 83);
-            this.metroTextBox52.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox52.Name = "metroTextBox52";
-            this.metroTextBox52.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox52.TabIndex = 77;
+            this.cmbDiaDesactivaSalida1.FormattingEnabled = true;
+            this.cmbDiaDesactivaSalida1.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida1.Location = new System.Drawing.Point(161, 39);
+            this.cmbDiaDesactivaSalida1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaDesactivaSalida1.Name = "cmbDiaDesactivaSalida1";
+            this.cmbDiaDesactivaSalida1.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaDesactivaSalida1.TabIndex = 79;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(778, 29);
+            this.label13.Location = new System.Drawing.Point(46, 18);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(25, 13);
-            this.label13.TabIndex = 76;
-            this.label13.Text = "DIA";
+            this.label13.Size = new System.Drawing.Size(76, 17);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "HORA/MIN";
+            // 
+            // txtHoraDesactivaSalida1
+            // 
+            this.txtHoraDesactivaSalida1.Enabled = false;
+            this.txtHoraDesactivaSalida1.Location = new System.Drawing.Point(46, 40);
+            this.txtHoraDesactivaSalida1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraDesactivaSalida1.Name = "txtHoraDesactivaSalida1";
+            this.txtHoraDesactivaSalida1.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraDesactivaSalida1.TabIndex = 14;
+            // 
+            // txtMinDesactivaSalida1
+            // 
+            this.txtMinDesactivaSalida1.Enabled = false;
+            this.txtMinDesactivaSalida1.Location = new System.Drawing.Point(90, 40);
+            this.txtMinDesactivaSalida1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinDesactivaSalida1.Name = "txtMinDesactivaSalida1";
+            this.txtMinDesactivaSalida1.Size = new System.Drawing.Size(37, 27);
+            this.txtMinDesactivaSalida1.TabIndex = 15;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(644, 29);
+            this.label14.Location = new System.Drawing.Point(225, 18);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 13);
-            this.label14.TabIndex = 75;
-            this.label14.Text = "HORA/MIN";
+            this.label14.Size = new System.Drawing.Size(30, 17);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "DIA";
             // 
-            // metroTextBox53
+            // txtHoraDesactivaSalida2
             // 
-            this.metroTextBox53.Enabled = false;
-            this.metroTextBox53.Location = new System.Drawing.Point(677, 47);
-            this.metroTextBox53.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox53.Name = "metroTextBox53";
-            this.metroTextBox53.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox53.TabIndex = 74;
+            this.txtHoraDesactivaSalida2.Enabled = false;
+            this.txtHoraDesactivaSalida2.Location = new System.Drawing.Point(46, 75);
+            this.txtHoraDesactivaSalida2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraDesactivaSalida2.Name = "txtHoraDesactivaSalida2";
+            this.txtHoraDesactivaSalida2.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraDesactivaSalida2.TabIndex = 23;
             // 
-            // metroTextBox54
+            // txtMinDesactivaSalida2
             // 
-            this.metroTextBox54.Enabled = false;
-            this.metroTextBox54.Location = new System.Drawing.Point(644, 47);
-            this.metroTextBox54.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBox54.Name = "metroTextBox54";
-            this.metroTextBox54.Size = new System.Drawing.Size(28, 22);
-            this.metroTextBox54.TabIndex = 73;
+            this.txtMinDesactivaSalida2.Enabled = false;
+            this.txtMinDesactivaSalida2.Location = new System.Drawing.Point(90, 75);
+            this.txtMinDesactivaSalida2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinDesactivaSalida2.Name = "txtMinDesactivaSalida2";
+            this.txtMinDesactivaSalida2.Size = new System.Drawing.Size(37, 27);
+            this.txtMinDesactivaSalida2.TabIndex = 26;
+            // 
+            // txtHoraDesactivaSalida3
+            // 
+            this.txtHoraDesactivaSalida3.Enabled = false;
+            this.txtHoraDesactivaSalida3.Location = new System.Drawing.Point(46, 116);
+            this.txtHoraDesactivaSalida3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraDesactivaSalida3.Name = "txtHoraDesactivaSalida3";
+            this.txtHoraDesactivaSalida3.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraDesactivaSalida3.TabIndex = 32;
+            // 
+            // txtMinDesactivaSalida3
+            // 
+            this.txtMinDesactivaSalida3.Enabled = false;
+            this.txtMinDesactivaSalida3.Location = new System.Drawing.Point(90, 116);
+            this.txtMinDesactivaSalida3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinDesactivaSalida3.Name = "txtMinDesactivaSalida3";
+            this.txtMinDesactivaSalida3.Size = new System.Drawing.Size(37, 27);
+            this.txtMinDesactivaSalida3.TabIndex = 34;
+            // 
+            // txtHoraDesactivaSalida4
+            // 
+            this.txtHoraDesactivaSalida4.Enabled = false;
+            this.txtHoraDesactivaSalida4.Location = new System.Drawing.Point(46, 158);
+            this.txtHoraDesactivaSalida4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraDesactivaSalida4.Name = "txtHoraDesactivaSalida4";
+            this.txtHoraDesactivaSalida4.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraDesactivaSalida4.TabIndex = 39;
+            // 
+            // txtMinDesactivaSalida4
+            // 
+            this.txtMinDesactivaSalida4.Enabled = false;
+            this.txtMinDesactivaSalida4.Location = new System.Drawing.Point(90, 158);
+            this.txtMinDesactivaSalida4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinDesactivaSalida4.Name = "txtMinDesactivaSalida4";
+            this.txtMinDesactivaSalida4.Size = new System.Drawing.Size(37, 27);
+            this.txtMinDesactivaSalida4.TabIndex = 41;
+            // 
+            // txtHoraDesactivaSalida5
+            // 
+            this.txtHoraDesactivaSalida5.Enabled = false;
+            this.txtHoraDesactivaSalida5.Location = new System.Drawing.Point(46, 197);
+            this.txtHoraDesactivaSalida5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraDesactivaSalida5.Name = "txtHoraDesactivaSalida5";
+            this.txtHoraDesactivaSalida5.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraDesactivaSalida5.TabIndex = 46;
+            // 
+            // txtMinDesactivaSalida5
+            // 
+            this.txtMinDesactivaSalida5.Enabled = false;
+            this.txtMinDesactivaSalida5.Location = new System.Drawing.Point(90, 197);
+            this.txtMinDesactivaSalida5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinDesactivaSalida5.Name = "txtMinDesactivaSalida5";
+            this.txtMinDesactivaSalida5.Size = new System.Drawing.Size(37, 27);
+            this.txtMinDesactivaSalida5.TabIndex = 48;
+            // 
+            // txtHoraDesactivaSalida6
+            // 
+            this.txtHoraDesactivaSalida6.Enabled = false;
+            this.txtHoraDesactivaSalida6.Location = new System.Drawing.Point(46, 238);
+            this.txtHoraDesactivaSalida6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraDesactivaSalida6.Name = "txtHoraDesactivaSalida6";
+            this.txtHoraDesactivaSalida6.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraDesactivaSalida6.TabIndex = 53;
+            // 
+            // txtMinDesactivaSalida6
+            // 
+            this.txtMinDesactivaSalida6.Enabled = false;
+            this.txtMinDesactivaSalida6.Location = new System.Drawing.Point(90, 238);
+            this.txtMinDesactivaSalida6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinDesactivaSalida6.Name = "txtMinDesactivaSalida6";
+            this.txtMinDesactivaSalida6.Size = new System.Drawing.Size(37, 27);
+            this.txtMinDesactivaSalida6.TabIndex = 55;
+            // 
+            // txtHoraDesactivaSalida7
+            // 
+            this.txtHoraDesactivaSalida7.Enabled = false;
+            this.txtHoraDesactivaSalida7.Location = new System.Drawing.Point(45, 278);
+            this.txtHoraDesactivaSalida7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraDesactivaSalida7.Name = "txtHoraDesactivaSalida7";
+            this.txtHoraDesactivaSalida7.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraDesactivaSalida7.TabIndex = 60;
+            // 
+            // txtMinDesactivaSalida7
+            // 
+            this.txtMinDesactivaSalida7.Enabled = false;
+            this.txtMinDesactivaSalida7.Location = new System.Drawing.Point(89, 278);
+            this.txtMinDesactivaSalida7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinDesactivaSalida7.Name = "txtMinDesactivaSalida7";
+            this.txtMinDesactivaSalida7.Size = new System.Drawing.Size(37, 27);
+            this.txtMinDesactivaSalida7.TabIndex = 62;
+            // 
+            // txtHoraDesactivaSalida8
+            // 
+            this.txtHoraDesactivaSalida8.Enabled = false;
+            this.txtHoraDesactivaSalida8.Location = new System.Drawing.Point(45, 319);
+            this.txtHoraDesactivaSalida8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraDesactivaSalida8.Name = "txtHoraDesactivaSalida8";
+            this.txtHoraDesactivaSalida8.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraDesactivaSalida8.TabIndex = 67;
+            // 
+            // txtMinDesactivaSalida8
+            // 
+            this.txtMinDesactivaSalida8.Enabled = false;
+            this.txtMinDesactivaSalida8.Location = new System.Drawing.Point(89, 319);
+            this.txtMinDesactivaSalida8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinDesactivaSalida8.Name = "txtMinDesactivaSalida8";
+            this.txtMinDesactivaSalida8.Size = new System.Drawing.Size(37, 27);
+            this.txtMinDesactivaSalida8.TabIndex = 69;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.chckActivadasSalida8);
+            this.groupBox5.Controls.Add(this.chckActivadasSalida7);
+            this.groupBox5.Controls.Add(this.chckActivadasSalida6);
+            this.groupBox5.Controls.Add(this.chckActivadasSalida5);
+            this.groupBox5.Controls.Add(this.chckActivadasSalida4);
+            this.groupBox5.Controls.Add(this.chckActivadasSalida3);
+            this.groupBox5.Controls.Add(this.chckActivadasSalida2);
+            this.groupBox5.Controls.Add(this.chckActivadasSalida1);
+            this.groupBox5.Controls.Add(this.cmbDiaActivaSalida8);
+            this.groupBox5.Controls.Add(this.cmbDiaActivaSalida7);
+            this.groupBox5.Controls.Add(this.cmbDiaActivaSalida6);
+            this.groupBox5.Controls.Add(this.cmbDiaActivaSalida5);
+            this.groupBox5.Controls.Add(this.cmbDiaActivaSalida4);
+            this.groupBox5.Controls.Add(this.cmbDiaActivaSalida3);
+            this.groupBox5.Controls.Add(this.cmbDiaActivaSalida2);
+            this.groupBox5.Controls.Add(this.label4);
+            this.groupBox5.Controls.Add(this.txtHoraActivaSalida1);
+            this.groupBox5.Controls.Add(this.txtMinActivaSalida1);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.txtHoraActivaSalida2);
+            this.groupBox5.Controls.Add(this.txtMinActivaSalida2);
+            this.groupBox5.Controls.Add(this.txtHoraActivaSalida3);
+            this.groupBox5.Controls.Add(this.txtMinActivaSalida3);
+            this.groupBox5.Controls.Add(this.txtHoraActivaSalida4);
+            this.groupBox5.Controls.Add(this.txtMinActivaSalida4);
+            this.groupBox5.Controls.Add(this.txtHoraActivaSalida5);
+            this.groupBox5.Controls.Add(this.txtMinActivaSalida5);
+            this.groupBox5.Controls.Add(this.txtHoraActivaSalida6);
+            this.groupBox5.Controls.Add(this.txtMinActivaSalida6);
+            this.groupBox5.Controls.Add(this.txtHoraActivaSalida7);
+            this.groupBox5.Controls.Add(this.txtMinActivaSalida7);
+            this.groupBox5.Controls.Add(this.txtHoraActivaSalida8);
+            this.groupBox5.Controls.Add(this.txtMinActivaSalida8);
+            this.groupBox5.Controls.Add(this.cmbDiaActivaSalida1);
+            this.groupBox5.Location = new System.Drawing.Point(444, 16);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(378, 388);
+            this.groupBox5.TabIndex = 98;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "ACTIVADAS";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // chckActivadasSalida8
+            // 
+            this.chckActivadasSalida8.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckActivadasSalida8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckActivadasSalida8.Location = new System.Drawing.Point(4, 321);
+            this.chckActivadasSalida8.Name = "chckActivadasSalida8";
+            this.chckActivadasSalida8.Size = new System.Drawing.Size(39, 27);
+            this.chckActivadasSalida8.TabIndex = 116;
+            this.chckActivadasSalida8.UseVisualStyleBackColor = true;
+            // 
+            // chckActivadasSalida7
+            // 
+            this.chckActivadasSalida7.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckActivadasSalida7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckActivadasSalida7.Location = new System.Drawing.Point(3, 280);
+            this.chckActivadasSalida7.Name = "chckActivadasSalida7";
+            this.chckActivadasSalida7.Size = new System.Drawing.Size(39, 27);
+            this.chckActivadasSalida7.TabIndex = 115;
+            this.chckActivadasSalida7.UseVisualStyleBackColor = true;
+            // 
+            // chckActivadasSalida6
+            // 
+            this.chckActivadasSalida6.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckActivadasSalida6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckActivadasSalida6.Location = new System.Drawing.Point(4, 240);
+            this.chckActivadasSalida6.Name = "chckActivadasSalida6";
+            this.chckActivadasSalida6.Size = new System.Drawing.Size(39, 27);
+            this.chckActivadasSalida6.TabIndex = 114;
+            this.chckActivadasSalida6.UseVisualStyleBackColor = true;
+            // 
+            // chckActivadasSalida5
+            // 
+            this.chckActivadasSalida5.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckActivadasSalida5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckActivadasSalida5.Location = new System.Drawing.Point(4, 199);
+            this.chckActivadasSalida5.Name = "chckActivadasSalida5";
+            this.chckActivadasSalida5.Size = new System.Drawing.Size(39, 27);
+            this.chckActivadasSalida5.TabIndex = 113;
+            this.chckActivadasSalida5.UseVisualStyleBackColor = true;
+            // 
+            // chckActivadasSalida4
+            // 
+            this.chckActivadasSalida4.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckActivadasSalida4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckActivadasSalida4.Location = new System.Drawing.Point(4, 158);
+            this.chckActivadasSalida4.Name = "chckActivadasSalida4";
+            this.chckActivadasSalida4.Size = new System.Drawing.Size(39, 27);
+            this.chckActivadasSalida4.TabIndex = 112;
+            this.chckActivadasSalida4.UseVisualStyleBackColor = true;
+            // 
+            // chckActivadasSalida3
+            // 
+            this.chckActivadasSalida3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckActivadasSalida3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckActivadasSalida3.Location = new System.Drawing.Point(4, 118);
+            this.chckActivadasSalida3.Name = "chckActivadasSalida3";
+            this.chckActivadasSalida3.Size = new System.Drawing.Size(39, 27);
+            this.chckActivadasSalida3.TabIndex = 111;
+            this.chckActivadasSalida3.UseVisualStyleBackColor = true;
+            // 
+            // chckActivadasSalida2
+            // 
+            this.chckActivadasSalida2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckActivadasSalida2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckActivadasSalida2.Location = new System.Drawing.Point(4, 77);
+            this.chckActivadasSalida2.Name = "chckActivadasSalida2";
+            this.chckActivadasSalida2.Size = new System.Drawing.Size(39, 27);
+            this.chckActivadasSalida2.TabIndex = 110;
+            this.chckActivadasSalida2.UseVisualStyleBackColor = true;
+            // 
+            // chckActivadasSalida1
+            // 
+            this.chckActivadasSalida1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chckActivadasSalida1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckActivadasSalida1.Location = new System.Drawing.Point(4, 40);
+            this.chckActivadasSalida1.Name = "chckActivadasSalida1";
+            this.chckActivadasSalida1.Size = new System.Drawing.Size(39, 27);
+            this.chckActivadasSalida1.TabIndex = 109;
+            this.chckActivadasSalida1.UseVisualStyleBackColor = true;
+            this.chckActivadasSalida1.CheckedChanged += new System.EventHandler(this.chckActivadasAll_CheckedChanged);
+            // 
+            // cmbDiaActivaSalida8
+            // 
+            this.cmbDiaActivaSalida8.FormattingEnabled = true;
+            this.cmbDiaActivaSalida8.ItemHeight = 24;
+            this.cmbDiaActivaSalida8.Location = new System.Drawing.Point(164, 318);
+            this.cmbDiaActivaSalida8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaActivaSalida8.Name = "cmbDiaActivaSalida8";
+            this.cmbDiaActivaSalida8.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaActivaSalida8.TabIndex = 78;
+            // 
+            // cmbDiaActivaSalida7
+            // 
+            this.cmbDiaActivaSalida7.FormattingEnabled = true;
+            this.cmbDiaActivaSalida7.ItemHeight = 24;
+            this.cmbDiaActivaSalida7.Location = new System.Drawing.Point(164, 277);
+            this.cmbDiaActivaSalida7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaActivaSalida7.Name = "cmbDiaActivaSalida7";
+            this.cmbDiaActivaSalida7.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaActivaSalida7.TabIndex = 77;
+            // 
+            // cmbDiaActivaSalida6
+            // 
+            this.cmbDiaActivaSalida6.FormattingEnabled = true;
+            this.cmbDiaActivaSalida6.ItemHeight = 24;
+            this.cmbDiaActivaSalida6.Location = new System.Drawing.Point(164, 237);
+            this.cmbDiaActivaSalida6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaActivaSalida6.Name = "cmbDiaActivaSalida6";
+            this.cmbDiaActivaSalida6.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaActivaSalida6.TabIndex = 76;
+            // 
+            // cmbDiaActivaSalida5
+            // 
+            this.cmbDiaActivaSalida5.FormattingEnabled = true;
+            this.cmbDiaActivaSalida5.ItemHeight = 24;
+            this.cmbDiaActivaSalida5.Location = new System.Drawing.Point(164, 196);
+            this.cmbDiaActivaSalida5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaActivaSalida5.Name = "cmbDiaActivaSalida5";
+            this.cmbDiaActivaSalida5.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaActivaSalida5.TabIndex = 75;
+            // 
+            // cmbDiaActivaSalida4
+            // 
+            this.cmbDiaActivaSalida4.FormattingEnabled = true;
+            this.cmbDiaActivaSalida4.ItemHeight = 24;
+            this.cmbDiaActivaSalida4.Location = new System.Drawing.Point(164, 158);
+            this.cmbDiaActivaSalida4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaActivaSalida4.Name = "cmbDiaActivaSalida4";
+            this.cmbDiaActivaSalida4.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaActivaSalida4.TabIndex = 74;
+            // 
+            // cmbDiaActivaSalida3
+            // 
+            this.cmbDiaActivaSalida3.FormattingEnabled = true;
+            this.cmbDiaActivaSalida3.ItemHeight = 24;
+            this.cmbDiaActivaSalida3.Location = new System.Drawing.Point(164, 115);
+            this.cmbDiaActivaSalida3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaActivaSalida3.Name = "cmbDiaActivaSalida3";
+            this.cmbDiaActivaSalida3.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaActivaSalida3.TabIndex = 73;
+            // 
+            // cmbDiaActivaSalida2
+            // 
+            this.cmbDiaActivaSalida2.FormattingEnabled = true;
+            this.cmbDiaActivaSalida2.ItemHeight = 24;
+            this.cmbDiaActivaSalida2.Location = new System.Drawing.Point(164, 74);
+            this.cmbDiaActivaSalida2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaActivaSalida2.Name = "cmbDiaActivaSalida2";
+            this.cmbDiaActivaSalida2.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaActivaSalida2.TabIndex = 72;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(50, 17);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "HORA/MIN";
+            // 
+            // txtHoraActivaSalida1
+            // 
+            this.txtHoraActivaSalida1.Enabled = false;
+            this.txtHoraActivaSalida1.Location = new System.Drawing.Point(50, 40);
+            this.txtHoraActivaSalida1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraActivaSalida1.Name = "txtHoraActivaSalida1";
+            this.txtHoraActivaSalida1.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraActivaSalida1.TabIndex = 14;
+            // 
+            // txtMinActivaSalida1
+            // 
+            this.txtMinActivaSalida1.Enabled = false;
+            this.txtMinActivaSalida1.Location = new System.Drawing.Point(94, 40);
+            this.txtMinActivaSalida1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinActivaSalida1.Name = "txtMinActivaSalida1";
+            this.txtMinActivaSalida1.Size = new System.Drawing.Size(37, 27);
+            this.txtMinActivaSalida1.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(229, 17);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 17);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "DIA";
+            // 
+            // txtHoraActivaSalida2
+            // 
+            this.txtHoraActivaSalida2.Enabled = false;
+            this.txtHoraActivaSalida2.Location = new System.Drawing.Point(49, 77);
+            this.txtHoraActivaSalida2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraActivaSalida2.Name = "txtHoraActivaSalida2";
+            this.txtHoraActivaSalida2.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraActivaSalida2.TabIndex = 23;
+            // 
+            // txtMinActivaSalida2
+            // 
+            this.txtMinActivaSalida2.Enabled = false;
+            this.txtMinActivaSalida2.Location = new System.Drawing.Point(93, 77);
+            this.txtMinActivaSalida2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinActivaSalida2.Name = "txtMinActivaSalida2";
+            this.txtMinActivaSalida2.Size = new System.Drawing.Size(37, 27);
+            this.txtMinActivaSalida2.TabIndex = 26;
+            // 
+            // txtHoraActivaSalida3
+            // 
+            this.txtHoraActivaSalida3.Enabled = false;
+            this.txtHoraActivaSalida3.Location = new System.Drawing.Point(49, 118);
+            this.txtHoraActivaSalida3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraActivaSalida3.Name = "txtHoraActivaSalida3";
+            this.txtHoraActivaSalida3.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraActivaSalida3.TabIndex = 32;
+            // 
+            // txtMinActivaSalida3
+            // 
+            this.txtMinActivaSalida3.Enabled = false;
+            this.txtMinActivaSalida3.Location = new System.Drawing.Point(93, 118);
+            this.txtMinActivaSalida3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinActivaSalida3.Name = "txtMinActivaSalida3";
+            this.txtMinActivaSalida3.Size = new System.Drawing.Size(37, 27);
+            this.txtMinActivaSalida3.TabIndex = 34;
+            // 
+            // txtHoraActivaSalida4
+            // 
+            this.txtHoraActivaSalida4.Enabled = false;
+            this.txtHoraActivaSalida4.Location = new System.Drawing.Point(49, 158);
+            this.txtHoraActivaSalida4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraActivaSalida4.Name = "txtHoraActivaSalida4";
+            this.txtHoraActivaSalida4.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraActivaSalida4.TabIndex = 39;
+            // 
+            // txtMinActivaSalida4
+            // 
+            this.txtMinActivaSalida4.Enabled = false;
+            this.txtMinActivaSalida4.Location = new System.Drawing.Point(93, 158);
+            this.txtMinActivaSalida4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinActivaSalida4.Name = "txtMinActivaSalida4";
+            this.txtMinActivaSalida4.Size = new System.Drawing.Size(37, 27);
+            this.txtMinActivaSalida4.TabIndex = 41;
+            // 
+            // txtHoraActivaSalida5
+            // 
+            this.txtHoraActivaSalida5.Enabled = false;
+            this.txtHoraActivaSalida5.Location = new System.Drawing.Point(49, 199);
+            this.txtHoraActivaSalida5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraActivaSalida5.Name = "txtHoraActivaSalida5";
+            this.txtHoraActivaSalida5.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraActivaSalida5.TabIndex = 46;
+            // 
+            // txtMinActivaSalida5
+            // 
+            this.txtMinActivaSalida5.Enabled = false;
+            this.txtMinActivaSalida5.Location = new System.Drawing.Point(93, 199);
+            this.txtMinActivaSalida5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinActivaSalida5.Name = "txtMinActivaSalida5";
+            this.txtMinActivaSalida5.Size = new System.Drawing.Size(37, 27);
+            this.txtMinActivaSalida5.TabIndex = 48;
+            // 
+            // txtHoraActivaSalida6
+            // 
+            this.txtHoraActivaSalida6.Enabled = false;
+            this.txtHoraActivaSalida6.Location = new System.Drawing.Point(49, 240);
+            this.txtHoraActivaSalida6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraActivaSalida6.Name = "txtHoraActivaSalida6";
+            this.txtHoraActivaSalida6.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraActivaSalida6.TabIndex = 53;
+            // 
+            // txtMinActivaSalida6
+            // 
+            this.txtMinActivaSalida6.Enabled = false;
+            this.txtMinActivaSalida6.Location = new System.Drawing.Point(93, 240);
+            this.txtMinActivaSalida6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinActivaSalida6.Name = "txtMinActivaSalida6";
+            this.txtMinActivaSalida6.Size = new System.Drawing.Size(37, 27);
+            this.txtMinActivaSalida6.TabIndex = 55;
+            // 
+            // txtHoraActivaSalida7
+            // 
+            this.txtHoraActivaSalida7.Enabled = false;
+            this.txtHoraActivaSalida7.Location = new System.Drawing.Point(49, 280);
+            this.txtHoraActivaSalida7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraActivaSalida7.Name = "txtHoraActivaSalida7";
+            this.txtHoraActivaSalida7.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraActivaSalida7.TabIndex = 60;
+            // 
+            // txtMinActivaSalida7
+            // 
+            this.txtMinActivaSalida7.Enabled = false;
+            this.txtMinActivaSalida7.Location = new System.Drawing.Point(93, 280);
+            this.txtMinActivaSalida7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinActivaSalida7.Name = "txtMinActivaSalida7";
+            this.txtMinActivaSalida7.Size = new System.Drawing.Size(37, 27);
+            this.txtMinActivaSalida7.TabIndex = 62;
+            // 
+            // txtHoraActivaSalida8
+            // 
+            this.txtHoraActivaSalida8.Enabled = false;
+            this.txtHoraActivaSalida8.Location = new System.Drawing.Point(49, 321);
+            this.txtHoraActivaSalida8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoraActivaSalida8.Name = "txtHoraActivaSalida8";
+            this.txtHoraActivaSalida8.Size = new System.Drawing.Size(37, 27);
+            this.txtHoraActivaSalida8.TabIndex = 67;
+            // 
+            // txtMinActivaSalida8
+            // 
+            this.txtMinActivaSalida8.Enabled = false;
+            this.txtMinActivaSalida8.Location = new System.Drawing.Point(93, 321);
+            this.txtMinActivaSalida8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinActivaSalida8.Name = "txtMinActivaSalida8";
+            this.txtMinActivaSalida8.Size = new System.Drawing.Size(37, 27);
+            this.txtMinActivaSalida8.TabIndex = 69;
+            // 
+            // cmbDiaActivaSalida1
+            // 
+            this.cmbDiaActivaSalida1.FormattingEnabled = true;
+            this.cmbDiaActivaSalida1.ItemHeight = 24;
+            this.cmbDiaActivaSalida1.Location = new System.Drawing.Point(164, 36);
+            this.cmbDiaActivaSalida1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDiaActivaSalida1.Name = "cmbDiaActivaSalida1";
+            this.cmbDiaActivaSalida1.Size = new System.Drawing.Size(193, 30);
+            this.cmbDiaActivaSalida1.TabIndex = 9;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 351);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 17);
+            this.label12.TabIndex = 66;
+            this.label12.Text = "SALIDA 8";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 310);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 17);
+            this.label11.TabIndex = 59;
+            this.label11.Text = "SALIDA 7";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 270);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 17);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "SALIDA 6";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 229);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 17);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "SALIDA 5";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 188);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 17);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "SALIDA 4";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 148);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 17);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "SALIDA 3";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 107);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 17);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "SALIDA 2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "SALIDA 1";
+            // 
+            // btnGrabarSalidas
+            // 
+            this.btnGrabarSalidas.Enabled = false;
+            this.btnGrabarSalidas.Location = new System.Drawing.Point(1230, 26);
+            this.btnGrabarSalidas.Name = "btnGrabarSalidas";
+            this.btnGrabarSalidas.Size = new System.Drawing.Size(90, 374);
+            this.btnGrabarSalidas.TabIndex = 102;
+            this.btnGrabarSalidas.Text = "GRABAR";
+            // 
+            // lblCOMEvent
+            // 
+            this.lblCOMEvent.BackColor = System.Drawing.Color.White;
+            this.lblCOMEvent.Location = new System.Drawing.Point(119, 12);
+            this.lblCOMEvent.Name = "lblCOMEvent";
+            this.lblCOMEvent.Size = new System.Drawing.Size(377, 23);
+            this.lblCOMEvent.TabIndex = 8;
+            // 
+            // lblEthernetEvent
+            // 
+            this.lblEthernetEvent.BackColor = System.Drawing.Color.White;
+            this.lblEthernetEvent.Location = new System.Drawing.Point(6, 17);
+            this.lblEthernetEvent.Name = "lblEthernetEvent";
+            this.lblEthernetEvent.Size = new System.Drawing.Size(377, 23);
+            this.lblEthernetEvent.TabIndex = 11;
+            // 
+            // picLoading
+            // 
+            this.picLoading.Enabled = false;
+            this.picLoading.Location = new System.Drawing.Point(609, 162);
+            this.picLoading.Name = "picLoading";
+            this.picLoading.Size = new System.Drawing.Size(195, 73);
+            this.picLoading.TabIndex = 9;
+            this.picLoading.TabStop = false;
+            this.picLoading.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 545);
+            this.ClientSize = new System.Drawing.Size(1511, 671);
+            this.Controls.Add(this.picLoading);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(20, 74, 20, 20);
+            this.Resizable = false;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1093,6 +1392,13 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1113,84 +1419,106 @@ namespace Ethernet.ConfigCOMForm
         private MetroFramework.Controls.MetroTextBox txtBye3;
         private MetroFramework.Controls.MetroTextBox txtBye2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox36;
-        private MetroFramework.Controls.MetroTextBox metroTextBox38;
-        private MetroFramework.Controls.MetroTextBox metroTextBox39;
-        private MetroFramework.Controls.MetroTextBox metroTextBox40;
+        private MetroFramework.Controls.MetroTextBox txtMinActivaSalida8;
+        private MetroFramework.Controls.MetroTextBox txtHoraActivaSalida8;
+        private MetroFramework.Controls.MetroTextBox txtTiempoSalida8;
         private System.Windows.Forms.Label label12;
-        private MetroFramework.Controls.MetroComboBox metroComboBox8;
-        private MetroFramework.Controls.MetroTextBox metroTextBox31;
-        private MetroFramework.Controls.MetroTextBox metroTextBox33;
-        private MetroFramework.Controls.MetroTextBox metroTextBox34;
-        private MetroFramework.Controls.MetroTextBox metroTextBox35;
+        private MetroFramework.Controls.MetroTextBox txtMinActivaSalida7;
+        private MetroFramework.Controls.MetroTextBox txtHoraActivaSalida7;
+        private MetroFramework.Controls.MetroTextBox txtTiempoSalida7;
         private System.Windows.Forms.Label label11;
-        private MetroFramework.Controls.MetroComboBox metroComboBox7;
-        private MetroFramework.Controls.MetroTextBox metroTextBox26;
-        private MetroFramework.Controls.MetroTextBox metroTextBox28;
-        private MetroFramework.Controls.MetroTextBox metroTextBox29;
-        private MetroFramework.Controls.MetroTextBox metroTextBox30;
+        private MetroFramework.Controls.MetroTextBox txtMinActivaSalida6;
+        private MetroFramework.Controls.MetroTextBox txtHoraActivaSalida6;
+        private MetroFramework.Controls.MetroTextBox txtTiempoSalida6;
         private System.Windows.Forms.Label label9;
-        private MetroFramework.Controls.MetroComboBox metroComboBox6;
-        private MetroFramework.Controls.MetroTextBox metroTextBox21;
-        private MetroFramework.Controls.MetroTextBox metroTextBox23;
-        private MetroFramework.Controls.MetroTextBox metroTextBox24;
-        private MetroFramework.Controls.MetroTextBox metroTextBox25;
+        private MetroFramework.Controls.MetroTextBox txtMinActivaSalida5;
+        private MetroFramework.Controls.MetroTextBox txtHoraActivaSalida5;
+        private MetroFramework.Controls.MetroTextBox txtTiempoSalida5;
         private System.Windows.Forms.Label label8;
-        private MetroFramework.Controls.MetroComboBox metroComboBox5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox16;
-        private MetroFramework.Controls.MetroTextBox metroTextBox18;
-        private MetroFramework.Controls.MetroTextBox metroTextBox19;
-        private MetroFramework.Controls.MetroTextBox metroTextBox20;
+        private MetroFramework.Controls.MetroTextBox txtMinActivaSalida4;
+        private MetroFramework.Controls.MetroTextBox txtHoraActivaSalida4;
+        private MetroFramework.Controls.MetroTextBox txtTiempoSalida4;
         private System.Windows.Forms.Label label7;
-        private MetroFramework.Controls.MetroComboBox metroComboBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox11;
-        private MetroFramework.Controls.MetroTextBox metroTextBox13;
-        private MetroFramework.Controls.MetroTextBox metroTextBox14;
-        private MetroFramework.Controls.MetroTextBox metroTextBox15;
+        private MetroFramework.Controls.MetroTextBox txtMinActivaSalida3;
+        private MetroFramework.Controls.MetroTextBox txtHoraActivaSalida3;
+        private MetroFramework.Controls.MetroTextBox txtTiempoSalida3;
         private System.Windows.Forms.Label label6;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox6;
-        private MetroFramework.Controls.MetroTextBox metroTextBox8;
-        private MetroFramework.Controls.MetroTextBox metroTextBox9;
-        private MetroFramework.Controls.MetroTextBox metroTextBox10;
+        private MetroFramework.Controls.MetroTextBox txtMinActivaSalida2;
+        private MetroFramework.Controls.MetroTextBox txtHoraActivaSalida2;
+        private MetroFramework.Controls.MetroTextBox txtTiempoSalida2;
         private System.Windows.Forms.Label label10;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroTextBox txtMinActivaSalida1;
+        private MetroFramework.Controls.MetroTextBox txtHoraActivaSalida1;
+        private MetroFramework.Controls.MetroTextBox txtTiempoSalida1;
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox9;
-        private MetroFramework.Controls.MetroComboBox metroComboBox10;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox7;
-        private MetroFramework.Controls.MetroTextBox metroTextBox12;
-        private MetroFramework.Controls.MetroTextBox metroTextBox17;
-        private MetroFramework.Controls.MetroTextBox metroTextBox22;
-        private MetroFramework.Controls.MetroTextBox metroTextBox27;
-        private MetroFramework.Controls.MetroTextBox metroTextBox32;
-        private MetroFramework.Controls.MetroTextBox metroTextBox37;
-        private MetroFramework.Controls.MetroTextBox metroTextBox41;
-        private MetroFramework.Controls.MetroTextBox metroTextBox42;
-        private MetroFramework.Controls.MetroTextBox metroTextBox43;
-        private MetroFramework.Controls.MetroTextBox metroTextBox44;
-        private MetroFramework.Controls.MetroTextBox metroTextBox45;
-        private MetroFramework.Controls.MetroTextBox metroTextBox46;
-        private MetroFramework.Controls.MetroTextBox metroTextBox47;
-        private MetroFramework.Controls.MetroTextBox metroTextBox48;
-        private MetroFramework.Controls.MetroTextBox metroTextBox49;
-        private MetroFramework.Controls.MetroTextBox metroTextBox50;
-        private MetroFramework.Controls.MetroTextBox metroTextBox51;
-        private MetroFramework.Controls.MetroTextBox metroTextBox52;
+        private MetroFramework.Controls.MetroComboBox cmbDiaActivaSalida1;
+        private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label13;
+        private MetroFramework.Controls.MetroTextBox txtHoraDesactivaSalida1;
+        private MetroFramework.Controls.MetroTextBox txtMinDesactivaSalida1;
         private System.Windows.Forms.Label label14;
-        private MetroFramework.Controls.MetroTextBox metroTextBox53;
-        private MetroFramework.Controls.MetroTextBox metroTextBox54;
+        private MetroFramework.Controls.MetroTextBox txtHoraDesactivaSalida2;
+        private MetroFramework.Controls.MetroTextBox txtMinDesactivaSalida2;
+        private MetroFramework.Controls.MetroTextBox txtHoraDesactivaSalida3;
+        private MetroFramework.Controls.MetroTextBox txtMinDesactivaSalida3;
+        private MetroFramework.Controls.MetroTextBox txtHoraDesactivaSalida4;
+        private MetroFramework.Controls.MetroTextBox txtMinDesactivaSalida4;
+        private MetroFramework.Controls.MetroTextBox txtHoraDesactivaSalida5;
+        private MetroFramework.Controls.MetroTextBox txtMinDesactivaSalida5;
+        private MetroFramework.Controls.MetroTextBox txtHoraDesactivaSalida6;
+        private MetroFramework.Controls.MetroTextBox txtMinDesactivaSalida6;
+        private MetroFramework.Controls.MetroTextBox txtHoraDesactivaSalida7;
+        private MetroFramework.Controls.MetroTextBox txtMinDesactivaSalida7;
+        private MetroFramework.Controls.MetroTextBox txtHoraDesactivaSalida8;
+        private MetroFramework.Controls.MetroTextBox txtMinDesactivaSalida8;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private MetroFramework.Controls.MetroComboBox cmbDiaDesactivaSalida8;
+        private MetroFramework.Controls.MetroComboBox cmbDiaDesactivaSalida7;
+        private MetroFramework.Controls.MetroComboBox cmbDiaDesactivaSalida6;
+        private MetroFramework.Controls.MetroComboBox cmbDiaDesactivaSalida5;
+        private MetroFramework.Controls.MetroComboBox cmbDiaDesactivaSalida4;
+        private MetroFramework.Controls.MetroComboBox cmbDiaDesactivaSalida3;
+        private MetroFramework.Controls.MetroComboBox cmbDiaDesactivaSalida2;
+        private MetroFramework.Controls.MetroComboBox cmbDiaDesactivaSalida1;
+        private MetroFramework.Controls.MetroComboBox cmbDiaActivaSalida8;
+        private MetroFramework.Controls.MetroComboBox cmbDiaActivaSalida7;
+        private MetroFramework.Controls.MetroComboBox cmbDiaActivaSalida6;
+        private MetroFramework.Controls.MetroComboBox cmbDiaActivaSalida5;
+        private MetroFramework.Controls.MetroComboBox cmbDiaActivaSalida4;
+        private MetroFramework.Controls.MetroComboBox cmbDiaActivaSalida3;
+        private MetroFramework.Controls.MetroComboBox cmbDiaActivaSalida2;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.CheckBox chckTiempoSalida1;
+        private System.Windows.Forms.CheckBox chckTiempoSalida8;
+        private System.Windows.Forms.CheckBox chckTiempoSalida7;
+        private System.Windows.Forms.CheckBox chckTiempoSalida6;
+        private System.Windows.Forms.CheckBox chckTiempoSalida5;
+        private System.Windows.Forms.CheckBox chckTiempoSalida4;
+        private System.Windows.Forms.CheckBox chckTiempoSalida3;
+        private System.Windows.Forms.CheckBox chckTiempoSalida2;
+        private System.Windows.Forms.CheckBox chckDesactivadasSalida8;
+        private System.Windows.Forms.CheckBox chckDesactivadasSalida7;
+        private System.Windows.Forms.CheckBox chckDesactivadasSalida6;
+        private System.Windows.Forms.CheckBox chckDesactivadasSalida5;
+        private System.Windows.Forms.CheckBox chckDesactivadasSalida4;
+        private System.Windows.Forms.CheckBox chckDesactivadasSalida3;
+        private System.Windows.Forms.CheckBox chckDesactivadasSalida2;
+        private System.Windows.Forms.CheckBox chckDesactivadasSalida1;
+        private System.Windows.Forms.CheckBox chckActivadasSalida8;
+        private System.Windows.Forms.CheckBox chckActivadasSalida7;
+        private System.Windows.Forms.CheckBox chckActivadasSalida6;
+        private System.Windows.Forms.CheckBox chckActivadasSalida5;
+        private System.Windows.Forms.CheckBox chckActivadasSalida4;
+        private System.Windows.Forms.CheckBox chckActivadasSalida3;
+        private System.Windows.Forms.CheckBox chckActivadasSalida2;
+        private System.Windows.Forms.CheckBox chckActivadasSalida1;
+        private MetroFramework.Controls.MetroButton btnGrabarSalidas;
+        private System.Windows.Forms.Label lblCOMEvent;
+        private System.Windows.Forms.Label lblEthernetEvent;
+        private System.Windows.Forms.PictureBox picLoading;
     }
 }
 
