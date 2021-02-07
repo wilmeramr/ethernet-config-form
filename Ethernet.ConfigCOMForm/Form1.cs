@@ -238,7 +238,7 @@ namespace Ethernet.ConfigCOMForm
 
             }
             inicializarComboxes();
-            drawer(tramaDemo);
+         //   drawer(tramaDemo);
 
             cmbPorts.DataSource = serial;
 
@@ -335,20 +335,26 @@ namespace Ethernet.ConfigCOMForm
             if (evento == "ConectarEthernet" && recievedData.Count==85)
             {
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
+               // recievedData.Clear();
             }
+
 
             if ((evento == "DesconectarEthernet" || evento == "CambiarIP" || evento== "btnGrabar") && recievedData.Count == 1)
             {
                 this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
+             //   recievedData.Clear();
+
             }
         }
 
         private void drawer(byte[] trama)
         {
-             CrearTrama(trama);
+            //recievedData.Clear();
 
             if (trama[0] == 1)
             {
+                CrearTrama(trama);
+
                 picLoading.Enabled = false;
                 picLoading.Visible = false;
 
@@ -411,43 +417,9 @@ namespace Ethernet.ConfigCOMForm
                 MessageBox.Show("Se Grabo correctamente.");
 
             }
+            recievedData.Clear();
 
-
-            //if (txt.Substring(0, 2) == "OK")
-            //{
-            //    MessageBox.Show(" Dirección IP Cambiada!!");
-            //}
-            //else if (txt.Substring(0, 9) == "CONECTADO") {
-
-            //    btnCambiarIP.Enabled = true;
-            //    btnDesconectarEthernet.Enabled = true;
-            //    btnConectarEthernet.Enabled = false;
-            //    txtBye1.Enabled = true;
-            //    txtBye2.Enabled = true;
-            //    txtBye3.Enabled = true;
-            //    txtBye4.Enabled = true;
-
-            //    MessageBox.Show(" Dispositivo conectado");
-
-            //}
-            //else if (txt.Substring(0, 11) == "DESCONECTADO")
-            //{
-            //    btnCambiarIP.Enabled = false;
-            //    btnDesconectarEthernet.Enabled = false;
-            //    btnConectarEthernet.Enabled = true;
-            //    txtBye1.Enabled = false;
-            //    txtBye2.Enabled = false;
-            //    txtBye3.Enabled = false;
-            //    txtBye4.Enabled = false;
-
-            //    MessageBox.Show(" Dispositivo desconectado");
-
-            //}
-
-            //if (txt.Contains("Baud Rate"))
-            //{
-            //    MessageBox.Show(txt);
-            //}
+   
 
         }
 
