@@ -30,10 +30,12 @@ namespace Ethernet.ConfigCOMForm
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCOMEvent = new System.Windows.Forms.Label();
             this.btnDesconectar = new MetroFramework.Controls.MetroButton();
             this.btnConectar = new MetroFramework.Controls.MetroButton();
             this.cmbPorts = new MetroFramework.Controls.MetroComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblEthernetEvent = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtBye4 = new MetroFramework.Controls.MetroTextBox();
             this.txtBye3 = new MetroFramework.Controls.MetroTextBox();
@@ -43,6 +45,7 @@ namespace Ethernet.ConfigCOMForm
             this.btnDesconectarEthernet = new MetroFramework.Controls.MetroButton();
             this.btnConectarEthernet = new MetroFramework.Controls.MetroButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnGrabarSalidas = new MetroFramework.Controls.MetroButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.chckTiempoSalida8 = new System.Windows.Forms.CheckBox();
             this.chckTiempoSalida7 = new System.Windows.Forms.CheckBox();
@@ -139,9 +142,6 @@ namespace Ethernet.ConfigCOMForm
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGrabarSalidas = new MetroFramework.Controls.MetroButton();
-            this.lblCOMEvent = new System.Windows.Forms.Label();
-            this.lblEthernetEvent = new System.Windows.Forms.Label();
             this.picLoading = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -170,6 +170,14 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puerto COM";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblCOMEvent
+            // 
+            this.lblCOMEvent.BackColor = System.Drawing.Color.White;
+            this.lblCOMEvent.Location = new System.Drawing.Point(119, 12);
+            this.lblCOMEvent.Name = "lblCOMEvent";
+            this.lblCOMEvent.Size = new System.Drawing.Size(377, 23);
+            this.lblCOMEvent.TabIndex = 8;
             // 
             // btnDesconectar
             // 
@@ -217,6 +225,14 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Configuracion Ethernet";
+            // 
+            // lblEthernetEvent
+            // 
+            this.lblEthernetEvent.BackColor = System.Drawing.Color.White;
+            this.lblEthernetEvent.Location = new System.Drawing.Point(6, 17);
+            this.lblEthernetEvent.Name = "lblEthernetEvent";
+            this.lblEthernetEvent.Size = new System.Drawing.Size(377, 23);
+            this.lblEthernetEvent.TabIndex = 11;
             // 
             // groupBox3
             // 
@@ -328,6 +344,16 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Configuracion de Salidas";
             // 
+            // btnGrabarSalidas
+            // 
+            this.btnGrabarSalidas.Enabled = false;
+            this.btnGrabarSalidas.Location = new System.Drawing.Point(1230, 26);
+            this.btnGrabarSalidas.Name = "btnGrabarSalidas";
+            this.btnGrabarSalidas.Size = new System.Drawing.Size(90, 374);
+            this.btnGrabarSalidas.TabIndex = 102;
+            this.btnGrabarSalidas.Text = "GRABAR";
+            this.btnGrabarSalidas.Click += new System.EventHandler(this.btnGrabarSalidas_Click);
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.chckTiempoSalida8);
@@ -363,6 +389,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckTiempoSalida8.Size = new System.Drawing.Size(39, 27);
             this.chckTiempoSalida8.TabIndex = 108;
             this.chckTiempoSalida8.UseVisualStyleBackColor = true;
+            this.chckTiempoSalida8.CheckedChanged += new System.EventHandler(this.chckTiempoAll_CheckedChanged);
             // 
             // chckTiempoSalida7
             // 
@@ -373,6 +400,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckTiempoSalida7.Size = new System.Drawing.Size(39, 27);
             this.chckTiempoSalida7.TabIndex = 107;
             this.chckTiempoSalida7.UseVisualStyleBackColor = true;
+            this.chckTiempoSalida7.CheckedChanged += new System.EventHandler(this.chckTiempoAll_CheckedChanged);
             // 
             // chckTiempoSalida6
             // 
@@ -383,6 +411,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckTiempoSalida6.Size = new System.Drawing.Size(39, 27);
             this.chckTiempoSalida6.TabIndex = 106;
             this.chckTiempoSalida6.UseVisualStyleBackColor = true;
+            this.chckTiempoSalida6.CheckedChanged += new System.EventHandler(this.chckTiempoAll_CheckedChanged);
             // 
             // chckTiempoSalida5
             // 
@@ -393,6 +422,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckTiempoSalida5.Size = new System.Drawing.Size(39, 27);
             this.chckTiempoSalida5.TabIndex = 105;
             this.chckTiempoSalida5.UseVisualStyleBackColor = true;
+            this.chckTiempoSalida5.CheckedChanged += new System.EventHandler(this.chckTiempoAll_CheckedChanged);
             // 
             // chckTiempoSalida4
             // 
@@ -403,6 +433,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckTiempoSalida4.Size = new System.Drawing.Size(39, 27);
             this.chckTiempoSalida4.TabIndex = 104;
             this.chckTiempoSalida4.UseVisualStyleBackColor = true;
+            this.chckTiempoSalida4.CheckedChanged += new System.EventHandler(this.chckTiempoAll_CheckedChanged);
             // 
             // chckTiempoSalida3
             // 
@@ -455,6 +486,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida1.Name = "txtTiempoSalida1";
             this.txtTiempoSalida1.Size = new System.Drawing.Size(76, 27);
             this.txtTiempoSalida1.TabIndex = 14;
+            this.txtTiempoSalida1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtTiempoSalida1.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtTiempoSalida8
             // 
@@ -464,6 +497,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida8.Name = "txtTiempoSalida8";
             this.txtTiempoSalida8.Size = new System.Drawing.Size(76, 27);
             this.txtTiempoSalida8.TabIndex = 68;
+            this.txtTiempoSalida8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtTiempoSalida8.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtTiempoSalida2
             // 
@@ -473,6 +508,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida2.Name = "txtTiempoSalida2";
             this.txtTiempoSalida2.Size = new System.Drawing.Size(76, 27);
             this.txtTiempoSalida2.TabIndex = 24;
+            this.txtTiempoSalida2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtTiempoSalida2.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtTiempoSalida3
             // 
@@ -482,6 +519,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida3.Name = "txtTiempoSalida3";
             this.txtTiempoSalida3.Size = new System.Drawing.Size(76, 27);
             this.txtTiempoSalida3.TabIndex = 33;
+            this.txtTiempoSalida3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtTiempoSalida3.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtTiempoSalida7
             // 
@@ -491,6 +530,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida7.Name = "txtTiempoSalida7";
             this.txtTiempoSalida7.Size = new System.Drawing.Size(76, 27);
             this.txtTiempoSalida7.TabIndex = 61;
+            this.txtTiempoSalida7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtTiempoSalida7.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtTiempoSalida4
             // 
@@ -500,6 +541,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida4.Name = "txtTiempoSalida4";
             this.txtTiempoSalida4.Size = new System.Drawing.Size(76, 27);
             this.txtTiempoSalida4.TabIndex = 40;
+            this.txtTiempoSalida4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtTiempoSalida4.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtTiempoSalida5
             // 
@@ -509,6 +552,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida5.Name = "txtTiempoSalida5";
             this.txtTiempoSalida5.Size = new System.Drawing.Size(76, 27);
             this.txtTiempoSalida5.TabIndex = 47;
+            this.txtTiempoSalida5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtTiempoSalida5.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtTiempoSalida6
             // 
@@ -518,6 +563,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida6.Name = "txtTiempoSalida6";
             this.txtTiempoSalida6.Size = new System.Drawing.Size(76, 27);
             this.txtTiempoSalida6.TabIndex = 54;
+            this.txtTiempoSalida6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtTiempoSalida6.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // groupBox6
             // 
@@ -571,6 +618,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckDesactivadasSalida8.Size = new System.Drawing.Size(39, 27);
             this.chckDesactivadasSalida8.TabIndex = 116;
             this.chckDesactivadasSalida8.UseVisualStyleBackColor = true;
+            this.chckDesactivadasSalida8.CheckedChanged += new System.EventHandler(this.chckDesactivadasAll_CheckedChanged);
             // 
             // chckDesactivadasSalida7
             // 
@@ -581,6 +629,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckDesactivadasSalida7.Size = new System.Drawing.Size(39, 27);
             this.chckDesactivadasSalida7.TabIndex = 115;
             this.chckDesactivadasSalida7.UseVisualStyleBackColor = true;
+            this.chckDesactivadasSalida7.CheckedChanged += new System.EventHandler(this.chckDesactivadasAll_CheckedChanged);
             // 
             // chckDesactivadasSalida6
             // 
@@ -591,6 +640,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckDesactivadasSalida6.Size = new System.Drawing.Size(39, 27);
             this.chckDesactivadasSalida6.TabIndex = 114;
             this.chckDesactivadasSalida6.UseVisualStyleBackColor = true;
+            this.chckDesactivadasSalida6.CheckedChanged += new System.EventHandler(this.chckDesactivadasAll_CheckedChanged);
             // 
             // chckDesactivadasSalida5
             // 
@@ -601,6 +651,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckDesactivadasSalida5.Size = new System.Drawing.Size(39, 27);
             this.chckDesactivadasSalida5.TabIndex = 113;
             this.chckDesactivadasSalida5.UseVisualStyleBackColor = true;
+            this.chckDesactivadasSalida5.CheckedChanged += new System.EventHandler(this.chckDesactivadasAll_CheckedChanged);
             // 
             // chckDesactivadasSalida4
             // 
@@ -611,6 +662,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckDesactivadasSalida4.Size = new System.Drawing.Size(39, 27);
             this.chckDesactivadasSalida4.TabIndex = 112;
             this.chckDesactivadasSalida4.UseVisualStyleBackColor = true;
+            this.chckDesactivadasSalida4.CheckedChanged += new System.EventHandler(this.chckDesactivadasAll_CheckedChanged);
             // 
             // chckDesactivadasSalida3
             // 
@@ -621,6 +673,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckDesactivadasSalida3.Size = new System.Drawing.Size(39, 27);
             this.chckDesactivadasSalida3.TabIndex = 111;
             this.chckDesactivadasSalida3.UseVisualStyleBackColor = true;
+            this.chckDesactivadasSalida3.CheckedChanged += new System.EventHandler(this.chckDesactivadasAll_CheckedChanged);
             // 
             // chckDesactivadasSalida2
             // 
@@ -631,6 +684,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckDesactivadasSalida2.Size = new System.Drawing.Size(39, 27);
             this.chckDesactivadasSalida2.TabIndex = 110;
             this.chckDesactivadasSalida2.UseVisualStyleBackColor = true;
+            this.chckDesactivadasSalida2.CheckedChanged += new System.EventHandler(this.chckDesactivadasAll_CheckedChanged);
             // 
             // chckDesactivadasSalida1
             // 
@@ -652,6 +706,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaDesactivaSalida8.Name = "cmbDiaDesactivaSalida8";
             this.cmbDiaDesactivaSalida8.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaDesactivaSalida8.TabIndex = 86;
+            this.cmbDiaDesactivaSalida8.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida7
             // 
@@ -662,6 +717,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaDesactivaSalida7.Name = "cmbDiaDesactivaSalida7";
             this.cmbDiaDesactivaSalida7.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaDesactivaSalida7.TabIndex = 85;
+            this.cmbDiaDesactivaSalida7.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida6
             // 
@@ -672,6 +728,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaDesactivaSalida6.Name = "cmbDiaDesactivaSalida6";
             this.cmbDiaDesactivaSalida6.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaDesactivaSalida6.TabIndex = 84;
+            this.cmbDiaDesactivaSalida6.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida5
             // 
@@ -682,6 +739,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaDesactivaSalida5.Name = "cmbDiaDesactivaSalida5";
             this.cmbDiaDesactivaSalida5.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaDesactivaSalida5.TabIndex = 83;
+            this.cmbDiaDesactivaSalida5.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida4
             // 
@@ -692,6 +750,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaDesactivaSalida4.Name = "cmbDiaDesactivaSalida4";
             this.cmbDiaDesactivaSalida4.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaDesactivaSalida4.TabIndex = 82;
+            this.cmbDiaDesactivaSalida4.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida3
             // 
@@ -702,6 +761,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaDesactivaSalida3.Name = "cmbDiaDesactivaSalida3";
             this.cmbDiaDesactivaSalida3.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaDesactivaSalida3.TabIndex = 81;
+            this.cmbDiaDesactivaSalida3.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida2
             // 
@@ -712,6 +772,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaDesactivaSalida2.Name = "cmbDiaDesactivaSalida2";
             this.cmbDiaDesactivaSalida2.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaDesactivaSalida2.TabIndex = 80;
+            this.cmbDiaDesactivaSalida2.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida1
             // 
@@ -722,6 +783,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaDesactivaSalida1.Name = "cmbDiaDesactivaSalida1";
             this.cmbDiaDesactivaSalida1.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaDesactivaSalida1.TabIndex = 79;
+            this.cmbDiaDesactivaSalida1.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -741,6 +803,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida1.Name = "txtHoraDesactivaSalida1";
             this.txtHoraDesactivaSalida1.Size = new System.Drawing.Size(37, 27);
             this.txtHoraDesactivaSalida1.TabIndex = 14;
+            this.txtHoraDesactivaSalida1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraDesactivaSalida1.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinDesactivaSalida1
             // 
@@ -750,6 +814,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinDesactivaSalida1.Name = "txtMinDesactivaSalida1";
             this.txtMinDesactivaSalida1.Size = new System.Drawing.Size(37, 27);
             this.txtMinDesactivaSalida1.TabIndex = 15;
+            this.txtMinDesactivaSalida1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinDesactivaSalida1.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // label14
             // 
@@ -769,6 +835,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida2.Name = "txtHoraDesactivaSalida2";
             this.txtHoraDesactivaSalida2.Size = new System.Drawing.Size(37, 27);
             this.txtHoraDesactivaSalida2.TabIndex = 23;
+            this.txtHoraDesactivaSalida2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraDesactivaSalida2.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinDesactivaSalida2
             // 
@@ -778,6 +846,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinDesactivaSalida2.Name = "txtMinDesactivaSalida2";
             this.txtMinDesactivaSalida2.Size = new System.Drawing.Size(37, 27);
             this.txtMinDesactivaSalida2.TabIndex = 26;
+            this.txtMinDesactivaSalida2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinDesactivaSalida2.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraDesactivaSalida3
             // 
@@ -787,6 +857,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida3.Name = "txtHoraDesactivaSalida3";
             this.txtHoraDesactivaSalida3.Size = new System.Drawing.Size(37, 27);
             this.txtHoraDesactivaSalida3.TabIndex = 32;
+            this.txtHoraDesactivaSalida3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraDesactivaSalida3.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinDesactivaSalida3
             // 
@@ -796,6 +868,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinDesactivaSalida3.Name = "txtMinDesactivaSalida3";
             this.txtMinDesactivaSalida3.Size = new System.Drawing.Size(37, 27);
             this.txtMinDesactivaSalida3.TabIndex = 34;
+            this.txtMinDesactivaSalida3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinDesactivaSalida3.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraDesactivaSalida4
             // 
@@ -805,6 +879,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida4.Name = "txtHoraDesactivaSalida4";
             this.txtHoraDesactivaSalida4.Size = new System.Drawing.Size(37, 27);
             this.txtHoraDesactivaSalida4.TabIndex = 39;
+            this.txtHoraDesactivaSalida4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraDesactivaSalida4.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinDesactivaSalida4
             // 
@@ -814,6 +890,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinDesactivaSalida4.Name = "txtMinDesactivaSalida4";
             this.txtMinDesactivaSalida4.Size = new System.Drawing.Size(37, 27);
             this.txtMinDesactivaSalida4.TabIndex = 41;
+            this.txtMinDesactivaSalida4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinDesactivaSalida4.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraDesactivaSalida5
             // 
@@ -823,6 +901,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida5.Name = "txtHoraDesactivaSalida5";
             this.txtHoraDesactivaSalida5.Size = new System.Drawing.Size(37, 27);
             this.txtHoraDesactivaSalida5.TabIndex = 46;
+            this.txtHoraDesactivaSalida5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraDesactivaSalida5.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinDesactivaSalida5
             // 
@@ -832,6 +912,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinDesactivaSalida5.Name = "txtMinDesactivaSalida5";
             this.txtMinDesactivaSalida5.Size = new System.Drawing.Size(37, 27);
             this.txtMinDesactivaSalida5.TabIndex = 48;
+            this.txtMinDesactivaSalida5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinDesactivaSalida5.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraDesactivaSalida6
             // 
@@ -841,6 +923,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida6.Name = "txtHoraDesactivaSalida6";
             this.txtHoraDesactivaSalida6.Size = new System.Drawing.Size(37, 27);
             this.txtHoraDesactivaSalida6.TabIndex = 53;
+            this.txtHoraDesactivaSalida6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraDesactivaSalida6.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinDesactivaSalida6
             // 
@@ -850,6 +934,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinDesactivaSalida6.Name = "txtMinDesactivaSalida6";
             this.txtMinDesactivaSalida6.Size = new System.Drawing.Size(37, 27);
             this.txtMinDesactivaSalida6.TabIndex = 55;
+            this.txtMinDesactivaSalida6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinDesactivaSalida6.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraDesactivaSalida7
             // 
@@ -859,6 +945,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida7.Name = "txtHoraDesactivaSalida7";
             this.txtHoraDesactivaSalida7.Size = new System.Drawing.Size(37, 27);
             this.txtHoraDesactivaSalida7.TabIndex = 60;
+            this.txtHoraDesactivaSalida7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraDesactivaSalida7.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinDesactivaSalida7
             // 
@@ -868,6 +956,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinDesactivaSalida7.Name = "txtMinDesactivaSalida7";
             this.txtMinDesactivaSalida7.Size = new System.Drawing.Size(37, 27);
             this.txtMinDesactivaSalida7.TabIndex = 62;
+            this.txtMinDesactivaSalida7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinDesactivaSalida7.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraDesactivaSalida8
             // 
@@ -877,6 +967,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida8.Name = "txtHoraDesactivaSalida8";
             this.txtHoraDesactivaSalida8.Size = new System.Drawing.Size(37, 27);
             this.txtHoraDesactivaSalida8.TabIndex = 67;
+            this.txtHoraDesactivaSalida8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraDesactivaSalida8.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinDesactivaSalida8
             // 
@@ -886,6 +978,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinDesactivaSalida8.Name = "txtMinDesactivaSalida8";
             this.txtMinDesactivaSalida8.Size = new System.Drawing.Size(37, 27);
             this.txtMinDesactivaSalida8.TabIndex = 69;
+            this.txtMinDesactivaSalida8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinDesactivaSalida8.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // groupBox5
             // 
@@ -940,6 +1034,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckActivadasSalida8.Size = new System.Drawing.Size(39, 27);
             this.chckActivadasSalida8.TabIndex = 116;
             this.chckActivadasSalida8.UseVisualStyleBackColor = true;
+            this.chckActivadasSalida8.CheckedChanged += new System.EventHandler(this.chckActivadasAll_CheckedChanged);
             // 
             // chckActivadasSalida7
             // 
@@ -950,6 +1045,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckActivadasSalida7.Size = new System.Drawing.Size(39, 27);
             this.chckActivadasSalida7.TabIndex = 115;
             this.chckActivadasSalida7.UseVisualStyleBackColor = true;
+            this.chckActivadasSalida7.CheckedChanged += new System.EventHandler(this.chckActivadasAll_CheckedChanged);
             // 
             // chckActivadasSalida6
             // 
@@ -960,6 +1056,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckActivadasSalida6.Size = new System.Drawing.Size(39, 27);
             this.chckActivadasSalida6.TabIndex = 114;
             this.chckActivadasSalida6.UseVisualStyleBackColor = true;
+            this.chckActivadasSalida6.CheckedChanged += new System.EventHandler(this.chckActivadasAll_CheckedChanged);
             // 
             // chckActivadasSalida5
             // 
@@ -970,6 +1067,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckActivadasSalida5.Size = new System.Drawing.Size(39, 27);
             this.chckActivadasSalida5.TabIndex = 113;
             this.chckActivadasSalida5.UseVisualStyleBackColor = true;
+            this.chckActivadasSalida5.CheckedChanged += new System.EventHandler(this.chckActivadasAll_CheckedChanged);
             // 
             // chckActivadasSalida4
             // 
@@ -980,6 +1078,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckActivadasSalida4.Size = new System.Drawing.Size(39, 27);
             this.chckActivadasSalida4.TabIndex = 112;
             this.chckActivadasSalida4.UseVisualStyleBackColor = true;
+            this.chckActivadasSalida4.CheckedChanged += new System.EventHandler(this.chckActivadasAll_CheckedChanged);
             // 
             // chckActivadasSalida3
             // 
@@ -990,6 +1089,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckActivadasSalida3.Size = new System.Drawing.Size(39, 27);
             this.chckActivadasSalida3.TabIndex = 111;
             this.chckActivadasSalida3.UseVisualStyleBackColor = true;
+            this.chckActivadasSalida3.CheckedChanged += new System.EventHandler(this.chckActivadasAll_CheckedChanged);
             // 
             // chckActivadasSalida2
             // 
@@ -1000,6 +1100,7 @@ namespace Ethernet.ConfigCOMForm
             this.chckActivadasSalida2.Size = new System.Drawing.Size(39, 27);
             this.chckActivadasSalida2.TabIndex = 110;
             this.chckActivadasSalida2.UseVisualStyleBackColor = true;
+            this.chckActivadasSalida2.CheckedChanged += new System.EventHandler(this.chckActivadasAll_CheckedChanged);
             // 
             // chckActivadasSalida1
             // 
@@ -1021,6 +1122,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaActivaSalida8.Name = "cmbDiaActivaSalida8";
             this.cmbDiaActivaSalida8.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaActivaSalida8.TabIndex = 78;
+            this.cmbDiaActivaSalida8.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida7
             // 
@@ -1031,6 +1133,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaActivaSalida7.Name = "cmbDiaActivaSalida7";
             this.cmbDiaActivaSalida7.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaActivaSalida7.TabIndex = 77;
+            this.cmbDiaActivaSalida7.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida6
             // 
@@ -1041,6 +1144,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaActivaSalida6.Name = "cmbDiaActivaSalida6";
             this.cmbDiaActivaSalida6.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaActivaSalida6.TabIndex = 76;
+            this.cmbDiaActivaSalida6.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida5
             // 
@@ -1051,6 +1155,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaActivaSalida5.Name = "cmbDiaActivaSalida5";
             this.cmbDiaActivaSalida5.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaActivaSalida5.TabIndex = 75;
+            this.cmbDiaActivaSalida5.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida4
             // 
@@ -1061,6 +1166,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaActivaSalida4.Name = "cmbDiaActivaSalida4";
             this.cmbDiaActivaSalida4.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaActivaSalida4.TabIndex = 74;
+            this.cmbDiaActivaSalida4.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida3
             // 
@@ -1071,6 +1177,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaActivaSalida3.Name = "cmbDiaActivaSalida3";
             this.cmbDiaActivaSalida3.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaActivaSalida3.TabIndex = 73;
+            this.cmbDiaActivaSalida3.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida2
             // 
@@ -1081,6 +1188,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaActivaSalida2.Name = "cmbDiaActivaSalida2";
             this.cmbDiaActivaSalida2.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaActivaSalida2.TabIndex = 72;
+            this.cmbDiaActivaSalida2.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -1100,6 +1208,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraActivaSalida1.Name = "txtHoraActivaSalida1";
             this.txtHoraActivaSalida1.Size = new System.Drawing.Size(37, 27);
             this.txtHoraActivaSalida1.TabIndex = 14;
+            this.txtHoraActivaSalida1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraActivaSalida1.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinActivaSalida1
             // 
@@ -1109,6 +1219,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinActivaSalida1.Name = "txtMinActivaSalida1";
             this.txtMinActivaSalida1.Size = new System.Drawing.Size(37, 27);
             this.txtMinActivaSalida1.TabIndex = 15;
+            this.txtMinActivaSalida1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinActivaSalida1.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // label5
             // 
@@ -1128,6 +1240,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraActivaSalida2.Name = "txtHoraActivaSalida2";
             this.txtHoraActivaSalida2.Size = new System.Drawing.Size(37, 27);
             this.txtHoraActivaSalida2.TabIndex = 23;
+            this.txtHoraActivaSalida2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraActivaSalida2.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinActivaSalida2
             // 
@@ -1137,6 +1251,7 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinActivaSalida2.Name = "txtMinActivaSalida2";
             this.txtMinActivaSalida2.Size = new System.Drawing.Size(37, 27);
             this.txtMinActivaSalida2.TabIndex = 26;
+            this.txtMinActivaSalida2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
             // 
             // txtHoraActivaSalida3
             // 
@@ -1146,6 +1261,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraActivaSalida3.Name = "txtHoraActivaSalida3";
             this.txtHoraActivaSalida3.Size = new System.Drawing.Size(37, 27);
             this.txtHoraActivaSalida3.TabIndex = 32;
+            this.txtHoraActivaSalida3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraActivaSalida3.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinActivaSalida3
             // 
@@ -1155,6 +1272,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinActivaSalida3.Name = "txtMinActivaSalida3";
             this.txtMinActivaSalida3.Size = new System.Drawing.Size(37, 27);
             this.txtMinActivaSalida3.TabIndex = 34;
+            this.txtMinActivaSalida3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinActivaSalida3.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraActivaSalida4
             // 
@@ -1164,6 +1283,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraActivaSalida4.Name = "txtHoraActivaSalida4";
             this.txtHoraActivaSalida4.Size = new System.Drawing.Size(37, 27);
             this.txtHoraActivaSalida4.TabIndex = 39;
+            this.txtHoraActivaSalida4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraActivaSalida4.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinActivaSalida4
             // 
@@ -1173,6 +1294,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinActivaSalida4.Name = "txtMinActivaSalida4";
             this.txtMinActivaSalida4.Size = new System.Drawing.Size(37, 27);
             this.txtMinActivaSalida4.TabIndex = 41;
+            this.txtMinActivaSalida4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinActivaSalida4.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraActivaSalida5
             // 
@@ -1182,6 +1305,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraActivaSalida5.Name = "txtHoraActivaSalida5";
             this.txtHoraActivaSalida5.Size = new System.Drawing.Size(37, 27);
             this.txtHoraActivaSalida5.TabIndex = 46;
+            this.txtHoraActivaSalida5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraActivaSalida5.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinActivaSalida5
             // 
@@ -1191,6 +1316,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinActivaSalida5.Name = "txtMinActivaSalida5";
             this.txtMinActivaSalida5.Size = new System.Drawing.Size(37, 27);
             this.txtMinActivaSalida5.TabIndex = 48;
+            this.txtMinActivaSalida5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinActivaSalida5.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraActivaSalida6
             // 
@@ -1200,6 +1327,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraActivaSalida6.Name = "txtHoraActivaSalida6";
             this.txtHoraActivaSalida6.Size = new System.Drawing.Size(37, 27);
             this.txtHoraActivaSalida6.TabIndex = 53;
+            this.txtHoraActivaSalida6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraActivaSalida6.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinActivaSalida6
             // 
@@ -1209,6 +1338,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinActivaSalida6.Name = "txtMinActivaSalida6";
             this.txtMinActivaSalida6.Size = new System.Drawing.Size(37, 27);
             this.txtMinActivaSalida6.TabIndex = 55;
+            this.txtMinActivaSalida6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinActivaSalida6.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraActivaSalida7
             // 
@@ -1218,6 +1349,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraActivaSalida7.Name = "txtHoraActivaSalida7";
             this.txtHoraActivaSalida7.Size = new System.Drawing.Size(37, 27);
             this.txtHoraActivaSalida7.TabIndex = 60;
+            this.txtHoraActivaSalida7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraActivaSalida7.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinActivaSalida7
             // 
@@ -1227,6 +1360,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinActivaSalida7.Name = "txtMinActivaSalida7";
             this.txtMinActivaSalida7.Size = new System.Drawing.Size(37, 27);
             this.txtMinActivaSalida7.TabIndex = 62;
+            this.txtMinActivaSalida7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinActivaSalida7.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtHoraActivaSalida8
             // 
@@ -1236,6 +1371,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraActivaSalida8.Name = "txtHoraActivaSalida8";
             this.txtHoraActivaSalida8.Size = new System.Drawing.Size(37, 27);
             this.txtHoraActivaSalida8.TabIndex = 67;
+            this.txtHoraActivaSalida8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtHoraActivaSalida8.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // txtMinActivaSalida8
             // 
@@ -1245,6 +1382,8 @@ namespace Ethernet.ConfigCOMForm
             this.txtMinActivaSalida8.Name = "txtMinActivaSalida8";
             this.txtMinActivaSalida8.Size = new System.Drawing.Size(37, 27);
             this.txtMinActivaSalida8.TabIndex = 69;
+            this.txtMinActivaSalida8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAll_KeyPress);
+            this.txtMinActivaSalida8.Leave += new System.EventHandler(this.txtAll_Leave);
             // 
             // cmbDiaActivaSalida1
             // 
@@ -1255,6 +1394,7 @@ namespace Ethernet.ConfigCOMForm
             this.cmbDiaActivaSalida1.Name = "cmbDiaActivaSalida1";
             this.cmbDiaActivaSalida1.Size = new System.Drawing.Size(193, 30);
             this.cmbDiaActivaSalida1.TabIndex = 9;
+            this.cmbDiaActivaSalida1.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -1335,31 +1475,6 @@ namespace Ethernet.ConfigCOMForm
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "SALIDA 1";
-            // 
-            // btnGrabarSalidas
-            // 
-            this.btnGrabarSalidas.Enabled = false;
-            this.btnGrabarSalidas.Location = new System.Drawing.Point(1230, 26);
-            this.btnGrabarSalidas.Name = "btnGrabarSalidas";
-            this.btnGrabarSalidas.Size = new System.Drawing.Size(90, 374);
-            this.btnGrabarSalidas.TabIndex = 102;
-            this.btnGrabarSalidas.Text = "GRABAR";
-            // 
-            // lblCOMEvent
-            // 
-            this.lblCOMEvent.BackColor = System.Drawing.Color.White;
-            this.lblCOMEvent.Location = new System.Drawing.Point(119, 12);
-            this.lblCOMEvent.Name = "lblCOMEvent";
-            this.lblCOMEvent.Size = new System.Drawing.Size(377, 23);
-            this.lblCOMEvent.TabIndex = 8;
-            // 
-            // lblEthernetEvent
-            // 
-            this.lblEthernetEvent.BackColor = System.Drawing.Color.White;
-            this.lblEthernetEvent.Location = new System.Drawing.Point(6, 17);
-            this.lblEthernetEvent.Name = "lblEthernetEvent";
-            this.lblEthernetEvent.Size = new System.Drawing.Size(377, 23);
-            this.lblEthernetEvent.TabIndex = 11;
             // 
             // picLoading
             // 

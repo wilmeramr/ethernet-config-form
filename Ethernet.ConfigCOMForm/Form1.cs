@@ -41,6 +41,15 @@ namespace Ethernet.ConfigCOMForm
         byte[] horaMinDia = new byte[24];
         byte[] chckDesactivar = new byte[8];
         byte[] horaMinDiaDesactivar = new byte[24];
+        byte[] chckTiempoAEnviar = new byte[8];
+        byte[] tiempoAEnviar = new byte[8];
+        byte[] chckActivarAEnviar = new byte[8];
+        byte[] horaMinDiaAEnviar = new byte[24];
+        byte[] chckDesactivarAEnviar = new byte[8];
+        byte[] horaMinDiaDesactivarAEnviar = new byte[24];
+        byte[] direccionIP = new byte[4];
+
+        List<string> checkactivos = new List<string>();
 
         byte[] tramaDemo = new byte[] { 
             1,
@@ -143,16 +152,16 @@ namespace Ethernet.ConfigCOMForm
 
 
         };
-        SortedDictionary<String, int> dias = new SortedDictionary<string, int>
+        SortedDictionary<int, string> dias = new SortedDictionary<int, string>
         {
-           {"Domingo",0 },
-          {"Lunes",1 },
-          {"Martes" ,2},
-          {"Miercoles",3 },
-          {"Jueves" ,4},
-          {"Viernes" ,5},
-          {"Sabado" ,6},
-          {"Todos los dias" ,7},
+           {0,"Domingo" },
+          {1,"Lunes" },
+          {2,"Martes" },
+          {3,"Miercoles"},
+          {4,"Jueves" },
+          {5,"Viernes" },
+          {6,"Sabado" },
+          {7,"Todos los dias"},
 
 
 
@@ -229,7 +238,7 @@ namespace Ethernet.ConfigCOMForm
 
             }
             inicializarComboxes();
-       //     drawer(tramaDemo);
+            drawer(tramaDemo);
 
             cmbPorts.DataSource = serial;
 
@@ -240,11 +249,14 @@ namespace Ethernet.ConfigCOMForm
 
             foreach (var comb in diasComboBoxes)
             {
+              
+
                 comb.DataSource = new BindingSource(dias, null);
-                comb.DisplayMember = "Key";
-                comb.ValueMember = "Value";
+                comb.DisplayMember = "Value";
+                comb.ValueMember = "Key";
                 comb.SelectedIndex = -1;
                 comb.Enabled = false;
+                //comb.Sorted = true;
             }
        
 
@@ -325,7 +337,7 @@ namespace Ethernet.ConfigCOMForm
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
             }
 
-            if ((evento == "DesconectarEthernet" || evento == "CambiarIP") && recievedData.Count == 1)
+            if ((evento == "DesconectarEthernet" || evento == "CambiarIP" || evento== "btnGrabar") && recievedData.Count == 1)
             {
                 this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
             }
@@ -333,19 +345,9 @@ namespace Ethernet.ConfigCOMForm
 
         private void drawer(byte[] trama)
         {
+             CrearTrama(trama);
 
-            //  var direccionIP = ;
-            var direccionIP = trama.SubArray(1,4);
-             chckTiempo = trama.SubArray(5,8);
-             tiempo = trama.SubArray(13, 8);
-             chckActivar = trama.SubArray(21,8);
-             horaMinDia = trama.SubArray(29, 24);
-             chckDesactivar = trama.SubArray(53, 8);
-             horaMinDiaDesactivar = trama.SubArray(61, 24);
-
-
-
-            if (trama[0]==1)
+            if (trama[0] == 1)
             {
                 picLoading.Enabled = false;
                 picLoading.Visible = false;
@@ -383,9 +385,10 @@ namespace Ethernet.ConfigCOMForm
 
 
                 MessageBox.Show(" Dispositivo conectado");
-            }else if (trama[0]==2)
+            }
+            else if (trama[0] == 2)
             {
-                  MessageBox.Show(" Dirección IP Cambiada!!");
+                MessageBox.Show(" Dirección IP Cambiada!!");
 
             }
             else if (trama[0] == 3)
@@ -399,6 +402,13 @@ namespace Ethernet.ConfigCOMForm
                 txtBye4.Enabled = false;
 
                 MessageBox.Show(" Dispositivo desconectado");
+
+            }
+            else if (trama[0] == 4)
+            {
+            
+
+                MessageBox.Show("Se Grabo correctamente.");
 
             }
 
@@ -438,6 +448,26 @@ namespace Ethernet.ConfigCOMForm
             //{
             //    MessageBox.Show(txt);
             //}
+
+        }
+
+        private void CrearTrama(byte[] trama)
+        {
+            //  var direccionIP = ;
+            direccionIP = trama.SubArray(1, 4);
+            chckTiempo = trama.SubArray(5, 8);
+            tiempo = trama.SubArray(13, 8);
+            chckActivar = trama.SubArray(21, 8);
+            horaMinDia = trama.SubArray(29, 24);
+            chckDesactivar = trama.SubArray(53, 8);
+            horaMinDiaDesactivar = trama.SubArray(61, 24);
+
+            chckTiempoAEnviar = trama.SubArray(5, 8);
+            tiempoAEnviar = trama.SubArray(13, 8);
+            chckActivarAEnviar = trama.SubArray(21, 8);
+            horaMinDiaAEnviar = trama.SubArray(29, 24);
+            chckDesactivarAEnviar = trama.SubArray(53, 8);
+            horaMinDiaDesactivarAEnviar = trama.SubArray(61, 24);
 
         }
 
@@ -712,6 +742,9 @@ namespace Ethernet.ConfigCOMForm
         {
             CheckBox checkBox = (CheckBox)sender;
 
+            actulizarTramaAEnviar(checkBox);
+    
+
             switch (checkBox.Name)
             {
                 case "chckTiempoSalida1":
@@ -734,15 +767,188 @@ namespace Ethernet.ConfigCOMForm
                     }
 
                     break;
+                case "chckTiempoSalida2":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida2.Enabled = true;
+                        chckActivadasSalida2.Checked = !checkBox.Checked;
+                        txtHoraActivaSalida2.Enabled = false;
+                        txtMinActivaSalida2.Enabled = false;
+                        cmbDiaActivaSalida2.Enabled = false;
+                        txtHoraDesactivaSalida2.Enabled = false;
+                        txtMinDesactivaSalida2.Enabled = false;
+                        cmbDiaDesactivaSalida2.Enabled = false;
+                        chckDesactivadasSalida2.Checked = false;
+                    }
+                    else
+                    {
+                        txtTiempoSalida2.Enabled = false;
+
+                    }
+
+                    break;
+                case "chckTiempoSalida3":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida3.Enabled = true;
+                        chckActivadasSalida3.Checked = !checkBox.Checked;
+                        txtHoraActivaSalida3.Enabled = false;
+                        txtMinActivaSalida3.Enabled = false;
+                        cmbDiaActivaSalida3.Enabled = false;
+                        txtHoraDesactivaSalida3.Enabled = false;
+                        txtMinDesactivaSalida3.Enabled = false;
+                        cmbDiaDesactivaSalida3.Enabled = false;
+                        chckDesactivadasSalida3.Checked = false;
+                    }
+                    else
+                    {
+                        txtTiempoSalida3.Enabled = false;
+
+                    }
+
+                    break;
+                case "chckTiempoSalida4":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida4.Enabled = true;
+                        chckActivadasSalida4.Checked = !checkBox.Checked;
+                        txtHoraActivaSalida4.Enabled = false;
+                        txtMinActivaSalida4.Enabled = false;
+                        cmbDiaActivaSalida4.Enabled = false;
+                        txtHoraDesactivaSalida4.Enabled = false;
+                        txtMinDesactivaSalida4.Enabled = false;
+                        cmbDiaDesactivaSalida4.Enabled = false;
+                        chckDesactivadasSalida4.Checked = false;
+                    }
+                    else
+                    {
+                        txtTiempoSalida4.Enabled = false;
+
+                    }
+
+                    break;
+                case "chckTiempoSalida5":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida5.Enabled = true;
+                        chckActivadasSalida5.Checked = !checkBox.Checked;
+                        txtHoraActivaSalida5.Enabled = false;
+                        txtMinActivaSalida5.Enabled = false;
+                        cmbDiaActivaSalida5.Enabled = false;
+                        txtHoraDesactivaSalida5.Enabled = false;
+                        txtMinDesactivaSalida5.Enabled = false;
+                        cmbDiaDesactivaSalida5.Enabled = false;
+                        chckDesactivadasSalida5.Checked = false;
+                    }
+                    else
+                    {
+                        txtTiempoSalida5.Enabled = false;
+
+                    }
+
+                    break;
+                case "chckTiempoSalida6":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida6.Enabled = true;
+                        chckActivadasSalida6.Checked = !checkBox.Checked;
+                        txtHoraActivaSalida6.Enabled = false;
+                        txtMinActivaSalida6.Enabled = false;
+                        cmbDiaActivaSalida6.Enabled = false;
+                        txtHoraDesactivaSalida6.Enabled = false;
+                        txtMinDesactivaSalida6.Enabled = false;
+                        cmbDiaDesactivaSalida6.Enabled = false;
+                        chckDesactivadasSalida6.Checked = false;
+                    }
+                    else
+                    {
+                        txtTiempoSalida6.Enabled = false;
+
+                    }
+
+                    break;
+                case "chckTiempoSalida7":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida7.Enabled = true;
+                        chckActivadasSalida7.Checked = !checkBox.Checked;
+                        txtHoraActivaSalida7.Enabled = false;
+                        txtMinActivaSalida7.Enabled = false;
+                        cmbDiaActivaSalida7.Enabled = false;
+                        txtHoraDesactivaSalida7.Enabled = false;
+                        txtMinDesactivaSalida7.Enabled = false;
+                        cmbDiaDesactivaSalida7.Enabled = false;
+                        chckDesactivadasSalida7.Checked = false;
+                    }
+                    else
+                    {
+                        txtTiempoSalida7.Enabled = false;
+
+                    }
+
+                    break;
+                case "chckTiempoSalida8":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida8.Enabled = true;
+                        chckActivadasSalida8.Checked = !checkBox.Checked;
+                        txtHoraActivaSalida8.Enabled = false;
+                        txtMinActivaSalida8.Enabled = false;
+                        cmbDiaActivaSalida8.Enabled = false;
+                        txtHoraDesactivaSalida8.Enabled = false;
+                        txtMinDesactivaSalida8.Enabled = false;
+                        cmbDiaDesactivaSalida8.Enabled = false;
+                        chckDesactivadasSalida8.Checked = false;
+                    }
+                    else
+                    {
+                        txtTiempoSalida8.Enabled = false;
+
+                    }
+
+                    break;
                 default:
                     break;
             }
 
         }
 
+        private void actulizarTramaAEnviar(CheckBox checkBox)
+        {
+            var name = checkBox.Name;
+            //chckTiempo = trama.SubArray(5, 8);
+            //tiempo = trama.SubArray(13, 8);
+            //chckActivar = trama.SubArray(21, 8);
+            //horaMinDia = trama.SubArray(29, 24);
+            //chckDesactivar = trama.SubArray(53, 8);
+            //horaMinDiaDesactivar = trama.SubArray(61, 24);
+
+            if (checkBox.Name.Contains("Tiempo"))
+            {
+                var index = Convert.ToInt32(name.Substring(16, name.Length - 16)) - 1;
+
+                chckTiempoAEnviar[index] = Convert.ToByte(checkBox.Checked);
+            }
+            else if (checkBox.Name.Contains("Activadas"))
+            {
+    
+                var index = Convert.ToInt32(name.Substring(19, name.Length - 19)) - 1;
+
+                chckActivarAEnviar[index] = Convert.ToByte(checkBox.Checked);
+            }
+            else if (checkBox.Name.Contains("Desactivadas"))
+            {
+                //chckDesactivadasSalida1
+                var index = Convert.ToInt32(name.Substring(22, name.Length - 22)) - 1;
+
+                chckDesactivarAEnviar[index] = Convert.ToByte(checkBox.Checked);
+            }
+        }
+
         private void chckActivadasAll_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBox = (CheckBox)sender;
+            actulizarTramaAEnviar(checkBox);
 
             switch (checkBox.Name)
             {
@@ -753,10 +959,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida1.Enabled = true;
                         txtMinActivaSalida1.Enabled = true;
                         cmbDiaActivaSalida1.Enabled = true;
-                        txtHoraDesactivaSalida1.Enabled = false;
-                        txtMinDesactivaSalida1.Enabled = false;
-                        cmbDiaDesactivaSalida1.Enabled = false;
-                        chckDesactivadasSalida1.Checked = false;
+                     //   txtHoraDesactivaSalida1.Enabled = false;
+                      //  txtMinDesactivaSalida1.Enabled = false;
+                      //  cmbDiaDesactivaSalida1.Enabled = false;
+                      //  chckDesactivadasSalida1.Checked = false;
                         chckTiempoSalida1.Checked = !checkBox.Checked;
                     }
                     else
@@ -764,6 +970,147 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida1.Enabled = false;
                         txtMinActivaSalida1.Enabled = false;
                         cmbDiaActivaSalida1.Enabled = false;
+                    }
+                    break;
+
+                case "chckActivadasSalida2":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida2.Enabled = false;
+                        txtHoraActivaSalida2.Enabled = true;
+                        txtMinActivaSalida2.Enabled = true;
+                        cmbDiaActivaSalida2.Enabled = true;
+                        //   txtHoraDesactivaSalida1.Enabled = false;
+                        //  txtMinDesactivaSalida1.Enabled = false;
+                        //  cmbDiaDesactivaSalida1.Enabled = false;
+                        //  chckDesactivadasSalida1.Checked = false;
+                        chckTiempoSalida2.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraActivaSalida2.Enabled = false;
+                        txtMinActivaSalida2.Enabled = false;
+                        cmbDiaActivaSalida2.Enabled = false;
+                    }
+                    break;
+                case "chckActivadasSalida3":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida3.Enabled = false;
+                        txtHoraActivaSalida3.Enabled = true;
+                        txtMinActivaSalida3.Enabled = true;
+                        cmbDiaActivaSalida3.Enabled = true;
+                        //   txtHoraDesactivaSalida1.Enabled = false;
+                        //  txtMinDesactivaSalida1.Enabled = false;
+                        //  cmbDiaDesactivaSalida1.Enabled = false;
+                        //  chckDesactivadasSalida1.Checked = false;
+                        chckTiempoSalida3.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraActivaSalida3.Enabled = false;
+                        txtMinActivaSalida3.Enabled = false;
+                        cmbDiaActivaSalida3.Enabled = false;
+                    }
+                    break;
+                case "chckActivadasSalida4":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida4.Enabled = false;
+                        txtHoraActivaSalida4.Enabled = true;
+                        txtMinActivaSalida4.Enabled = true;
+                        cmbDiaActivaSalida4.Enabled = true;
+                        //   txtHoraDesactivaSalida1.Enabled = false;
+                        //  txtMinDesactivaSalida1.Enabled = false;
+                        //  cmbDiaDesactivaSalida1.Enabled = false;
+                        //  chckDesactivadasSalida1.Checked = false;
+                        chckTiempoSalida4.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraActivaSalida4.Enabled = false;
+                        txtMinActivaSalida4.Enabled = false;
+                        cmbDiaActivaSalida4.Enabled = false;
+                    }
+                    break;
+                case "chckActivadasSalida5":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida5.Enabled = false;
+                        txtHoraActivaSalida5.Enabled = true;
+                        txtMinActivaSalida5.Enabled = true;
+                        cmbDiaActivaSalida5.Enabled = true;
+                        //   txtHoraDesactivaSalida1.Enabled = false;
+                        //  txtMinDesactivaSalida1.Enabled = false;
+                        //  cmbDiaDesactivaSalida1.Enabled = false;
+                        //  chckDesactivadasSalida1.Checked = false;
+                        chckTiempoSalida5.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraActivaSalida5.Enabled = false;
+                        txtMinActivaSalida5.Enabled = false;
+                        cmbDiaActivaSalida5.Enabled = false;
+                    }
+                    break;
+                case "chckActivadasSalida6":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida6.Enabled = false;
+                        txtHoraActivaSalida6.Enabled = true;
+                        txtMinActivaSalida6.Enabled = true;
+                        cmbDiaActivaSalida6.Enabled = true;
+                        //   txtHoraDesactivaSalida1.Enabled = false;
+                        //  txtMinDesactivaSalida1.Enabled = false;
+                        //  cmbDiaDesactivaSalida1.Enabled = false;
+                        //  chckDesactivadasSalida1.Checked = false;
+                        chckTiempoSalida6.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraActivaSalida6.Enabled = false;
+                        txtMinActivaSalida6.Enabled = false;
+                        cmbDiaActivaSalida6.Enabled = false;
+                    }
+                    break;
+                case "chckActivadasSalida7":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida7.Enabled = false;
+                        txtHoraActivaSalida7.Enabled = true;
+                        txtMinActivaSalida7.Enabled = true;
+                        cmbDiaActivaSalida7.Enabled = true;
+                        //   txtHoraDesactivaSalida1.Enabled = false;
+                        //  txtMinDesactivaSalida1.Enabled = false;
+                        //  cmbDiaDesactivaSalida1.Enabled = false;
+                        //  chckDesactivadasSalida1.Checked = false;
+                        chckTiempoSalida7.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraActivaSalida7.Enabled = false;
+                        txtMinActivaSalida7.Enabled = false;
+                        cmbDiaActivaSalida7.Enabled = false;
+                    }
+                    break;
+                case "chckActivadasSalida8":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida8.Enabled = false;
+                        txtHoraActivaSalida8.Enabled = true;
+                        txtMinActivaSalida8.Enabled = true;
+                        cmbDiaActivaSalida8.Enabled = true;
+                        //   txtHoraDesactivaSalida1.Enabled = false;
+                        //  txtMinDesactivaSalida1.Enabled = false;
+                        //  cmbDiaDesactivaSalida1.Enabled = false;
+                        //  chckDesactivadasSalida1.Checked = false;
+                        chckTiempoSalida8.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraActivaSalida8.Enabled = false;
+                        txtMinActivaSalida8.Enabled = false;
+                        cmbDiaActivaSalida8.Enabled = false;
                     }
                     break;
                 default:
@@ -774,6 +1121,7 @@ namespace Ethernet.ConfigCOMForm
         private void chckDesactivadasAll_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBox = (CheckBox)sender;
+            actulizarTramaAEnviar(checkBox);
 
             switch (checkBox.Name)
             {
@@ -784,11 +1132,11 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraDesactivaSalida1.Enabled = true;
                         txtMinDesactivaSalida1.Enabled = true;
                         cmbDiaDesactivaSalida1.Enabled = true;
-                        txtHoraActivaSalida1.Enabled = false;
-                        txtMinActivaSalida1.Enabled = false;
-                        cmbDiaActivaSalida1.Enabled = false;
+                        //txtHoraActivaSalida1.Enabled = false;
+                      //  txtMinActivaSalida1.Enabled = false;
+                        //cmbDiaActivaSalida1.Enabled = false;
                         chckTiempoSalida1.Checked = !checkBox.Checked;
-                        chckActivadasSalida1.Checked = !checkBox.Checked;
+                      //  chckActivadasSalida1.Checked = !checkBox.Checked;
                     }
                     else
                     {
@@ -797,8 +1145,461 @@ namespace Ethernet.ConfigCOMForm
                         cmbDiaDesactivaSalida1.Enabled = false;
                     }
                     break;
+                case "chckDesactivadasSalida2":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida2.Enabled = false;
+                        txtHoraDesactivaSalida2.Enabled = true;
+                        txtMinDesactivaSalida2.Enabled = true;
+                        cmbDiaDesactivaSalida2.Enabled = true;
+                        //txtHoraActivaSalida1.Enabled = false;
+                        //  txtMinActivaSalida1.Enabled = false;
+                        //cmbDiaActivaSalida1.Enabled = false;
+                        chckTiempoSalida2.Checked = !checkBox.Checked;
+                        //  chckActivadasSalida1.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraDesactivaSalida2.Enabled = false;
+                        txtMinDesactivaSalida2.Enabled = false;
+                        cmbDiaDesactivaSalida2.Enabled = false;
+                    }
+                    break;
+                case "chckDesactivadasSalida3":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida3.Enabled = false;
+                        txtHoraDesactivaSalida3.Enabled = true;
+                        txtMinDesactivaSalida3.Enabled = true;
+                        cmbDiaDesactivaSalida3.Enabled = true;
+                        //txtHoraActivaSalida1.Enabled = false;
+                        //  txtMinActivaSalida1.Enabled = false;
+                        //cmbDiaActivaSalida1.Enabled = false;
+                        chckTiempoSalida3.Checked = !checkBox.Checked;
+                        //  chckActivadasSalida1.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraDesactivaSalida3.Enabled = false;
+                        txtMinDesactivaSalida3.Enabled = false;
+                        cmbDiaDesactivaSalida3.Enabled = false;
+                    }
+                    break;
+                case "chckDesactivadasSalida4":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida4.Enabled = false;
+                        txtHoraDesactivaSalida4.Enabled = true;
+                        txtMinDesactivaSalida4.Enabled = true;
+                        cmbDiaDesactivaSalida4.Enabled = true;
+                        //txtHoraActivaSalida1.Enabled = false;
+                        //  txtMinActivaSalida1.Enabled = false;
+                        //cmbDiaActivaSalida1.Enabled = false;
+                        chckTiempoSalida4.Checked = !checkBox.Checked;
+                        //  chckActivadasSalida1.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraDesactivaSalida4.Enabled = false;
+                        txtMinDesactivaSalida4.Enabled = false;
+                        cmbDiaDesactivaSalida4.Enabled = false;
+                    }
+                    break;
+                case "chckDesactivadasSalida5":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida5.Enabled = false;
+                        txtHoraDesactivaSalida5.Enabled = true;
+                        txtMinDesactivaSalida5.Enabled = true;
+                        cmbDiaDesactivaSalida5.Enabled = true;
+                        //txtHoraActivaSalida1.Enabled = false;
+                        //  txtMinActivaSalida1.Enabled = false;
+                        //cmbDiaActivaSalida1.Enabled = false;
+                        chckTiempoSalida5.Checked = !checkBox.Checked;
+                        //  chckActivadasSalida1.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraDesactivaSalida5.Enabled = false;
+                        txtMinDesactivaSalida5.Enabled = false;
+                        cmbDiaDesactivaSalida5.Enabled = false;
+                    }
+                    break;
+                case "chckDesactivadasSalida6":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida6.Enabled = false;
+                        txtHoraDesactivaSalida6.Enabled = true;
+                        txtMinDesactivaSalida6.Enabled = true;
+                        cmbDiaDesactivaSalida6.Enabled = true;
+                        //txtHoraActivaSalida1.Enabled = false;
+                        //  txtMinActivaSalida1.Enabled = false;
+                        //cmbDiaActivaSalida1.Enabled = false;
+                        chckTiempoSalida6.Checked = !checkBox.Checked;
+                        //  chckActivadasSalida1.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraDesactivaSalida6.Enabled = false;
+                        txtMinDesactivaSalida6.Enabled = false;
+                        cmbDiaDesactivaSalida6.Enabled = false;
+                    }
+                    break;
+                case "chckDesactivadasSalida7":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida7.Enabled = false;
+                        txtHoraDesactivaSalida7.Enabled = true;
+                        txtMinDesactivaSalida7.Enabled = true;
+                        cmbDiaDesactivaSalida7.Enabled = true;
+                        //txtHoraActivaSalida1.Enabled = false;
+                        //  txtMinActivaSalida1.Enabled = false;
+                        //cmbDiaActivaSalida1.Enabled = false;
+                        chckTiempoSalida7.Checked = !checkBox.Checked;
+                        //  chckActivadasSalida1.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraDesactivaSalida7.Enabled = false;
+                        txtMinDesactivaSalida7.Enabled = false;
+                        cmbDiaDesactivaSalida7.Enabled = false;
+                    }
+                    break;
+                case "chckDesactivadasSalida8":
+                    if (checkBox.Checked)
+                    {
+                        txtTiempoSalida8.Enabled = false;
+                        txtHoraDesactivaSalida8.Enabled = true;
+                        txtMinDesactivaSalida8.Enabled = true;
+                        cmbDiaDesactivaSalida8.Enabled = true;
+                        //txtHoraActivaSalida1.Enabled = false;
+                        //  txtMinActivaSalida1.Enabled = false;
+                        //cmbDiaActivaSalida1.Enabled = false;
+                        chckTiempoSalida8.Checked = !checkBox.Checked;
+                        //  chckActivadasSalida1.Checked = !checkBox.Checked;
+                    }
+                    else
+                    {
+                        txtHoraDesactivaSalida8.Enabled = false;
+                        txtMinDesactivaSalida8.Enabled = false;
+                        cmbDiaDesactivaSalida8.Enabled = false;
+                    }
+                    break;
                 default:
                     break;
+            }
+        }
+
+        private void btnGrabarSalidas_Click(object sender, EventArgs e)
+        {
+            evento = "btnGrabar";
+
+            for (int i = 0; i < tiempoCheckBoxes.Count; i++)
+            {
+                if (tiempoCheckBoxes[i].Checked==true)
+                {
+                    chckTiempo[i] = chckTiempoAEnviar[i];
+
+                    tiempo[i] = tiempoAEnviar[i];
+
+                }
+                else
+                {
+                    chckTiempo[i] = chckTiempoAEnviar[i];
+
+                }
+                if (activarCheckBoxes[i].Checked == true)
+                {
+                    chckActivar[i] = chckActivarAEnviar[i];
+
+                    List<byte[]> listhoraMinDiaAEnviar = new List<byte[]>();
+                    List<byte[]> listhoraMinDia = new List<byte[]>();
+
+                    var contador = 0;
+
+                    while (contador < horaMinDiaAEnviar.Length)
+                    {
+                        listhoraMinDiaAEnviar.Add(horaMinDiaAEnviar.SubArray(contador, 3));
+                        listhoraMinDia.Add(horaMinDia.SubArray(contador, 3));
+
+
+                        contador += 3;
+                    }
+                    listhoraMinDia[i] = listhoraMinDiaAEnviar[i];
+
+                  
+                    byte[] temp = listhoraMinDia[0];
+                    for (int j = 1; j < listhoraMinDia.ToArray().Length; j++)
+                    {
+                        temp = temp.Concat(listhoraMinDia[j]).ToArray();
+                    }
+            
+                    horaMinDia = temp;
+
+                }
+                else
+                {
+                    chckActivar[i] = chckActivarAEnviar[i];
+
+                
+                }
+                if (desactivarCheckBoxes[i].Checked == true)
+                {
+                    chckDesactivar[i] = chckDesactivarAEnviar[i];
+
+                    List<byte[]> listhoraMinDiaDesactivarAEnviar = new List<byte[]>();
+                    List<byte[]> listhoraMinDiaDesactivar = new List<byte[]>();
+
+                    var contador = 0;
+
+                    while (contador < horaMinDiaDesactivarAEnviar.Length)
+                    {
+                        listhoraMinDiaDesactivarAEnviar.Add(horaMinDiaDesactivarAEnviar.SubArray(contador, 3));
+                        listhoraMinDiaDesactivar.Add(horaMinDiaDesactivar.SubArray(contador, 3));
+
+
+                        contador += 3;
+                    }
+                    listhoraMinDiaDesactivar[i] = listhoraMinDiaDesactivarAEnviar[i];
+
+
+                    byte[] temp = listhoraMinDiaDesactivar[0];
+                    for (int j = 1; j < listhoraMinDiaDesactivar.ToArray().Length; j++)
+                    {
+                        temp = temp.Concat(listhoraMinDiaDesactivar[j]).ToArray();
+                    }
+
+                    horaMinDiaDesactivar = temp;
+
+                }
+                else
+                {
+                    chckDesactivar[i] = chckDesactivarAEnviar[i];
+
+
+                }
+            }
+
+            byte[] TramaEnvio = chckTiempo;
+
+            TramaEnvio = TramaEnvio.Concat(tiempo)
+                .Concat(chckActivar)
+                .Concat(horaMinDia)
+                .Concat(chckDesactivar)
+                .Concat(horaMinDiaDesactivar)
+
+                .ToArray();
+            byte[] data = { 3, 3, 4, };
+            data= data.Concat(TramaEnvio).ToArray();
+            _port.Write(data, 0, data.Length);
+
+
+
+        }
+
+        private void actualizarTiempo(string checkactivo)
+        {
+
+           // "chckTiempoSalida1"
+            var index = Convert.ToInt32(checkactivo.Substring(16, checkactivo.Length-16))-1;
+
+            chckTiempo[index] =(byte) Convert.ToInt32(tiempoTextBoxes.ElementAt(index).Text);
+
+        }
+
+        private void txtAll_KeyPress(object sender,
+        KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+        private void txtAll_Leave(object sender, EventArgs e)
+            {
+            MetroTextBox textBox = (MetroTextBox)sender;
+            var name = textBox.Name;
+
+            //chckTiempo = trama.SubArray(5, 8);
+            //tiempo = trama.SubArray(13, 8);
+            //chckActivar = trama.SubArray(21, 8);
+            //horaMinDia = trama.SubArray(29, 24);
+            //chckDesactivar = trama.SubArray(53, 8);
+            //horaMinDiaDesactivar = trama.SubArray(61, 24);
+
+            if (name.Contains("Tiempo"))
+            {
+                var index = Convert.ToInt32(name.Substring(15, name.Length - 15)) - 1;
+                tiempoAEnviar[index] = (byte)Convert.ToInt32(textBox.Text);
+
+            }
+            else if (name.Contains("HoraActiva"))
+            {
+                List<byte[]> vs = new List<byte[]>();
+                var contador = 0;
+
+                while (contador<horaMinDiaAEnviar.Length)
+                {
+                    vs.Add(horaMinDiaAEnviar.SubArray(contador, 3));
+
+                    contador += 3;
+                }
+                var index = Convert.ToInt32(name.Substring(19, name.Length - 19)) - 1;
+
+                vs[index][0] = (byte)Convert.ToInt32(textBox.Text);
+                byte[] temp = vs[0];
+                for (int i = 1; i < vs.ToArray().Length; i++)
+                {
+                    temp = temp.Concat(vs[i]).ToArray();
+                }
+
+                    horaMinDiaAEnviar = temp;
+          
+
+            }
+
+            else if (name.Contains("MinActiva"))
+            {
+                List<byte[]> vs = new List<byte[]>();
+                var contador = 0;
+
+                while (contador < horaMinDiaAEnviar.Length)
+                {
+                    vs.Add(horaMinDiaAEnviar.SubArray(contador, 3));
+
+                    contador += 3;
+                }
+
+                var index = Convert.ToInt32(name.Substring(18, name.Length - 18))-1;
+                vs[index][1] = (byte)Convert.ToInt32(textBox.Text);
+                byte[] temp = vs[0];
+                for (int i = 1; i < vs.ToArray().Length; i++)
+                {
+                    temp = temp.Concat(vs[i]).ToArray();
+                }
+
+                horaMinDiaAEnviar = temp;
+
+
+            }
+            else if (name.Contains("HoraDesactiva"))
+            {
+                List<byte[]> vs = new List<byte[]>();
+                var contador = 0;
+
+                while (contador < horaMinDiaDesactivarAEnviar.Length)
+                {
+                    vs.Add(horaMinDiaDesactivarAEnviar.SubArray(contador, 3));
+
+                    contador += 3;
+                }
+                var index = Convert.ToInt32(name.Substring(22, name.Length - 22)) - 1;
+
+                vs[index][0] = (byte)Convert.ToInt32(textBox.Text);
+                byte[] temp = vs[0];
+                for (int i = 1; i < vs.ToArray().Length; i++)
+                {
+                    temp = temp.Concat(vs[i]).ToArray();
+                }
+
+                horaMinDiaDesactivarAEnviar = temp;
+
+
+            }
+
+            else if (name.Contains("MinDesactiva"))
+            {
+                List<byte[]> vs = new List<byte[]>();
+                var contador = 0;
+
+                while (contador < horaMinDiaDesactivarAEnviar.Length)
+                {
+                    vs.Add(horaMinDiaDesactivarAEnviar.SubArray(contador, 3));
+
+                    contador += 3;
+                }
+
+                var index = Convert.ToInt32(name.Substring(21, name.Length - 21)) - 1;
+                vs[index][1] = (byte)Convert.ToInt32(textBox.Text);
+                byte[] temp = vs[0];
+                for (int i = 1; i < vs.ToArray().Length; i++)
+                {
+                    temp = temp.Concat(vs[i]).ToArray();
+                }
+
+                horaMinDiaDesactivarAEnviar = temp;
+
+
+            }
+        }
+
+      
+        private void cmbDiaAll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MetroComboBox metroComboBox = (MetroComboBox)sender;
+
+            var name = metroComboBox.Name;
+            if (metroComboBox.Name.Contains("DiaActiva"))
+            {
+
+                List<byte[]> vs = new List<byte[]>();
+                var contador = 0;
+
+                while (contador < horaMinDiaAEnviar.Length)
+                {
+                    vs.Add(horaMinDiaAEnviar.SubArray(contador, 3));
+
+                    contador += 3;
+                }
+
+                var index = Convert.ToInt32(name.Substring(18, name.Length - 18)) - 1;
+
+                vs[index][2] = (byte)metroComboBox.SelectedIndex;
+                byte[] temp = vs[0];
+                for (int i = 1; i < vs.ToArray().Length; i++)
+                {
+                    temp = temp.Concat(vs[i]).ToArray();
+                }
+
+                horaMinDiaAEnviar = temp;
+
+
+            }
+            else if (metroComboBox.Name.Contains("DiaDesactiva"))
+            {
+
+                List<byte[]> vs = new List<byte[]>();
+                var contador = 0;
+
+                while (contador < horaMinDiaDesactivarAEnviar.Length)
+                {
+                    vs.Add(horaMinDiaDesactivarAEnviar.SubArray(contador, 3));
+
+                    contador += 3;
+                }
+                var index = Convert.ToInt32(name.Substring(21, name.Length - 21)) - 1;
+
+                vs[index][2] = (byte)metroComboBox.SelectedIndex;
+                byte[] temp = vs[0];
+                for (int i = 1; i < vs.ToArray().Length; i++)
+                {
+                    temp = temp.Concat(vs[i]).ToArray();
+                }
+
+                horaMinDiaDesactivarAEnviar = temp;
+
+
             }
         }
     }
