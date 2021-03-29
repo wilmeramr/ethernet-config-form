@@ -281,11 +281,11 @@ namespace Ethernet.ConfigCOMForm
                     _port = new SerialPort(cmbPorts.SelectedItem.ToString());
 
                     // configure serial port
-                    _port.BaudRate = 9600;
+                    _port.BaudRate = 115200;
                     _port.DataBits = 8;
                     _port.Parity = Parity.None;
                     _port.StopBits = StopBits.One;
-                    _port.ReadTimeout = 500;
+                    _port.ReadTimeout = 5000;
                     _port.WriteTimeout = 500;
                     _port.DataReceived += new
                      SerialDataReceivedEventHandler(port_DataReceived);
@@ -332,7 +332,8 @@ namespace Ethernet.ConfigCOMForm
         private void processData()
         {
 
-            if (evento == "ConectarEthernet" && recievedData.Count==85)
+            Console.WriteLine(recievedData.Count.ToString());
+            if (evento == "ConectarEthernet" && recievedData.Count>=66)
             {
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
                // recievedData.Clear();
@@ -350,6 +351,8 @@ namespace Ethernet.ConfigCOMForm
         private void drawer(byte[] trama)
         {
             //recievedData.Clear();
+
+            var binary = Convert.ToString(Convert.ToInt32( trama[5]),2);
 
             if (trama[0] == 1)
             {
