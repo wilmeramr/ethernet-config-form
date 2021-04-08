@@ -61,7 +61,7 @@ namespace Ethernet.ConfigCOMForm
             168,
             0,
             90,
-           255,
+          10,
             10,
             10,
             10,
@@ -255,12 +255,13 @@ namespace Ethernet.ConfigCOMForm
 
 
 
-            if (cmbPorts.SelectedIndex==-1)
+            if (cmbPorts.SelectedIndex == -1)
             {
                 MessageBox.Show("No selecciono un puerto");
 
             }
-            else {
+            else
+            {
 
                 try
                 {
@@ -294,7 +295,7 @@ namespace Ethernet.ConfigCOMForm
 
             }
 
-            //drawer(tramaDemo);
+            // drawer(tramaDemo);
 
         }
 
@@ -440,18 +441,18 @@ namespace Ethernet.ConfigCOMForm
             //  var direccionIP = ;
             direccionIP = trama.SubArray(1, 4);
             // chckTiempo = trama.SubArray(5, 8);
-            chckTiempo = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            chckTiempo = Convert.ToString(Convert.ToInt32(trama[5]), 2).PadLeft(8,'0').ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
             tiempo = trama.SubArray(6, 8);
-            chckActivar = Convert.ToString(Convert.ToInt32(trama[14]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            chckActivar = Convert.ToString(Convert.ToInt32(trama[14]), 2).PadLeft(8, '0').ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
             horaMinDia = trama.SubArray(15, 24);
-            chckDesactivar = Convert.ToString(Convert.ToInt32(trama[39]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            chckDesactivar = Convert.ToString(Convert.ToInt32(trama[39]), 2).PadLeft(8, '0').ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
             horaMinDiaDesactivar = trama.SubArray(40, 24);
 
-            chckTiempoAEnviar = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            chckTiempoAEnviar = Convert.ToString(Convert.ToInt32(trama[5]), 2).PadLeft(8, '0').ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
             tiempoAEnviar = trama.SubArray(6, 8);
-            chckActivarAEnviar = Convert.ToString(Convert.ToInt32(trama[14]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            chckActivarAEnviar = Convert.ToString(Convert.ToInt32(trama[14]), 2).PadLeft(8, '0').ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
             horaMinDiaAEnviar = trama.SubArray(15, 24);
-            chckDesactivarAEnviar = Convert.ToString(Convert.ToInt32(trama[39]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            chckDesactivarAEnviar = Convert.ToString(Convert.ToInt32(trama[39]), 2).PadLeft(8, '0').ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
             horaMinDiaDesactivarAEnviar = trama.SubArray(40, 24);
 
             horaActual = trama.SubArray(64, 3);
