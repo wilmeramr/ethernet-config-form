@@ -1531,7 +1531,7 @@ namespace Ethernet.ConfigCOMForm
             // 
             this.lblHora.Location = new System.Drawing.Point(904, 198);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(232, 40);
+            this.lblHora.Size = new System.Drawing.Size(410, 40);
             this.lblHora.TabIndex = 11;
             // 
             // Form1

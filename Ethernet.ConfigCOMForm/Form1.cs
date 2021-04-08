@@ -23,6 +23,8 @@ namespace Ethernet.ConfigCOMForm
         DateTime dateTime;
         private Queue<byte> recievedData = new Queue<byte>();
         delegate void SetTextDeleg(byte[] trama);
+        string diaActual = "";
+
         string evento = "";
         List<CheckBox> tiempoCheckBoxes = new List<CheckBox>();
         List<CheckBox> activarCheckBoxes = new List<CheckBox>();
@@ -138,6 +140,7 @@ namespace Ethernet.ConfigCOMForm
 
 
         };
+
         SortedDictionary<int, string> dias = new SortedDictionary<int, string>
         {
            {0,"Domingo" },
@@ -295,7 +298,7 @@ namespace Ethernet.ConfigCOMForm
 
             }
 
-            // drawer(tramaDemo);
+         //   drawer(tramaDemo);
 
         }
 
@@ -321,8 +324,7 @@ namespace Ethernet.ConfigCOMForm
         private void processData()
         {
 
-            Console.WriteLine(recievedData.Count.ToString());
-            if (evento == "ConectarEthernet" && recievedData.Count==66)
+            if (evento == "ConectarEthernet" && recievedData.Count==67)
             {
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
                // recievedData.Clear();
@@ -341,10 +343,10 @@ namespace Ethernet.ConfigCOMForm
         {
             //recievedData.Clear();
 
-            var d = Convert.ToByte("0",8);
-            List<int> vs = new List<int>();
-            byte[] vs1 = new byte[8];
-           var binary = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s=> { return Convert.ToByte(s.ToString(), 8); });
+           // var d = Convert.ToByte("0",8);
+           // List<int> vs = new List<int>();
+           // byte[] vs1 = new byte[8];
+           //var binary = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s=> { return Convert.ToByte(s.ToString(), 8); });
 
          
             //for (int i = 0; i < binary.Length; i++)
@@ -366,7 +368,8 @@ namespace Ethernet.ConfigCOMForm
             if (trama[0] == 1)
             {
                 CrearTrama(trama);
-                dateTime = new DateTime(2021, 10, 10, 16, 15, 00);
+                dateTime = new DateTime(2021, 10, 10, Convert.ToInt32(horaActual[0]), Convert.ToInt32(horaActual[1]), 00);
+               dias.TryGetValue(Convert.ToInt32(horaActual[2]), out diaActual);
                 timer1.Start();
                 picLoading.Enabled = false;
                 picLoading.Visible = false;
@@ -1613,7 +1616,7 @@ namespace Ethernet.ConfigCOMForm
         {
             
             dateTime=dateTime.AddSeconds(1);
-            lblHora.Text = "Hora Dispositivo: "+ dateTime.ToString("HH:mm:ss");
+            lblHora.Text = "Hora Dispositivo: "+ dateTime.ToString("HH:mm:ss")+ " " + diaActual;
         }
     }
 
