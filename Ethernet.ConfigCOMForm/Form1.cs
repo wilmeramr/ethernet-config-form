@@ -747,10 +747,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida1.Enabled = false;
                         txtMinActivaSalida1.Enabled = false;
                         cmbDiaActivaSalida1.Enabled = false;
-                        txtHoraDesactivaSalida1.Enabled = false;
-                        txtMinDesactivaSalida1.Enabled = false;
-                        cmbDiaDesactivaSalida1.Enabled = false;
-                        chckDesactivadasSalida1.Checked = false;
+                        //txtHoraDesactivaSalida1.Enabled = false;
+                        //txtMinDesactivaSalida1.Enabled = false;
+                        //cmbDiaDesactivaSalida1.Enabled = false;
+                        //chckDesactivadasSalida1.Checked = false;
                     }
                     else
                     {
@@ -767,10 +767,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida2.Enabled = false;
                         txtMinActivaSalida2.Enabled = false;
                         cmbDiaActivaSalida2.Enabled = false;
-                        txtHoraDesactivaSalida2.Enabled = false;
-                        txtMinDesactivaSalida2.Enabled = false;
-                        cmbDiaDesactivaSalida2.Enabled = false;
-                        chckDesactivadasSalida2.Checked = false;
+                        //txtHoraDesactivaSalida2.Enabled = false;
+                        //txtMinDesactivaSalida2.Enabled = false;
+                        //cmbDiaDesactivaSalida2.Enabled = false;
+                        //chckDesactivadasSalida2.Checked = false;
                     }
                     else
                     {
@@ -787,10 +787,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida3.Enabled = false;
                         txtMinActivaSalida3.Enabled = false;
                         cmbDiaActivaSalida3.Enabled = false;
-                        txtHoraDesactivaSalida3.Enabled = false;
-                        txtMinDesactivaSalida3.Enabled = false;
-                        cmbDiaDesactivaSalida3.Enabled = false;
-                        chckDesactivadasSalida3.Checked = false;
+                        //txtHoraDesactivaSalida3.Enabled = false;
+                        //txtMinDesactivaSalida3.Enabled = false;
+                        //cmbDiaDesactivaSalida3.Enabled = false;
+                        //chckDesactivadasSalida3.Checked = false;
                     }
                     else
                     {
@@ -807,10 +807,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida4.Enabled = false;
                         txtMinActivaSalida4.Enabled = false;
                         cmbDiaActivaSalida4.Enabled = false;
-                        txtHoraDesactivaSalida4.Enabled = false;
-                        txtMinDesactivaSalida4.Enabled = false;
-                        cmbDiaDesactivaSalida4.Enabled = false;
-                        chckDesactivadasSalida4.Checked = false;
+                        //txtHoraDesactivaSalida4.Enabled = false;
+                        //txtMinDesactivaSalida4.Enabled = false;
+                        //cmbDiaDesactivaSalida4.Enabled = false;
+                        //chckDesactivadasSalida4.Checked = false;
                     }
                     else
                     {
@@ -827,10 +827,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida5.Enabled = false;
                         txtMinActivaSalida5.Enabled = false;
                         cmbDiaActivaSalida5.Enabled = false;
-                        txtHoraDesactivaSalida5.Enabled = false;
-                        txtMinDesactivaSalida5.Enabled = false;
-                        cmbDiaDesactivaSalida5.Enabled = false;
-                        chckDesactivadasSalida5.Checked = false;
+                        //txtHoraDesactivaSalida5.Enabled = false;
+                        //txtMinDesactivaSalida5.Enabled = false;
+                        //cmbDiaDesactivaSalida5.Enabled = false;
+                        //chckDesactivadasSalida5.Checked = false;
                     }
                     else
                     {
@@ -847,10 +847,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida6.Enabled = false;
                         txtMinActivaSalida6.Enabled = false;
                         cmbDiaActivaSalida6.Enabled = false;
-                        txtHoraDesactivaSalida6.Enabled = false;
-                        txtMinDesactivaSalida6.Enabled = false;
-                        cmbDiaDesactivaSalida6.Enabled = false;
-                        chckDesactivadasSalida6.Checked = false;
+                        //txtHoraDesactivaSalida6.Enabled = false;
+                        //txtMinDesactivaSalida6.Enabled = false;
+                        //cmbDiaDesactivaSalida6.Enabled = false;
+                        //chckDesactivadasSalida6.Checked = false;
                     }
                     else
                     {
@@ -867,10 +867,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida7.Enabled = false;
                         txtMinActivaSalida7.Enabled = false;
                         cmbDiaActivaSalida7.Enabled = false;
-                        txtHoraDesactivaSalida7.Enabled = false;
-                        txtMinDesactivaSalida7.Enabled = false;
-                        cmbDiaDesactivaSalida7.Enabled = false;
-                        chckDesactivadasSalida7.Checked = false;
+                        //txtHoraDesactivaSalida7.Enabled = false;
+                        //txtMinDesactivaSalida7.Enabled = false;
+                        //cmbDiaDesactivaSalida7.Enabled = false;
+                        //chckDesactivadasSalida7.Checked = false;
                     }
                     else
                     {
@@ -887,10 +887,10 @@ namespace Ethernet.ConfigCOMForm
                         txtHoraActivaSalida8.Enabled = false;
                         txtMinActivaSalida8.Enabled = false;
                         cmbDiaActivaSalida8.Enabled = false;
-                        txtHoraDesactivaSalida8.Enabled = false;
-                        txtMinDesactivaSalida8.Enabled = false;
-                        cmbDiaDesactivaSalida8.Enabled = false;
-                        chckDesactivadasSalida8.Checked = false;
+                        //txtHoraDesactivaSalida8.Enabled = false;
+                        //txtMinDesactivaSalida8.Enabled = false;
+                        //cmbDiaDesactivaSalida8.Enabled = false;
+                        //chckDesactivadasSalida8.Checked = false;
                     }
                     else
                     {
