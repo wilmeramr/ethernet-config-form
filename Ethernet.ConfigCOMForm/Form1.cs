@@ -20,6 +20,7 @@ namespace Ethernet.ConfigCOMForm
     public partial class Form1 : MetroForm
     {
         static SerialPort _port;
+        DateTime dateTime;
         private Queue<byte> recievedData = new Queue<byte>();
         delegate void SetTextDeleg(byte[] trama);
         string evento = "";
@@ -47,6 +48,9 @@ namespace Ethernet.ConfigCOMForm
         byte[] horaMinDiaAEnviar = new byte[24];
         byte[] chckDesactivarAEnviar = new byte[8];
         byte[] horaMinDiaDesactivarAEnviar = new byte[24];
+
+      byte[] horaActual = new byte[3];
+
         byte[] direccionIP = new byte[4];
 
         List<string> checkactivos = new List<string>();
@@ -57,14 +61,7 @@ namespace Ethernet.ConfigCOMForm
             168,
             0,
             90,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
+           255,
             10,
             10,
             10,
@@ -73,14 +70,7 @@ namespace Ethernet.ConfigCOMForm
             10,
             10,
             10,
-            1,
-             1,
-             1,
-             1,
-             1,
-             1,
-             1,
-             1,
+          255,
              16,
              45,
              1,
@@ -105,14 +95,7 @@ namespace Ethernet.ConfigCOMForm
             16,
              45,
              1,
-              1,
-             1,
-             1,
-             1,
-             1,
-             1,
-             1,
-             1,
+          164,
                 16,
              55,
              7,
@@ -137,6 +120,9 @@ namespace Ethernet.ConfigCOMForm
    16,
              55,
              7,
+             1,
+             50,
+             0
 
 
         };
@@ -266,7 +252,7 @@ namespace Ethernet.ConfigCOMForm
         {
 
 
-   
+
 
 
             if (cmbPorts.SelectedIndex==-1)
@@ -307,6 +293,8 @@ namespace Ethernet.ConfigCOMForm
 
 
             }
+
+            //drawer(tramaDemo);
 
         }
 
@@ -352,12 +340,33 @@ namespace Ethernet.ConfigCOMForm
         {
             //recievedData.Clear();
 
-            var binary = Convert.ToString(Convert.ToInt32( trama[5]),2);
+            var d = Convert.ToByte("0",8);
+            List<int> vs = new List<int>();
+            byte[] vs1 = new byte[8];
+           var binary = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s=> { return Convert.ToByte(s.ToString(), 8); });
+
+         
+            //for (int i = 0; i < binary.Length; i++)
+            //{
+
+            //    if (binary.ToArray()[i]=='1')
+            //    {
+            //        vs1[i] = 1;
+            //    }
+            //    else
+            //    {
+            //        vs1[i] = 0;
+
+            //    }
+
+
+            //}
 
             if (trama[0] == 1)
             {
                 CrearTrama(trama);
-
+                dateTime = new DateTime(2021, 10, 10, 16, 15, 00);
+                timer1.Start();
                 picLoading.Enabled = false;
                 picLoading.Visible = false;
 
@@ -430,19 +439,23 @@ namespace Ethernet.ConfigCOMForm
         {
             //  var direccionIP = ;
             direccionIP = trama.SubArray(1, 4);
-            chckTiempo = trama.SubArray(5, 8);
-            tiempo = trama.SubArray(13, 8);
-            chckActivar = trama.SubArray(21, 8);
-            horaMinDia = trama.SubArray(29, 24);
-            chckDesactivar = trama.SubArray(53, 8);
-            horaMinDiaDesactivar = trama.SubArray(61, 24);
+            // chckTiempo = trama.SubArray(5, 8);
+            chckTiempo = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            tiempo = trama.SubArray(6, 8);
+            chckActivar = Convert.ToString(Convert.ToInt32(trama[14]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            horaMinDia = trama.SubArray(15, 24);
+            chckDesactivar = Convert.ToString(Convert.ToInt32(trama[39]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            horaMinDiaDesactivar = trama.SubArray(40, 24);
 
-            chckTiempoAEnviar = trama.SubArray(5, 8);
-            tiempoAEnviar = trama.SubArray(13, 8);
-            chckActivarAEnviar = trama.SubArray(21, 8);
-            horaMinDiaAEnviar = trama.SubArray(29, 24);
-            chckDesactivarAEnviar = trama.SubArray(53, 8);
-            horaMinDiaDesactivarAEnviar = trama.SubArray(61, 24);
+            chckTiempoAEnviar = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            tiempoAEnviar = trama.SubArray(6, 8);
+            chckActivarAEnviar = Convert.ToString(Convert.ToInt32(trama[14]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            horaMinDiaAEnviar = trama.SubArray(15, 24);
+            chckDesactivarAEnviar = Convert.ToString(Convert.ToInt32(trama[39]), 2).ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
+            horaMinDiaDesactivarAEnviar = trama.SubArray(40, 24);
+
+            horaActual = trama.SubArray(64, 3);
+
 
         }
 
@@ -1355,12 +1368,29 @@ namespace Ethernet.ConfigCOMForm
                 }
             }
 
-            byte[] TramaEnvio = chckTiempo;
+
+            //var b = Convert.ToByte(str, 8);
+            var sbchckTiempo = new System.Text.StringBuilder();
+            var sbchckActivar = new System.Text.StringBuilder();
+            var sbchckDesactivar = new System.Text.StringBuilder();
+
+
+            for (int i = 0; i < chckTiempo.Length; i++)
+            {
+                sbchckTiempo.Append(Convert.ToString(chckTiempo[i], 8));
+                sbchckActivar.Append(Convert.ToString(chckActivar[i], 8));
+                sbchckDesactivar.Append(Convert.ToString(chckDesactivar[i], 8));
+
+
+            }
+
+            var b = new byte[] { Convert.ToByte(sbchckTiempo.ToString(), 2) };
+            byte[] TramaEnvio = b;
 
             TramaEnvio = TramaEnvio.Concat(tiempo)
-                .Concat(chckActivar)
+                .Concat(new byte[] { Convert.ToByte(sbchckActivar.ToString(), 2) })
                 .Concat(horaMinDia)
-                .Concat(chckDesactivar)
+                .Concat(new byte[] { Convert.ToByte(sbchckDesactivar.ToString(), 2) })
                 .Concat(horaMinDiaDesactivar)
 
                 .ToArray();
@@ -1576,6 +1606,13 @@ namespace Ethernet.ConfigCOMForm
 
 
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            dateTime=dateTime.AddSeconds(1);
+            lblHora.Text = "Hora Dispositivo: "+ dateTime.ToString("HH:mm:ss");
         }
     }
 
