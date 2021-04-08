@@ -23,6 +23,8 @@ namespace Ethernet.ConfigCOMForm
         DateTime dateTime;
         private Queue<byte> recievedData = new Queue<byte>();
         delegate void SetTextDeleg(byte[] trama);
+        string diaActual = "";
+
         string evento = "";
         List<CheckBox> tiempoCheckBoxes = new List<CheckBox>();
         List<CheckBox> activarCheckBoxes = new List<CheckBox>();
@@ -138,6 +140,7 @@ namespace Ethernet.ConfigCOMForm
 
 
         };
+
         SortedDictionary<int, string> dias = new SortedDictionary<int, string>
         {
            {0,"Domingo" },
@@ -295,7 +298,7 @@ namespace Ethernet.ConfigCOMForm
 
             }
 
-            // drawer(tramaDemo);
+         //   drawer(tramaDemo);
 
         }
 
@@ -365,7 +368,8 @@ namespace Ethernet.ConfigCOMForm
             if (trama[0] == 1)
             {
                 CrearTrama(trama);
-                dateTime = new DateTime(2021, 10, 10, 16, 15, 00);
+                dateTime = new DateTime(2021, 10, 10, Convert.ToInt32(horaActual[0]), Convert.ToInt32(horaActual[1]), 00);
+               dias.TryGetValue(Convert.ToInt32(horaActual[2]), out diaActual);
                 timer1.Start();
                 picLoading.Enabled = false;
                 picLoading.Visible = false;
@@ -1612,7 +1616,7 @@ namespace Ethernet.ConfigCOMForm
         {
             
             dateTime=dateTime.AddSeconds(1);
-            lblHora.Text = "Hora Dispositivo: "+ dateTime.ToString("HH:mm:ss");
+            lblHora.Text = "Hora Dispositivo: "+ dateTime.ToString("HH:mm:ss")+ " " + diaActual;
         }
     }
 
