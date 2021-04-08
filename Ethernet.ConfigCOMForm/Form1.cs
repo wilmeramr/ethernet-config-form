@@ -333,7 +333,7 @@ namespace Ethernet.ConfigCOMForm
         {
 
             Console.WriteLine(recievedData.Count.ToString());
-            if (evento == "ConectarEthernet" && recievedData.Count>=66)
+            if (evento == "ConectarEthernet" && recievedData.Count==66)
             {
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
                // recievedData.Clear();
