@@ -321,8 +321,7 @@ namespace Ethernet.ConfigCOMForm
         private void processData()
         {
 
-            Console.WriteLine(recievedData.Count.ToString());
-            if (evento == "ConectarEthernet" && recievedData.Count==66)
+            if (evento == "ConectarEthernet" && recievedData.Count==67)
             {
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
                // recievedData.Clear();
@@ -341,10 +340,10 @@ namespace Ethernet.ConfigCOMForm
         {
             //recievedData.Clear();
 
-            var d = Convert.ToByte("0",8);
-            List<int> vs = new List<int>();
-            byte[] vs1 = new byte[8];
-           var binary = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s=> { return Convert.ToByte(s.ToString(), 8); });
+           // var d = Convert.ToByte("0",8);
+           // List<int> vs = new List<int>();
+           // byte[] vs1 = new byte[8];
+           //var binary = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s=> { return Convert.ToByte(s.ToString(), 8); });
 
          
             //for (int i = 0; i < binary.Length; i++)
