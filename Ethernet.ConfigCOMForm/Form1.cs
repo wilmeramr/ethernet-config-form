@@ -270,23 +270,23 @@ namespace Ethernet.ConfigCOMForm
                 {
                     _port = new SerialPort(cmbPorts.SelectedItem.ToString());
 
-                    // configure serial port
-                    _port.BaudRate = 115200;
-                    _port.DataBits = 8;
-                    _port.Parity = Parity.None;
-                    _port.StopBits = StopBits.One;
-                    _port.ReadTimeout = 5000;
-                    _port.WriteTimeout = 500;
+            // configure serial port
+            _port.BaudRate = 115200;
+            _port.DataBits = 8;
+            _port.Parity = Parity.None;
+            _port.StopBits = StopBits.One;
+            _port.ReadTimeout = 5000;
+            _port.WriteTimeout = 5000;
                     _port.DataReceived += new
                      SerialDataReceivedEventHandler(port_DataReceived);
                     _port.Open();
 
-                    btnConectar.Enabled = false;
-                    btnConectar.Style = MetroColorStyle.Green;
-                    btnDesconectar.Enabled = true;
-                    lblCOMEvent.BackColor = Color.Green;
-                    btnConectarEthernet.Enabled = true;
-                }
+            btnConectar.Enabled = false;
+            btnConectar.Style = MetroColorStyle.Green;
+            btnDesconectar.Enabled = true;
+            lblCOMEvent.BackColor = Color.Green;
+            btnConectarEthernet.Enabled = true;
+        }
                 catch (Exception)
                 {
                     lblCOMEvent.BackColor = Color.Red;
@@ -296,9 +296,9 @@ namespace Ethernet.ConfigCOMForm
 
 
 
-            }
+}
 
-         //   drawer(tramaDemo);
+           // drawer(tramaDemo);
 
         }
 
@@ -331,10 +331,16 @@ namespace Ethernet.ConfigCOMForm
             }
 
 
-            if ((evento == "DesconectarEthernet" || evento == "CambiarIP" || evento== "btnGrabar") && recievedData.Count == 1)
+            if (( evento == "CambiarIP" || evento== "btnGrabar") && recievedData.Count == 1)
             {
                 this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
              //   recievedData.Clear();
+
+            }
+            if ((evento == "DesconectarEthernet") )
+            {
+                this.BeginInvoke(new SetTextDeleg(drawer), new object[] { new byte[] { recievedData.ElementAt(0) } });
+                //   recievedData.Clear();
 
             }
         }
