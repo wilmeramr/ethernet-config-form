@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ethernet.ConfigCOMForm", "Ethernet.ConfigCOMForm\Ethernet.ConfigCOMForm.csproj", "{D8B4C8AC-01FB-4061-A70D-818413A87936}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MF328", "MF328\MF328.csproj", "{7949F915-4187-4808-A62A-2834F423648A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialSkin", "MaterialSkin\MaterialSkin.csproj", "{8EB7611B-68CD-4B8B-987A-11717E2B250C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D8B4C8AC-01FB-4061-A70D-818413A87936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8B4C8AC-01FB-4061-A70D-818413A87936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8B4C8AC-01FB-4061-A70D-818413A87936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7949F915-4187-4808-A62A-2834F423648A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7949F915-4187-4808-A62A-2834F423648A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7949F915-4187-4808-A62A-2834F423648A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7949F915-4187-4808-A62A-2834F423648A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB7611B-68CD-4B8B-987A-11717E2B250C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB7611B-68CD-4B8B-987A-11717E2B250C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB7611B-68CD-4B8B-987A-11717E2B250C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB7611B-68CD-4B8B-987A-11717E2B250C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
