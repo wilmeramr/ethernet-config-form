@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extension\BinarioExtension.cs" />
+    <Compile Include="Extension\ListGroupBoxExtension.cs" />
+    <Compile Include="Extension\TramaExtension.cs" />
+    <Compile Include="Helpers\CheckBoxBussines.cs" />
+    <Compile Include="Helpers\GrabarTrama.cs" />
+    <Compile Include="Helpers\ValidatorTxt.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

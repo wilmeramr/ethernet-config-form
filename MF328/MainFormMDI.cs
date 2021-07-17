@@ -19,7 +19,7 @@ namespace MF328
         private readonly MaterialSkinManager materialSkinManager;
 
         static SerialPort _port;
-        private string evento;
+        public static string evento;
         private Queue<byte> recievedData = new Queue<byte>();
         delegate void SetTextDeleg(byte[] trama);
         private Form formActual;
@@ -30,14 +30,18 @@ namespace MF328
             progressBar.ForeColor = Color.Green;
             btnDesconectarCOM.Enabled = false;
             cnxDispositivo.Enabled = false;
-            cmbPorts.ComboBox.DataSource = SerialPort.GetPortNames(); 
-            
+            var puertos = SerialPort.GetPortNames().ToList();
+            List<object> objPorts = new List<object>();
+            puertos.ForEach(puerto=> objPorts.Add((object)puerto));
+            cmbPorts.ComboBox.Items.AddRange(objPorts.ToArray());
         }
 
         private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //byte[] data = { 3, 3, 250 };
-            //drawer(data);
+            //  byte[] TramaSample = new byte[] { 1, 3, 240, 20, 240, 20, 240,  20, 2, 240, 20, 240, 20, 240,  20, 2, 240, 20, 240, 20, 240,  20, 3, 0, 150, 1, 70, 0, 160, 100 };
+             byte[] TramaSample = new byte[] {1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 0, 20, 20, 30, 30, 40, 40, 100 };
+
+            drawer(TramaSample);
             if (cmbPorts.SelectedIndex == -1)
             {
                 sendMaterialSnackBar("No selecciono un puerto", "OK");
@@ -49,7 +53,7 @@ namespace MF328
                 _port = new SerialPort(cmbPorts.SelectedItem.ToString());
 
                 // configure serial port
-                _port.BaudRate = 115200;
+                _port.BaudRate = 9500;
                 _port.DataBits = 8;
                 _port.Parity = Parity.None;
                 _port.StopBits = StopBits.One;
@@ -157,13 +161,13 @@ namespace MF328
                 // recievedData.Clear();
             }
 
+            
+            if (evento == "grabar" && recievedData.Count == 1)
+            {
+                this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
+                //   recievedData.Clear();
 
-            //if ((evento == "CambiarIP" || evento == "btnGrabar" || evento == "CambiarFecha") && recievedData.Count == 1)
-            //{
-            //    this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
-            //    //   recievedData.Clear();
-
-            //}
+            }
             //if ((evento == "DesconectarEthernet"))
             //{
             //    this.BeginInvoke(new SetTextDeleg(drawer), new object[] { new byte[] { recievedData.ElementAt(0) } });
@@ -174,11 +178,18 @@ namespace MF328
 
         private void drawer(byte[] trama)
         {
+
+            if (evento == "grabar" && trama[0]==3)
+            {
+                sendMaterialSnackBar("Se grabo correctamente", "OK");
+                return;
+            }
+
             if(formActual == null)
             {
                 formActual = new Modelo1Form(_port,trama);
                 formActual.FormClosed += new FormClosedEventHandler(CerrarForm);
-                formActual.MdiParent=this;
+                formActual.MdiParent= this;
                 formActual.Width = Convert.ToInt32(this.Width * 0.85);
                 formActual.Height = Convert.ToInt32(this.Height * 0.85);
                 formActual.Show();
@@ -194,6 +205,12 @@ namespace MF328
         private void CerrarForm(object sender, FormClosedEventArgs e)
         {
             formActual = null;
+            recievedData.Clear();
+        }
+
+        private void cmbPorts_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

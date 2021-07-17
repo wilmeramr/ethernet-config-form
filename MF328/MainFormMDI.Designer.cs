@@ -29,23 +29,24 @@ namespace MF328
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFormMDI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.conectarAPuertoCOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seleccionPuertoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbPorts = new System.Windows.Forms.ToolStripComboBox();
-            this.btnDesconectarCOM = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.lblProcessBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnConectarCOM = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDesconectarCOM = new System.Windows.Forms.ToolStripMenuItem();
             this.cnxDispositivo = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarDIreccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtDireccion = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnConectarDispositivo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnConectarCOM = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblProcessBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,58 +78,36 @@ namespace MF328
             // seleccionPuertoToolStripMenuItem
             // 
             this.seleccionPuertoToolStripMenuItem.Name = "seleccionPuertoToolStripMenuItem";
-            this.seleccionPuertoToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.seleccionPuertoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.seleccionPuertoToolStripMenuItem.Text = "Seleccion Puerto";
             // 
             // cmbPorts
             // 
             this.cmbPorts.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+          
             this.cmbPorts.Name = "cmbPorts";
             this.cmbPorts.Size = new System.Drawing.Size(121, 28);
-            // 
-            // btnDesconectarCOM
-            // 
-            this.btnDesconectarCOM.Name = "btnDesconectarCOM";
-            this.btnDesconectarCOM.Size = new System.Drawing.Size(202, 26);
-            this.btnDesconectarCOM.Text = "Desconectar";
-            this.btnDesconectarCOM.Click += new System.EventHandler(this.btnDesconectarCOM_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblProcessBar,
-            this.toolStripProgressBar1,
-            this.progressBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1031);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1549, 24);
-            this.statusStrip1.TabIndex = 15;
-            this.statusStrip1.Text = "statusStrip1";
+            this.cmbPorts.Click += new System.EventHandler(this.cmbPorts_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(199, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
-            // toolStripProgressBar1
+            // btnConectarCOM
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(0, 18);
+            this.btnConectarCOM.Image = global::MF328.Properties.Resources.baseline_thumb_up_black_24dp;
+            this.btnConectarCOM.Name = "btnConectarCOM";
+            this.btnConectarCOM.Size = new System.Drawing.Size(224, 26);
+            this.btnConectarCOM.Text = "Conectar";
+            this.btnConectarCOM.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
-            // progressBar
+            // btnDesconectarCOM
             // 
-            this.progressBar.AutoToolTip = true;
-            this.progressBar.Name = "progressBar";
-            this.progressBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.progressBar.Size = new System.Drawing.Size(900, 16);
-            this.progressBar.Step = 100;
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // lblProcessBar
-            // 
-            this.lblProcessBar.Name = "lblProcessBar";
-            this.lblProcessBar.Size = new System.Drawing.Size(0, 18);
+            this.btnDesconectarCOM.Name = "btnDesconectarCOM";
+            this.btnDesconectarCOM.Size = new System.Drawing.Size(224, 26);
+            this.btnDesconectarCOM.Text = "Desconectar";
+            this.btnDesconectarCOM.Click += new System.EventHandler(this.btnDesconectarCOM_Click);
             // 
             // cnxDispositivo
             // 
@@ -173,21 +152,49 @@ namespace MF328
             this.toolStripMenuItem2.Size = new System.Drawing.Size(212, 26);
             this.toolStripMenuItem2.Text = "Desconectar";
             // 
-            // btnConectarCOM
+            // statusStrip1
             // 
-            this.btnConectarCOM.Image = global::MF328.Properties.Resources.baseline_thumb_up_black_24dp;
-            this.btnConectarCOM.Name = "btnConectarCOM";
-            this.btnConectarCOM.Size = new System.Drawing.Size(202, 26);
-            this.btnConectarCOM.Text = "Conectar";
-            this.btnConectarCOM.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblProcessBar,
+            this.toolStripProgressBar1,
+            this.progressBar});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1031);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1549, 24);
+            this.statusStrip1.TabIndex = 15;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblProcessBar
+            // 
+            this.lblProcessBar.Name = "lblProcessBar";
+            this.lblProcessBar.Size = new System.Drawing.Size(0, 18);
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(0, 18);
+            // 
+            // progressBar
+            // 
+            this.progressBar.AutoToolTip = true;
+            this.progressBar.Name = "progressBar";
+            this.progressBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.progressBar.Size = new System.Drawing.Size(900, 16);
+            this.progressBar.Step = 100;
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // MainFormMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1549, 1055);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
