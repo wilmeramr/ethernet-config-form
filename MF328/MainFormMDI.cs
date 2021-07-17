@@ -20,7 +20,7 @@ namespace MF328
 
         static SerialPort _port;
         public static string evento;
-        private Queue<byte> recievedData = new Queue<byte>();
+        public static Queue<byte> recievedData = new Queue<byte>();
         delegate void SetTextDeleg(byte[] trama);
         private Form formActual;
 
@@ -53,7 +53,7 @@ namespace MF328
                 _port = new SerialPort(cmbPorts.SelectedItem.ToString());
 
                 // configure serial port
-                _port.BaudRate = 9500;
+                _port.BaudRate = 9600;
                 _port.DataBits = 8;
                 _port.Parity = Parity.None;
                 _port.StopBits = StopBits.One;
@@ -117,6 +117,7 @@ namespace MF328
             try
             {
                 evento = "ConectarEthernet";
+                recievedData.Clear();
                 byte[] data = {(byte) Convert.ToInt32(txtDireccion.Text), 3, 250 };
                 _port.Write(data, 0, data.Length);
 
@@ -175,6 +176,12 @@ namespace MF328
                 //   recievedData.Clear();
 
             }
+            if (evento == "cambiar" && recievedData.Count == 1)
+            {
+                this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
+                //   recievedData.Clear();
+
+            }
             //if ((evento == "DesconectarEthernet"))
             //{
             //    this.BeginInvoke(new SetTextDeleg(drawer), new object[] { new byte[] { recievedData.ElementAt(0) } });
@@ -195,6 +202,11 @@ namespace MF328
             if (evento == "desconectar" && trama[0] == 3)
             {
                 sendMaterialSnackBar("Se desconecto correctamente", "OK");
+                return;
+            }
+            if (evento == "cambiar" && trama[0] == 1)
+            {
+                sendMaterialSnackBar("Se cambio correctamente", "OK");
                 return;
             }
             if (formActual == null)
@@ -229,6 +241,7 @@ namespace MF328
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            recievedData.Clear();
             evento = "desconectar";
             byte[] data = { 250,2 };
             _port.Write(data, 0, data.Length);

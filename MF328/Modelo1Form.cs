@@ -194,7 +194,9 @@ namespace MF328
         {
 
             MainFormMDI.evento = "grabar";
-          var tramaEntradas= GrabarTrama.ObtenerTramaEntradas(EntradasGroupBox);
+            MainFormMDI.recievedData.Clear();
+
+            var tramaEntradas = GrabarTrama.ObtenerTramaEntradas(EntradasGroupBox);
           var tramaSalidas = GrabarTrama.ObtenerTramaSalidas(SalidasGroupBox);
           var tramaResult = tramaEntradas.Concat(tramaSalidas);
 
@@ -202,6 +204,16 @@ namespace MF328
            var enviar= array.Concat(tramaResult).ToArray();
             _port.Write(enviar, 0, enviar.Length);
 
+        }
+
+        private void btnGrabarDireccion_Click(object sender, EventArgs e)
+        {
+
+            MainFormMDI.evento = "cambiar";
+            MainFormMDI.recievedData.Clear();
+
+            var array = new byte[] { 250, 1, Convert.ToByte( TxtCambiar.Text) };
+            _port.Write(array, 0, array.Length);
         }
     }
 }
