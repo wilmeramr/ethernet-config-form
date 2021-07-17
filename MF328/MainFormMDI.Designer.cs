@@ -78,13 +78,12 @@ namespace MF328
             // seleccionPuertoToolStripMenuItem
             // 
             this.seleccionPuertoToolStripMenuItem.Name = "seleccionPuertoToolStripMenuItem";
-            this.seleccionPuertoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.seleccionPuertoToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.seleccionPuertoToolStripMenuItem.Text = "Seleccion Puerto";
             // 
             // cmbPorts
             // 
             this.cmbPorts.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-          
             this.cmbPorts.Name = "cmbPorts";
             this.cmbPorts.Size = new System.Drawing.Size(121, 28);
             this.cmbPorts.Click += new System.EventHandler(this.cmbPorts_Click);
@@ -92,20 +91,20 @@ namespace MF328
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(199, 6);
             // 
             // btnConectarCOM
             // 
             this.btnConectarCOM.Image = global::MF328.Properties.Resources.baseline_thumb_up_black_24dp;
             this.btnConectarCOM.Name = "btnConectarCOM";
-            this.btnConectarCOM.Size = new System.Drawing.Size(224, 26);
+            this.btnConectarCOM.Size = new System.Drawing.Size(202, 26);
             this.btnConectarCOM.Text = "Conectar";
             this.btnConectarCOM.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
             // btnDesconectarCOM
             // 
             this.btnDesconectarCOM.Name = "btnDesconectarCOM";
-            this.btnDesconectarCOM.Size = new System.Drawing.Size(224, 26);
+            this.btnDesconectarCOM.Size = new System.Drawing.Size(202, 26);
             this.btnDesconectarCOM.Text = "Desconectar";
             this.btnDesconectarCOM.Click += new System.EventHandler(this.btnDesconectarCOM_Click);
             // 
@@ -124,7 +123,7 @@ namespace MF328
             // ingresarDIreccionToolStripMenuItem
             // 
             this.ingresarDIreccionToolStripMenuItem.Name = "ingresarDIreccionToolStripMenuItem";
-            this.ingresarDIreccionToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.ingresarDIreccionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ingresarDIreccionToolStripMenuItem.Text = "Ingresar Direccion";
             // 
             // txtDireccion
@@ -137,20 +136,21 @@ namespace MF328
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(209, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
             // 
             // btnConectarDispositivo
             // 
             this.btnConectarDispositivo.Name = "btnConectarDispositivo";
-            this.btnConectarDispositivo.Size = new System.Drawing.Size(212, 26);
+            this.btnConectarDispositivo.Size = new System.Drawing.Size(224, 26);
             this.btnConectarDispositivo.Text = "Conectar";
             this.btnConectarDispositivo.Click += new System.EventHandler(this.btnConectarDispositivo_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(212, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem2.Text = "Desconectar";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // statusStrip1
             // 
@@ -188,8 +188,7 @@ namespace MF328
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1549, 1055);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);

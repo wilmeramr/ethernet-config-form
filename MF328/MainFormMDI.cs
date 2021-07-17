@@ -39,9 +39,9 @@ namespace MF328
         private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //  byte[] TramaSample = new byte[] { 1, 3, 240, 20, 240, 20, 240,  20, 2, 240, 20, 240, 20, 240,  20, 2, 240, 20, 240, 20, 240,  20, 3, 0, 150, 1, 70, 0, 160, 100 };
-             byte[] TramaSample = new byte[] {1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 0, 20, 20, 30, 30, 40, 40, 100 };
+           //  byte[] TramaSample = new byte[] {1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 0, 20, 20, 30, 30, 40, 40, 100 };
 
-            drawer(TramaSample);
+            //drawer(TramaSample);
             if (cmbPorts.SelectedIndex == -1)
             {
                 sendMaterialSnackBar("No selecciono un puerto", "OK");
@@ -168,6 +168,13 @@ namespace MF328
                 //   recievedData.Clear();
 
             }
+
+            if (evento == "desconectar" && recievedData.Count == 1)
+            {
+                this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
+                //   recievedData.Clear();
+
+            }
             //if ((evento == "DesconectarEthernet"))
             //{
             //    this.BeginInvoke(new SetTextDeleg(drawer), new object[] { new byte[] { recievedData.ElementAt(0) } });
@@ -179,13 +186,18 @@ namespace MF328
         private void drawer(byte[] trama)
         {
 
-            if (evento == "grabar" && trama[0]==3)
+            if (evento == "grabar" && trama[0]==4)
             {
                 sendMaterialSnackBar("Se grabo correctamente", "OK");
                 return;
             }
 
-            if(formActual == null)
+            if (evento == "desconectar" && trama[0] == 3)
+            {
+                sendMaterialSnackBar("Se desconecto correctamente", "OK");
+                return;
+            }
+            if (formActual == null)
             {
                 formActual = new Modelo1Form(_port,trama);
                 formActual.FormClosed += new FormClosedEventHandler(CerrarForm);
@@ -206,11 +218,20 @@ namespace MF328
         {
             formActual = null;
             recievedData.Clear();
+
+
         }
 
         private void cmbPorts_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            evento = "desconectar";
+            byte[] data = { 250,2 };
+            _port.Write(data, 0, data.Length);
         }
     }
 }
