@@ -169,7 +169,7 @@ namespace Ethernet.ConfigCOMForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
 
             var serial = SerialPort.GetPortNames();
             //if (serial.Length==0)
@@ -270,23 +270,23 @@ namespace Ethernet.ConfigCOMForm
                 {
                     _port = new SerialPort(cmbPorts.SelectedItem.ToString());
 
-                    // configure serial port
-                    _port.BaudRate = 115200;
-                    _port.DataBits = 8;
-                    _port.Parity = Parity.None;
-                    _port.StopBits = StopBits.One;
-                    _port.ReadTimeout = 5000;
-                    _port.WriteTimeout = 500;
+            // configure serial port
+            _port.BaudRate = 115200;
+            _port.DataBits = 8;
+            _port.Parity = Parity.None;
+            _port.StopBits = StopBits.One;
+            _port.ReadTimeout = 5000;
+            _port.WriteTimeout = 5000;
                     _port.DataReceived += new
                      SerialDataReceivedEventHandler(port_DataReceived);
                     _port.Open();
 
-                    btnConectar.Enabled = false;
-                    btnConectar.Style = MetroColorStyle.Green;
-                    btnDesconectar.Enabled = true;
-                    lblCOMEvent.BackColor = Color.Green;
-                    btnConectarEthernet.Enabled = true;
-                }
+            btnConectar.Enabled = false;
+            btnConectar.Style = MetroColorStyle.Green;
+            btnDesconectar.Enabled = true;
+            lblCOMEvent.BackColor = Color.Green;
+            btnConectarEthernet.Enabled = true;
+        }
                 catch (Exception)
                 {
                     lblCOMEvent.BackColor = Color.Red;
@@ -296,9 +296,9 @@ namespace Ethernet.ConfigCOMForm
 
 
 
-            }
+}
 
-         //   drawer(tramaDemo);
+           // drawer(tramaDemo);
 
         }
 
@@ -324,17 +324,23 @@ namespace Ethernet.ConfigCOMForm
         private void processData()
         {
 
-            if (evento == "ConectarEthernet" && recievedData.Count==67)
+            if (evento == "ConectarEthernet" && recievedData.Count==71)
             {
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
                // recievedData.Clear();
             }
 
 
-            if ((evento == "DesconectarEthernet" || evento == "CambiarIP" || evento== "btnGrabar") && recievedData.Count == 1)
+            if (( evento == "CambiarIP" || evento== "btnGrabar" || evento == "CambiarFecha") && recievedData.Count == 1)
             {
                 this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
              //   recievedData.Clear();
+
+            }
+            if ((evento == "DesconectarEthernet") )
+            {
+                this.BeginInvoke(new SetTextDeleg(drawer), new object[] { new byte[] { recievedData.ElementAt(0) } });
+                //   recievedData.Clear();
 
             }
         }
@@ -368,12 +374,13 @@ namespace Ethernet.ConfigCOMForm
             if (trama[0] == 1)
             {
                 CrearTrama(trama);
-                dateTime = new DateTime(2021, 10, 10, Convert.ToInt32(horaActual[0]), Convert.ToInt32(horaActual[1]), 00);
-               dias.TryGetValue(Convert.ToInt32(horaActual[2]), out diaActual);
+              // dias.TryGetValue(Convert.ToInt32(horaActual[2]), out diaActual);
                 timer1.Start();
                 picLoading.Enabled = false;
                 picLoading.Visible = false;
 
+                btnDate.Enabled = true;
+                dateTimePicker1.Enabled = true;
 
                 btnCambiarIP.Enabled = true;
                 btnDesconectarEthernet.Enabled = true;
@@ -422,6 +429,9 @@ namespace Ethernet.ConfigCOMForm
                 txtBye2.Enabled = false;
                 txtBye3.Enabled = false;
                 txtBye4.Enabled = false;
+                btnDate.Enabled = false;
+                dateTimePicker1.Enabled = false;
+
 
                 MessageBox.Show(" Dispositivo desconectado");
 
@@ -433,6 +443,13 @@ namespace Ethernet.ConfigCOMForm
                 MessageBox.Show("Se Grabo correctamente.");
 
             }
+            else if (trama[0] == 5)
+            {
+
+
+                MessageBox.Show("Se fecha y hora actualizada.");
+
+            }
             recievedData.Clear();
 
    
@@ -441,6 +458,9 @@ namespace Ethernet.ConfigCOMForm
 
         private void CrearTrama(byte[] trama)
         {
+
+         
+
             //  var direccionIP = ;
             direccionIP = trama.SubArray(1, 4);
             // chckTiempo = trama.SubArray(5, 8);
@@ -458,7 +478,21 @@ namespace Ethernet.ConfigCOMForm
             chckDesactivarAEnviar = Convert.ToString(Convert.ToInt32(trama[39]), 2).PadLeft(8, '0').ToCharArray().Select(s => { return Convert.ToByte(s.ToString(), 8); }).ToArray();
             horaMinDiaDesactivarAEnviar = trama.SubArray(40, 24);
 
-            horaActual = trama.SubArray(64, 3);
+            var posicion1 = Convert.ToString(Convert.ToInt32(trama[64]), 2).PadLeft(8, '0');
+            var posicion2 = Convert.ToString(Convert.ToInt32(trama[65]), 2).PadLeft(8, '0');
+            
+            var año = Convert.ToInt32(posicion1 + posicion2, 2);
+            var mes = trama[66];
+            var dia = trama[67];
+            var hora = trama[68];
+            var min = trama[69];
+            var seg = trama[70];
+
+
+
+            dateTime = new DateTime(año, mes, dia, hora, min, seg);
+
+           // horaActual = trama.SubArray(68, 3);
 
 
         }
@@ -1616,7 +1650,29 @@ namespace Ethernet.ConfigCOMForm
         {
             
             dateTime=dateTime.AddSeconds(1);
-            lblHora.Text = "Hora Dispositivo: "+ dateTime.ToString("HH:mm:ss")+ " " + diaActual;
+            dateTimePicker1.Value = dateTime;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTime = dateTimePicker1.Value;
+        }
+
+        private void btnDate_Click(object sender, EventArgs e)
+        {
+            evento = "CambiarFecha";
+
+            var datMOdificar = dateTimePicker1.Value;
+
+            var AñoBinary = Convert.ToString(datMOdificar.Year, 2).PadLeft(16,'0');
+
+            var añopart1 = (byte)Convert.ToInt32(AñoBinary.Substring(0, 8), 2);
+            var añopart2 = (byte)Convert.ToInt32(AñoBinary.Substring(8, 8), 2);
+
+
+            byte[] data = { 3, 3, 5,añopart1,añopart2,(byte)datMOdificar.Month,(byte)datMOdificar.Day,(byte)datMOdificar.Hour, (byte)datMOdificar.Minute, (byte)datMOdificar.Second };
+         //   data = data.Concat(TramaEnvio).ToArray();
+            _port.Write(data, 0, data.Length);
         }
     }
 
