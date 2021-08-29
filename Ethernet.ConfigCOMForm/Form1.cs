@@ -54,6 +54,10 @@ namespace Ethernet.ConfigCOMForm
       byte[] horaActual = new byte[3];
 
         byte[] direccionIP = new byte[4];
+        byte[] GatewayIP = new byte[4];
+        byte[] MAC = new byte[6];
+
+
 
         List<string> checkactivos = new List<string>();
 
@@ -121,11 +125,27 @@ namespace Ethernet.ConfigCOMForm
              7,
    16,
              55,
-             7,
-             1,
-             50,
-             0
-
+             7
+            
+            ,20
+            ,21
+            ,3
+            ,4
+            ,5
+            ,6
+            ,7
+            ,192
+            ,168
+            ,0
+            ,1
+            ,124
+            ,125
+            ,126
+            ,127
+            ,128
+            ,129
+            
+         
 
         };
 
@@ -298,7 +318,7 @@ namespace Ethernet.ConfigCOMForm
 
 }
 
-           // drawer(tramaDemo);
+           drawer(tramaDemo);
 
         }
 
@@ -324,7 +344,7 @@ namespace Ethernet.ConfigCOMForm
         private void processData()
         {
 
-            if (evento == "ConectarEthernet" && recievedData.Count==71)
+            if (evento == "ConectarEthernet" && recievedData.Count==81)
             {
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
                // recievedData.Clear();
@@ -403,7 +423,8 @@ namespace Ethernet.ConfigCOMForm
                 cargaTextHoraActivarSalidas(horaMinDia);
                 cargaCheckDesactivarSalidas(chckDesactivar);
                 cargaTextHoraDesactivarSalidas(horaMinDiaDesactivar);
-
+                cargaGateWayIP(GatewayIP);
+                cargaMACIP(MAC);
 
 
                 //txtTiempoSalida1.Text = trama[13].ToString();
@@ -480,13 +501,16 @@ namespace Ethernet.ConfigCOMForm
 
             var posicion1 = Convert.ToString(Convert.ToInt32(trama[64]), 2).PadLeft(8, '0');
             var posicion2 = Convert.ToString(Convert.ToInt32(trama[65]), 2).PadLeft(8, '0');
-            
+
+         
             var año = Convert.ToInt32(posicion1 + posicion2, 2);
             var mes = trama[66];
             var dia = trama[67];
             var hora = trama[68];
             var min = trama[69];
             var seg = trama[70];
+            GatewayIP = trama.SubArray(71, 4);
+            MAC = trama.SubArray(75, 6);
 
 
 
@@ -633,6 +657,36 @@ namespace Ethernet.ConfigCOMForm
             txtBye3.Enabled = true;
             txtBye4.Enabled = true;
         }
+        private void cargaGateWayIP(byte[] gateWay)
+        {
+            txtGateway1.Text = gateWay[0].ToString();
+            txtGateway2.Text = gateWay[1].ToString();
+            txtGateway3.Text = gateWay[2].ToString();
+            txtGateway4.Text = gateWay[3].ToString();
+
+            txtGateway1.Enabled = true;
+            txtGateway2.Enabled = true;
+            txtGateway3.Enabled = true;
+            txtGateway4.Enabled = true;
+        }
+        private void cargaMACIP(byte[] mac)
+        {
+            txtMac1.Text = mac[0].ToHexa();
+            txtMac2.Text = mac[1].ToHexa();
+            txtMac3.Text = mac[2].ToHexa();
+            txtMac4.Text = mac[3].ToHexa();
+            txtMac5.Text = mac[4].ToHexa();
+            txtMac6.Text = mac[5].ToHexa();
+
+
+            txtMac1.Enabled = true;
+            txtMac2.Enabled = true;
+            txtMac3.Enabled = true;
+            txtMac4.Enabled = true;
+            txtMac5.Enabled = true;
+            txtMac6.Enabled = true;
+
+        }
 
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
@@ -683,7 +737,16 @@ namespace Ethernet.ConfigCOMForm
                 {
                     //GUSTAVO
 
-                    byte[] data = { 3,3,2, Convert.ToByte(txtBye1.Text), Convert.ToByte(txtBye2.Text), Convert.ToByte(txtBye3.Text), Convert.ToByte(txtBye4.Text) };
+                    byte[] direccionIP = { Convert.ToByte(txtBye1.Text), Convert.ToByte(txtBye2.Text), Convert.ToByte(txtBye3.Text), Convert.ToByte(txtBye4.Text) };
+                    byte[] gatewayIP = { Convert.ToByte(txtGateway1.Text), Convert.ToByte(txtGateway2.Text), Convert.ToByte(txtGateway3.Text), Convert.ToByte(txtGateway4.Text) };
+                    byte[] mac = { Convert.ToByte(txtMac1.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac2.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac3.Text.ToDecimalFromHexa())
+                            , Convert.ToByte(txtMac4.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac5.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac6.Text.ToDecimalFromHexa()) };
+
+                    byte[] data = { 3,3,2};
+                    data = data.Concat(direccionIP)
+                        .Concat(gatewayIP)
+                        .Concat(mac).ToArray();
+
                     _port.Write(data, 0, data.Length);
 
 
