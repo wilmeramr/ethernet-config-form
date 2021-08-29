@@ -14,5 +14,18 @@ namespace Ethernet.ConfigCOMForm
             Array.Copy(data, index, result, 0, length);
             return result;
         }
+
+        public static string ToHexa(this byte data)
+        {
+           
+            return string.Format("{0:x}", Convert.ToInt32(data)).ToUpper(); 
+        }
+
+        public static string ToDecimalFromHexa(this string hexValue)
+        {
+
+            return Convert.ToInt64(hexValue, 16).ToString(); 
+        }
+
     }
 }
