@@ -163,6 +163,18 @@ namespace Ethernet.ConfigCOMForm
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.picLoading = new System.Windows.Forms.PictureBox();
             this.btnDate = new MetroFramework.Controls.MetroButton();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtDns4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtDns3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtDns2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtDns1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMascara4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMascara3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMascara2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMascara1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.txtPort = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -241,7 +253,7 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(593, 166);
+            this.groupBox2.Size = new System.Drawing.Size(593, 244);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Configuracion Ethernet";
@@ -256,6 +268,18 @@ namespace Ethernet.ConfigCOMForm
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.metroLabel6);
+            this.groupBox3.Controls.Add(this.txtPort);
+            this.groupBox3.Controls.Add(this.metroLabel4);
+            this.groupBox3.Controls.Add(this.metroLabel5);
+            this.groupBox3.Controls.Add(this.txtDns4);
+            this.groupBox3.Controls.Add(this.txtDns3);
+            this.groupBox3.Controls.Add(this.txtDns2);
+            this.groupBox3.Controls.Add(this.txtDns1);
+            this.groupBox3.Controls.Add(this.txtMascara4);
+            this.groupBox3.Controls.Add(this.txtMascara3);
+            this.groupBox3.Controls.Add(this.txtMascara2);
+            this.groupBox3.Controls.Add(this.txtMascara1);
             this.groupBox3.Controls.Add(this.metroLabel3);
             this.groupBox3.Controls.Add(this.metroLabel2);
             this.groupBox3.Controls.Add(this.metroLabel1);
@@ -274,11 +298,11 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox3.Controls.Add(this.txtBye2);
             this.groupBox3.Controls.Add(this.txtBye1);
             this.groupBox3.Controls.Add(this.btnCambiarIP);
-            this.groupBox3.Location = new System.Drawing.Point(40, 54);
+            this.groupBox3.Location = new System.Drawing.Point(40, 48);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(528, 108);
+            this.groupBox3.Size = new System.Drawing.Size(528, 190);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             // 
@@ -296,9 +320,9 @@ namespace Ethernet.ConfigCOMForm
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(41, 47);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(69, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(98, 20);
             this.metroLabel2.TabIndex = 25;
-            this.metroLabel2.Text = "Gateway :";
+            this.metroLabel2.Text = "Puerta Enlace:";
             // 
             // metroLabel1
             // 
@@ -441,7 +465,7 @@ namespace Ethernet.ConfigCOMForm
             // btnCambiarIP
             // 
             this.btnCambiarIP.Enabled = false;
-            this.btnCambiarIP.Location = new System.Drawing.Point(435, 15);
+            this.btnCambiarIP.Location = new System.Drawing.Point(435, 141);
             this.btnCambiarIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCambiarIP.Name = "btnCambiarIP";
             this.btnCambiarIP.Size = new System.Drawing.Size(87, 34);
@@ -484,7 +508,7 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Location = new System.Drawing.Point(36, 240);
+            this.groupBox4.Location = new System.Drawing.Point(36, 269);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -728,6 +752,7 @@ namespace Ethernet.ConfigCOMForm
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.btnGrabarSalidas);
             this.groupBox6.Controls.Add(this.metroButton3);
             this.groupBox6.Controls.Add(this.chckDesactivadasSalida8);
             this.groupBox6.Controls.Add(this.chckDesactivadasSalida7);
@@ -1682,7 +1707,7 @@ namespace Ethernet.ConfigCOMForm
             // btnGrabarSalidas
             // 
             this.btnGrabarSalidas.Enabled = false;
-            this.btnGrabarSalidas.Location = new System.Drawing.Point(1191, 200);
+            this.btnGrabarSalidas.Location = new System.Drawing.Point(338, -25);
             this.btnGrabarSalidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGrabarSalidas.Name = "btnGrabarSalidas";
             this.btnGrabarSalidas.Size = new System.Drawing.Size(91, 60);
@@ -1729,12 +1754,120 @@ namespace Ethernet.ConfigCOMForm
             this.btnDate.Text = "Cambiar";
             this.btnDate.Click += new System.EventHandler(this.btnDate_Click);
             // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(42, 144);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(40, 20);
+            this.metroLabel4.TabIndex = 36;
+            this.metroLabel4.Text = "DNS:";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel5.Location = new System.Drawing.Point(43, 110);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(67, 20);
+            this.metroLabel5.TabIndex = 35;
+            this.metroLabel5.Text = "Mascara :";
+            // 
+            // txtDns4
+            // 
+            this.txtDns4.Enabled = false;
+            this.txtDns4.Location = new System.Drawing.Point(301, 141);
+            this.txtDns4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDns4.Name = "txtDns4";
+            this.txtDns4.Size = new System.Drawing.Size(37, 27);
+            this.txtDns4.TabIndex = 34;
+            // 
+            // txtDns3
+            // 
+            this.txtDns3.Enabled = false;
+            this.txtDns3.Location = new System.Drawing.Point(257, 142);
+            this.txtDns3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDns3.Name = "txtDns3";
+            this.txtDns3.Size = new System.Drawing.Size(37, 27);
+            this.txtDns3.TabIndex = 33;
+            // 
+            // txtDns2
+            // 
+            this.txtDns2.Enabled = false;
+            this.txtDns2.Location = new System.Drawing.Point(213, 142);
+            this.txtDns2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDns2.Name = "txtDns2";
+            this.txtDns2.Size = new System.Drawing.Size(37, 27);
+            this.txtDns2.TabIndex = 32;
+            // 
+            // txtDns1
+            // 
+            this.txtDns1.Enabled = false;
+            this.txtDns1.Location = new System.Drawing.Point(169, 142);
+            this.txtDns1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDns1.Name = "txtDns1";
+            this.txtDns1.Size = new System.Drawing.Size(37, 27);
+            this.txtDns1.TabIndex = 31;
+            // 
+            // txtMascara4
+            // 
+            this.txtMascara4.Enabled = false;
+            this.txtMascara4.Location = new System.Drawing.Point(301, 109);
+            this.txtMascara4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMascara4.Name = "txtMascara4";
+            this.txtMascara4.Size = new System.Drawing.Size(37, 27);
+            this.txtMascara4.TabIndex = 30;
+            // 
+            // txtMascara3
+            // 
+            this.txtMascara3.Enabled = false;
+            this.txtMascara3.Location = new System.Drawing.Point(257, 110);
+            this.txtMascara3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMascara3.Name = "txtMascara3";
+            this.txtMascara3.Size = new System.Drawing.Size(37, 27);
+            this.txtMascara3.TabIndex = 29;
+            // 
+            // txtMascara2
+            // 
+            this.txtMascara2.Enabled = false;
+            this.txtMascara2.Location = new System.Drawing.Point(213, 110);
+            this.txtMascara2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMascara2.Name = "txtMascara2";
+            this.txtMascara2.Size = new System.Drawing.Size(37, 27);
+            this.txtMascara2.TabIndex = 28;
+            // 
+            // txtMascara1
+            // 
+            this.txtMascara1.Enabled = false;
+            this.txtMascara1.Location = new System.Drawing.Point(169, 110);
+            this.txtMascara1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMascara1.Name = "txtMascara1";
+            this.txtMascara1.Size = new System.Drawing.Size(37, 27);
+            this.txtMascara1.TabIndex = 27;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(356, 15);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(54, 20);
+            this.metroLabel6.TabIndex = 39;
+            this.metroLabel6.Text = "Puerto:";
+            // 
+            // txtPort
+            // 
+            this.txtPort.Enabled = false;
+            this.txtPort.Location = new System.Drawing.Point(429, 13);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(63, 27);
+            this.txtPort.TabIndex = 37;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1387, 671);
-            this.Controls.Add(this.btnGrabarSalidas);
             this.Controls.Add(this.btnDate);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.picLoading);
@@ -1900,6 +2033,18 @@ namespace Ethernet.ConfigCOMForm
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroTextBox txtPort;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTextBox txtDns4;
+        private MetroFramework.Controls.MetroTextBox txtDns3;
+        private MetroFramework.Controls.MetroTextBox txtDns2;
+        private MetroFramework.Controls.MetroTextBox txtDns1;
+        private MetroFramework.Controls.MetroTextBox txtMascara1;
+        private MetroFramework.Controls.MetroTextBox txtMascara4;
+        private MetroFramework.Controls.MetroTextBox txtMascara3;
+        private MetroFramework.Controls.MetroTextBox txtMascara2;
     }
 }
 

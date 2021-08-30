@@ -10,6 +10,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,8 +55,13 @@ namespace Ethernet.ConfigCOMForm
       byte[] horaActual = new byte[3];
 
         byte[] direccionIP = new byte[4];
-        byte[] GatewayIP = new byte[4];
-        byte[] MAC = new byte[6];
+        byte[] gatewayIP = new byte[4];
+        byte[] mac = new byte[6];
+        byte[] mascara = new byte[4];
+        byte[] dns = new byte[4];
+        byte[] puerto = new byte[2];
+
+
 
 
 
@@ -144,6 +150,16 @@ namespace Ethernet.ConfigCOMForm
             ,127
             ,128
             ,129
+            ,100
+            ,100
+            ,100
+            ,100
+            ,120
+            ,120
+            ,120
+            ,120
+            ,60
+            ,30
             
          
 
@@ -318,7 +334,9 @@ namespace Ethernet.ConfigCOMForm
 
 }
 
-           drawer(tramaDemo);
+          //
+          //
+       // drawer(tramaDemo);
 
         }
 
@@ -344,7 +362,7 @@ namespace Ethernet.ConfigCOMForm
         private void processData()
         {
 
-            if (evento == "ConectarEthernet" && recievedData.Count==81)
+            if (evento == "ConectarEthernet" && recievedData.Count==91)
             {
                   this.BeginInvoke(new SetTextDeleg(drawer), new object[] { recievedData.ToArray() });
                // recievedData.Clear();
@@ -367,29 +385,7 @@ namespace Ethernet.ConfigCOMForm
 
         private void drawer(byte[] trama)
         {
-            //recievedData.Clear();
-
-           // var d = Convert.ToByte("0",8);
-           // List<int> vs = new List<int>();
-           // byte[] vs1 = new byte[8];
-           //var binary = Convert.ToString(Convert.ToInt32(trama[5]), 2).ToCharArray().Select(s=> { return Convert.ToByte(s.ToString(), 8); });
-
-         
-            //for (int i = 0; i < binary.Length; i++)
-            //{
-
-            //    if (binary.ToArray()[i]=='1')
-            //    {
-            //        vs1[i] = 1;
-            //    }
-            //    else
-            //    {
-            //        vs1[i] = 0;
-
-            //    }
-
-
-            //}
+           
 
             if (trama[0] == 1)
             {
@@ -423,8 +419,13 @@ namespace Ethernet.ConfigCOMForm
                 cargaTextHoraActivarSalidas(horaMinDia);
                 cargaCheckDesactivarSalidas(chckDesactivar);
                 cargaTextHoraDesactivarSalidas(horaMinDiaDesactivar);
-                cargaGateWayIP(GatewayIP);
-                cargaMACIP(MAC);
+                cargaGateWayIP(gatewayIP);
+                cargaMACIP(mac);
+                cargaMascara(mascara);
+                cargaDns(dns);
+               // carga(mac);
+
+
 
 
                 //txtTiempoSalida1.Text = trama[13].ToString();
@@ -504,16 +505,26 @@ namespace Ethernet.ConfigCOMForm
 
          
             var año = Convert.ToInt32(posicion1 + posicion2, 2);
+
             var mes = trama[66];
             var dia = trama[67];
             var hora = trama[68];
             var min = trama[69];
             var seg = trama[70];
-            GatewayIP = trama.SubArray(71, 4);
-            MAC = trama.SubArray(75, 6);
+            gatewayIP = trama.SubArray(71, 4);
+            mac = trama.SubArray(75, 6);
+            mascara = trama.SubArray(81, 4);
+            dns = trama.SubArray(85, 4);
+            puerto = trama.SubArray(89, 2);
+
+            var puerto1 = Convert.ToString(Convert.ToInt32(trama[89]), 2).PadLeft(8, '0');
+            var puerto2 = Convert.ToString(Convert.ToInt32(trama[90]), 2).PadLeft(8, '0');
 
 
+            var port = Convert.ToInt32(puerto1 + puerto2, 2);
 
+            txtPort.Text = port.ToString();
+            txtPort.Enabled = true;
             dateTime = new DateTime(año, mes, dia, hora, min, seg);
 
            // horaActual = trama.SubArray(68, 3);
@@ -687,7 +698,37 @@ namespace Ethernet.ConfigCOMForm
             txtMac6.Enabled = true;
 
         }
+        private void cargaMascara(byte[] mac)
+        {
+            txtMascara1.Text = mac[0].ToString();
+            txtMascara2.Text = mac[1].ToString();
+            txtMascara3.Text = mac[2].ToString();
+            txtMascara4.Text = mac[3].ToString();
 
+
+            txtMascara1.Enabled = true;
+            txtMascara2.Enabled = true;
+            txtMascara3.Enabled = true;
+            txtMascara4.Enabled = true;
+          
+
+        }
+
+        private void cargaDns(byte[] mac)
+        {
+            txtDns1.Text = mac[0].ToString();
+            txtDns2.Text = mac[1].ToString();
+            txtDns3.Text = mac[2].ToString();
+            txtDns4.Text = mac[3].ToString();
+
+
+            txtDns1.Enabled = true;
+            txtDns2.Enabled = true;
+            txtDns3.Enabled = true;
+            txtDns4.Enabled = true;
+
+
+        }
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
             _port.Close();
@@ -730,10 +771,48 @@ namespace Ethernet.ConfigCOMForm
         private void btnCambiarIP_Click(object sender, EventArgs e)
         {
             evento = "CambiarIP";
+            const string PATTERN = @"([^A-Fa-f0-9]|\s+?)+";
+            var regex = new Regex(PATTERN);
+           
 
-            if (IsAddressValid(txtBye1.Text+"."+ txtBye2.Text + "." + txtBye3.Text + "." + txtBye4.Text))
+
+            if ( !IsAddressValid(txtBye1.Text + "." + txtBye2.Text + "." + txtBye3.Text + "." + txtBye4.Text))
             {
-                if (_port != null)
+                MessageBox.Show("El formato de la  direccion IP es incorrecto los rangos son [0,255]");
+                return;
+            }
+
+            if (Convert.ToInt32(txtPort.Text)<=0)
+            {
+                MessageBox.Show("El valor del puerto incorrecto");
+                return;
+            }
+            if (!IsAddressValid(txtGateway1.Text + "." + txtGateway2.Text + "." + txtGateway3.Text + "." + txtGateway4.Text))
+            {
+                MessageBox.Show("El formato de la  puerta de enlace es incorrecto los rangos son [0,255]");
+                return;
+            }
+
+            if (!IsAddressValid(txtMascara1.Text + "." + txtMascara2.Text + "." + txtMascara3.Text + "." + txtMascara4.Text))
+            {
+                MessageBox.Show("El formato de la  mascara es incorrecto los rangos son [0,255]");
+                return;
+            }
+
+            if (regex.IsMatch(txtMac1.Text))
+            {
+                MessageBox.Show("El formato de un valor de la mac es incorrecto los rangos son [0-9][A-F]");
+                return;
+            }
+
+            if (!IsAddressValid(txtDns1.Text + "." + txtDns2.Text + "." + txtDns3.Text + "." + txtDns4.Text))
+            {
+                MessageBox.Show("El formato del  dns es incorrecto los rangos son [0,255]");
+                return;
+            }
+
+
+            if (_port != null)
                 {
                     //GUSTAVO
 
@@ -741,11 +820,24 @@ namespace Ethernet.ConfigCOMForm
                     byte[] gatewayIP = { Convert.ToByte(txtGateway1.Text), Convert.ToByte(txtGateway2.Text), Convert.ToByte(txtGateway3.Text), Convert.ToByte(txtGateway4.Text) };
                     byte[] mac = { Convert.ToByte(txtMac1.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac2.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac3.Text.ToDecimalFromHexa())
                             , Convert.ToByte(txtMac4.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac5.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac6.Text.ToDecimalFromHexa()) };
+                    byte[] mascara = { Convert.ToByte(txtMascara1.Text), Convert.ToByte(txtMascara2.Text), Convert.ToByte(txtMascara3.Text), Convert.ToByte(txtMascara4.Text) };
+                    byte[] dns = { Convert.ToByte(txtDns1.Text), Convert.ToByte(txtDns2.Text), Convert.ToByte(txtDns3.Text), Convert.ToByte(txtDns4.Text) };
 
-                    byte[] data = { 3,3,2};
+               
+                var portBinario = Convert.ToInt32(txtPort.Text).decimalBinario().ToString().PadLeft(16, '0');
+
+                var port1 = ((byte)Convert.ToInt32(portBinario.Substring(0, 8), 2));
+                var port2 = (byte)Convert.ToInt32(portBinario.Substring(8, 8), 2);
+                var port = new byte[] { port1, port2 };
+
+                byte[] data = { 3,3,2};
                     data = data.Concat(direccionIP)
                         .Concat(gatewayIP)
-                        .Concat(mac).ToArray();
+                        .Concat(mac)
+                        .Concat(mascara)
+                        .Concat(dns)
+                        .Concat(port)
+                        .ToArray();
 
                     _port.Write(data, 0, data.Length);
 
@@ -757,11 +849,7 @@ namespace Ethernet.ConfigCOMForm
                     MessageBox.Show("Problemas con el puerto");
 
                 }
-            }
-            else
-            {
-                MessageBox.Show("El formato de la  direccion IP es incorrecto los rangos son [0,255]");
-            }
+          
         }
 
         public bool IsAddressValid(string addrString)
