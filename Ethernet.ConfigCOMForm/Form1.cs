@@ -517,11 +517,16 @@ namespace Ethernet.ConfigCOMForm
             dns = trama.SubArray(85, 4);
             puerto = trama.SubArray(89, 2);
 
+          
             var puerto1 = Convert.ToString(Convert.ToInt32(trama[89]), 2).PadLeft(8, '0');
             var puerto2 = Convert.ToString(Convert.ToInt32(trama[90]), 2).PadLeft(8, '0');
 
 
-            var port = Convert.ToInt32(puerto1 + puerto2, 2);
+            var port = Convert.ToInt32(puerto2 + puerto1, 2);
+            if (Convert.ToInt32(trama[90]) == 0)
+            {
+                port = Convert.ToInt32(trama[89]);
+            }
 
             txtPort.Text = port.ToString();
             txtPort.Enabled = true;
@@ -828,7 +833,7 @@ namespace Ethernet.ConfigCOMForm
 
                 var port1 = ((byte)Convert.ToInt32(portBinario.Substring(0, 8), 2));
                 var port2 = (byte)Convert.ToInt32(portBinario.Substring(8, 8), 2);
-                var port = new byte[] { port1, port2 };
+                var port = new byte[] { port2 , port1 };
 
                 byte[] data = { 3,3,2};
                     data = data.Concat(direccionIP)
