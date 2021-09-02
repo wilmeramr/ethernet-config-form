@@ -307,7 +307,7 @@ namespace Ethernet.ConfigCOMForm
                     _port = new SerialPort(cmbPorts.SelectedItem.ToString());
 
             // configure serial port
-            _port.BaudRate = 115200;
+            _port.BaudRate = 9600;
             _port.DataBits = 8;
             _port.Parity = Parity.None;
             _port.StopBits = StopBits.One;
