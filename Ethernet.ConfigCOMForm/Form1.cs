@@ -307,7 +307,7 @@ namespace Ethernet.ConfigCOMForm
                     _port = new SerialPort(cmbPorts.SelectedItem.ToString());
 
             // configure serial port
-            _port.BaudRate = 115200;
+            _port.BaudRate = 9600;
             _port.DataBits = 8;
             _port.Parity = Parity.None;
             _port.StopBits = StopBits.One;
@@ -336,7 +336,7 @@ namespace Ethernet.ConfigCOMForm
 
           //
           //
-       // drawer(tramaDemo);
+       //drawer(tramaDemo);
 
         }
 
@@ -401,7 +401,6 @@ namespace Ethernet.ConfigCOMForm
                 btnCambiarIP.Enabled = true;
                 btnDesconectarEthernet.Enabled = true;
                 btnConectarEthernet.Enabled = false;
-                btnGrabarSalidas.Enabled = true;
 
                 for (int i = 0; i < 8; i++)
                 {
@@ -462,14 +461,28 @@ namespace Ethernet.ConfigCOMForm
             {
             
 
-                MessageBox.Show("Se Grabo correctamente.");
+                MessageBox.Show("Se Grabo correctamente desactivar por tiempo.");
+
+            }
+            else if (trama[0] == 7)
+            {
+
+
+                MessageBox.Show("Se fecha y hora actualizada.");
 
             }
             else if (trama[0] == 5)
             {
 
 
-                MessageBox.Show("Se fecha y hora actualizada.");
+                MessageBox.Show("Se Grabo correctamente ACTIVA HORA/MIN/DIA.");
+
+            }
+            else if (trama[0] == 6)
+            {
+
+
+                MessageBox.Show("Se Grabo correctamente DESACTIVA HORA/MIN/DIA.");
 
             }
             recievedData.Clear();
@@ -517,11 +530,16 @@ namespace Ethernet.ConfigCOMForm
             dns = trama.SubArray(85, 4);
             puerto = trama.SubArray(89, 2);
 
+          
             var puerto1 = Convert.ToString(Convert.ToInt32(trama[89]), 2).PadLeft(8, '0');
             var puerto2 = Convert.ToString(Convert.ToInt32(trama[90]), 2).PadLeft(8, '0');
 
 
-            var port = Convert.ToInt32(puerto1 + puerto2, 2);
+            var port = Convert.ToInt32(puerto2 + puerto1, 2);
+            if (Convert.ToInt32(trama[90]) == 0)
+            {
+                port = Convert.ToInt32(trama[89]);
+            }
 
             txtPort.Text = port.ToString();
             txtPort.Enabled = true;
@@ -828,7 +846,7 @@ namespace Ethernet.ConfigCOMForm
 
                 var port1 = ((byte)Convert.ToInt32(portBinario.Substring(0, 8), 2));
                 var port2 = (byte)Convert.ToInt32(portBinario.Substring(8, 8), 2);
-                var port = new byte[] { port1, port2 };
+                var port = new byte[] { port2 , port1 };
 
                 byte[] data = { 3,3,2};
                     data = data.Concat(direccionIP)
@@ -1467,9 +1485,8 @@ namespace Ethernet.ConfigCOMForm
             }
         }
 
-        private void btnGrabarSalidas_Click(object sender, EventArgs e)
+        private byte[] obtenerTramaEnvio()
         {
-            evento = "btnGrabar";
 
             for (int i = 0; i < tiempoCheckBoxes.Count; i++)
             {
@@ -1583,11 +1600,11 @@ namespace Ethernet.ConfigCOMForm
                 .Concat(horaMinDiaDesactivar)
 
                 .ToArray();
-            byte[] data = { 3, 3, 4, };
-            data= data.Concat(TramaEnvio).ToArray();
-            _port.Write(data, 0, data.Length);
+            //byte[] data = { 3, 3, 4, };
+            //data = data.Concat(TramaEnvio).ToArray();
+            //_port.Write(data, 0, data.Length);
 
-
+            return TramaEnvio;
 
         }
 
@@ -1823,6 +1840,46 @@ namespace Ethernet.ConfigCOMForm
 
             byte[] data = { 3, 3, 5,añopart1,añopart2,(byte)datMOdificar.Month,(byte)datMOdificar.Day,(byte)datMOdificar.Hour, (byte)datMOdificar.Minute, (byte)datMOdificar.Second };
          //   data = data.Concat(TramaEnvio).ToArray();
+            _port.Write(data, 0, data.Length);
+        }
+
+        private void btnGrabarTiempo_Click(object sender, EventArgs e)
+        {
+            evento = "btnGrabar";
+
+            var trama = obtenerTramaEnvio();
+
+            byte[] data = new byte[] { 3, 3, 4 };
+
+            data = data.Concat( trama.SubArray(0, 9)).ToArray();
+
+            _port.Write(data, 0, data.Length);
+
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            evento = "btnGrabar";
+
+            var trama = obtenerTramaEnvio();
+
+            byte[] data = new byte[] { 3, 3, 5 };
+
+            data = data.Concat( trama.SubArray(9, 25)).ToArray();
+
+            _port.Write(data, 0, data.Length);
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            evento = "btnGrabar";
+
+            var trama = obtenerTramaEnvio();
+
+            byte[] data = new byte[] { 3, 3, 6 };
+
+            data = data.Concat(trama.SubArray(34, 25)).ToArray();
+
             _port.Write(data, 0, data.Length);
         }
     }

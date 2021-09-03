@@ -38,6 +38,18 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblEthernetEvent = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.txtPort = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtDns4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtDns3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtDns2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtDns1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMascara4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMascara3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMascara2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtMascara1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -60,7 +72,7 @@ namespace Ethernet.ConfigCOMForm
             this.btnConectarEthernet = new MetroFramework.Controls.MetroButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnGrabarTiempo = new MetroFramework.Controls.MetroButton();
             this.chckTiempoSalida8 = new System.Windows.Forms.CheckBox();
             this.chckTiempoSalida7 = new System.Windows.Forms.CheckBox();
             this.chckTiempoSalida6 = new System.Windows.Forms.CheckBox();
@@ -79,7 +91,7 @@ namespace Ethernet.ConfigCOMForm
             this.txtTiempoSalida5 = new MetroFramework.Controls.MetroTextBox();
             this.txtTiempoSalida6 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.btnDesactivar = new MetroFramework.Controls.MetroButton();
             this.chckDesactivadasSalida8 = new System.Windows.Forms.CheckBox();
             this.chckDesactivadasSalida7 = new System.Windows.Forms.CheckBox();
             this.chckDesactivadasSalida6 = new System.Windows.Forms.CheckBox();
@@ -115,7 +127,7 @@ namespace Ethernet.ConfigCOMForm
             this.txtHoraDesactivaSalida8 = new MetroFramework.Controls.MetroTextBox();
             this.txtMinDesactivaSalida8 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.btnActiva = new MetroFramework.Controls.MetroButton();
             this.chckActivadasSalida8 = new System.Windows.Forms.CheckBox();
             this.chckActivadasSalida7 = new System.Windows.Forms.CheckBox();
             this.chckActivadasSalida6 = new System.Windows.Forms.CheckBox();
@@ -158,23 +170,10 @@ namespace Ethernet.ConfigCOMForm
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGrabarSalidas = new MetroFramework.Controls.MetroButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.picLoading = new System.Windows.Forms.PictureBox();
             this.btnDate = new MetroFramework.Controls.MetroButton();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.txtDns4 = new MetroFramework.Controls.MetroTextBox();
-            this.txtDns3 = new MetroFramework.Controls.MetroTextBox();
-            this.txtDns2 = new MetroFramework.Controls.MetroTextBox();
-            this.txtDns1 = new MetroFramework.Controls.MetroTextBox();
-            this.txtMascara4 = new MetroFramework.Controls.MetroTextBox();
-            this.txtMascara3 = new MetroFramework.Controls.MetroTextBox();
-            this.txtMascara2 = new MetroFramework.Controls.MetroTextBox();
-            this.txtMascara1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.txtPort = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -305,6 +304,115 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox3.Size = new System.Drawing.Size(528, 190);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(356, 15);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(54, 20);
+            this.metroLabel6.TabIndex = 39;
+            this.metroLabel6.Text = "Puerto:";
+            // 
+            // txtPort
+            // 
+            this.txtPort.Enabled = false;
+            this.txtPort.Location = new System.Drawing.Point(429, 13);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(63, 27);
+            this.txtPort.TabIndex = 37;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(42, 144);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(40, 20);
+            this.metroLabel4.TabIndex = 36;
+            this.metroLabel4.Text = "DNS:";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel5.Location = new System.Drawing.Point(43, 110);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(67, 20);
+            this.metroLabel5.TabIndex = 35;
+            this.metroLabel5.Text = "Mascara :";
+            // 
+            // txtDns4
+            // 
+            this.txtDns4.Enabled = false;
+            this.txtDns4.Location = new System.Drawing.Point(301, 141);
+            this.txtDns4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDns4.Name = "txtDns4";
+            this.txtDns4.Size = new System.Drawing.Size(37, 27);
+            this.txtDns4.TabIndex = 34;
+            // 
+            // txtDns3
+            // 
+            this.txtDns3.Enabled = false;
+            this.txtDns3.Location = new System.Drawing.Point(257, 142);
+            this.txtDns3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDns3.Name = "txtDns3";
+            this.txtDns3.Size = new System.Drawing.Size(37, 27);
+            this.txtDns3.TabIndex = 33;
+            // 
+            // txtDns2
+            // 
+            this.txtDns2.Enabled = false;
+            this.txtDns2.Location = new System.Drawing.Point(213, 142);
+            this.txtDns2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDns2.Name = "txtDns2";
+            this.txtDns2.Size = new System.Drawing.Size(37, 27);
+            this.txtDns2.TabIndex = 32;
+            // 
+            // txtDns1
+            // 
+            this.txtDns1.Enabled = false;
+            this.txtDns1.Location = new System.Drawing.Point(169, 142);
+            this.txtDns1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDns1.Name = "txtDns1";
+            this.txtDns1.Size = new System.Drawing.Size(37, 27);
+            this.txtDns1.TabIndex = 31;
+            // 
+            // txtMascara4
+            // 
+            this.txtMascara4.Enabled = false;
+            this.txtMascara4.Location = new System.Drawing.Point(301, 109);
+            this.txtMascara4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMascara4.Name = "txtMascara4";
+            this.txtMascara4.Size = new System.Drawing.Size(37, 27);
+            this.txtMascara4.TabIndex = 30;
+            // 
+            // txtMascara3
+            // 
+            this.txtMascara3.Enabled = false;
+            this.txtMascara3.Location = new System.Drawing.Point(257, 110);
+            this.txtMascara3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMascara3.Name = "txtMascara3";
+            this.txtMascara3.Size = new System.Drawing.Size(37, 27);
+            this.txtMascara3.TabIndex = 29;
+            // 
+            // txtMascara2
+            // 
+            this.txtMascara2.Enabled = false;
+            this.txtMascara2.Location = new System.Drawing.Point(213, 110);
+            this.txtMascara2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMascara2.Name = "txtMascara2";
+            this.txtMascara2.Size = new System.Drawing.Size(37, 27);
+            this.txtMascara2.TabIndex = 28;
+            // 
+            // txtMascara1
+            // 
+            this.txtMascara1.Enabled = false;
+            this.txtMascara1.Location = new System.Drawing.Point(169, 110);
+            this.txtMascara1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMascara1.Name = "txtMascara1";
+            this.txtMascara1.Size = new System.Drawing.Size(37, 27);
+            this.txtMascara1.TabIndex = 27;
             // 
             // metroLabel3
             // 
@@ -519,7 +627,7 @@ namespace Ethernet.ConfigCOMForm
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.metroButton1);
+            this.groupBox7.Controls.Add(this.btnGrabarTiempo);
             this.groupBox7.Controls.Add(this.chckTiempoSalida8);
             this.groupBox7.Controls.Add(this.chckTiempoSalida7);
             this.groupBox7.Controls.Add(this.chckTiempoSalida6);
@@ -546,15 +654,15 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Desactivar por Tiempo";
             // 
-            // metroButton1
+            // btnGrabarTiempo
             // 
-            this.metroButton1.Enabled = false;
-            this.metroButton1.Location = new System.Drawing.Point(147, 45);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(87, 34);
-            this.metroButton1.TabIndex = 109;
-            this.metroButton1.Text = "Grabar";
+            this.btnGrabarTiempo.Location = new System.Drawing.Point(147, 45);
+            this.btnGrabarTiempo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGrabarTiempo.Name = "btnGrabarTiempo";
+            this.btnGrabarTiempo.Size = new System.Drawing.Size(87, 34);
+            this.btnGrabarTiempo.TabIndex = 109;
+            this.btnGrabarTiempo.Text = "Grabar";
+            this.btnGrabarTiempo.Click += new System.EventHandler(this.btnGrabarTiempo_Click);
             // 
             // chckTiempoSalida8
             // 
@@ -752,8 +860,7 @@ namespace Ethernet.ConfigCOMForm
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.btnGrabarSalidas);
-            this.groupBox6.Controls.Add(this.metroButton3);
+            this.groupBox6.Controls.Add(this.btnDesactivar);
             this.groupBox6.Controls.Add(this.chckDesactivadasSalida8);
             this.groupBox6.Controls.Add(this.chckDesactivadasSalida7);
             this.groupBox6.Controls.Add(this.chckDesactivadasSalida6);
@@ -797,15 +904,15 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "DESACTIVADAS";
             // 
-            // metroButton3
+            // btnDesactivar
             // 
-            this.metroButton3.Enabled = false;
-            this.metroButton3.Location = new System.Drawing.Point(355, 35);
-            this.metroButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(87, 34);
-            this.metroButton3.TabIndex = 118;
-            this.metroButton3.Text = "Grabar";
+            this.btnDesactivar.Location = new System.Drawing.Point(355, 35);
+            this.btnDesactivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDesactivar.Name = "btnDesactivar";
+            this.btnDesactivar.Size = new System.Drawing.Size(87, 34);
+            this.btnDesactivar.TabIndex = 118;
+            this.btnDesactivar.Text = "Grabar";
+            this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
             // chckDesactivadasSalida8
             // 
@@ -1189,7 +1296,7 @@ namespace Ethernet.ConfigCOMForm
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.metroButton2);
+            this.groupBox5.Controls.Add(this.btnActiva);
             this.groupBox5.Controls.Add(this.chckActivadasSalida8);
             this.groupBox5.Controls.Add(this.chckActivadasSalida7);
             this.groupBox5.Controls.Add(this.chckActivadasSalida6);
@@ -1234,15 +1341,15 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox5.Text = "ACTIVADAS";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
-            // metroButton2
+            // btnActiva
             // 
-            this.metroButton2.Enabled = false;
-            this.metroButton2.Location = new System.Drawing.Point(359, 36);
-            this.metroButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(87, 34);
-            this.metroButton2.TabIndex = 117;
-            this.metroButton2.Text = "Grabar";
+            this.btnActiva.Location = new System.Drawing.Point(359, 36);
+            this.btnActiva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnActiva.Name = "btnActiva";
+            this.btnActiva.Size = new System.Drawing.Size(87, 34);
+            this.btnActiva.TabIndex = 117;
+            this.btnActiva.Text = "Grabar";
+            this.btnActiva.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // chckActivadasSalida8
             // 
@@ -1704,17 +1811,6 @@ namespace Ethernet.ConfigCOMForm
             this.label1.TabIndex = 6;
             this.label1.Text = "SALIDA 1";
             // 
-            // btnGrabarSalidas
-            // 
-            this.btnGrabarSalidas.Enabled = false;
-            this.btnGrabarSalidas.Location = new System.Drawing.Point(338, -25);
-            this.btnGrabarSalidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGrabarSalidas.Name = "btnGrabarSalidas";
-            this.btnGrabarSalidas.Size = new System.Drawing.Size(91, 60);
-            this.btnGrabarSalidas.TabIndex = 102;
-            this.btnGrabarSalidas.Text = "GRABAR";
-            this.btnGrabarSalidas.Click += new System.EventHandler(this.btnGrabarSalidas_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -1753,115 +1849,6 @@ namespace Ethernet.ConfigCOMForm
             this.btnDate.TabIndex = 14;
             this.btnDate.Text = "Cambiar";
             this.btnDate.Click += new System.EventHandler(this.btnDate_Click);
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(42, 144);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(40, 20);
-            this.metroLabel4.TabIndex = 36;
-            this.metroLabel4.Text = "DNS:";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.metroLabel5.Location = new System.Drawing.Point(43, 110);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(67, 20);
-            this.metroLabel5.TabIndex = 35;
-            this.metroLabel5.Text = "Mascara :";
-            // 
-            // txtDns4
-            // 
-            this.txtDns4.Enabled = false;
-            this.txtDns4.Location = new System.Drawing.Point(301, 141);
-            this.txtDns4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDns4.Name = "txtDns4";
-            this.txtDns4.Size = new System.Drawing.Size(37, 27);
-            this.txtDns4.TabIndex = 34;
-            // 
-            // txtDns3
-            // 
-            this.txtDns3.Enabled = false;
-            this.txtDns3.Location = new System.Drawing.Point(257, 142);
-            this.txtDns3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDns3.Name = "txtDns3";
-            this.txtDns3.Size = new System.Drawing.Size(37, 27);
-            this.txtDns3.TabIndex = 33;
-            // 
-            // txtDns2
-            // 
-            this.txtDns2.Enabled = false;
-            this.txtDns2.Location = new System.Drawing.Point(213, 142);
-            this.txtDns2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDns2.Name = "txtDns2";
-            this.txtDns2.Size = new System.Drawing.Size(37, 27);
-            this.txtDns2.TabIndex = 32;
-            // 
-            // txtDns1
-            // 
-            this.txtDns1.Enabled = false;
-            this.txtDns1.Location = new System.Drawing.Point(169, 142);
-            this.txtDns1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDns1.Name = "txtDns1";
-            this.txtDns1.Size = new System.Drawing.Size(37, 27);
-            this.txtDns1.TabIndex = 31;
-            // 
-            // txtMascara4
-            // 
-            this.txtMascara4.Enabled = false;
-            this.txtMascara4.Location = new System.Drawing.Point(301, 109);
-            this.txtMascara4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMascara4.Name = "txtMascara4";
-            this.txtMascara4.Size = new System.Drawing.Size(37, 27);
-            this.txtMascara4.TabIndex = 30;
-            // 
-            // txtMascara3
-            // 
-            this.txtMascara3.Enabled = false;
-            this.txtMascara3.Location = new System.Drawing.Point(257, 110);
-            this.txtMascara3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMascara3.Name = "txtMascara3";
-            this.txtMascara3.Size = new System.Drawing.Size(37, 27);
-            this.txtMascara3.TabIndex = 29;
-            // 
-            // txtMascara2
-            // 
-            this.txtMascara2.Enabled = false;
-            this.txtMascara2.Location = new System.Drawing.Point(213, 110);
-            this.txtMascara2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMascara2.Name = "txtMascara2";
-            this.txtMascara2.Size = new System.Drawing.Size(37, 27);
-            this.txtMascara2.TabIndex = 28;
-            // 
-            // txtMascara1
-            // 
-            this.txtMascara1.Enabled = false;
-            this.txtMascara1.Location = new System.Drawing.Point(169, 110);
-            this.txtMascara1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMascara1.Name = "txtMascara1";
-            this.txtMascara1.Size = new System.Drawing.Size(37, 27);
-            this.txtMascara1.TabIndex = 27;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(356, 15);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(54, 20);
-            this.metroLabel6.TabIndex = 39;
-            this.metroLabel6.Text = "Puerto:";
-            // 
-            // txtPort
-            // 
-            this.txtPort.Enabled = false;
-            this.txtPort.Location = new System.Drawing.Point(429, 13);
-            this.txtPort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(63, 27);
-            this.txtPort.TabIndex = 37;
             // 
             // Form1
             // 
@@ -2010,7 +1997,6 @@ namespace Ethernet.ConfigCOMForm
         private System.Windows.Forms.CheckBox chckActivadasSalida3;
         private System.Windows.Forms.CheckBox chckActivadasSalida2;
         private System.Windows.Forms.CheckBox chckActivadasSalida1;
-        private MetroFramework.Controls.MetroButton btnGrabarSalidas;
         private System.Windows.Forms.Label lblCOMEvent;
         private System.Windows.Forms.Label lblEthernetEvent;
         private System.Windows.Forms.Timer timer1;
@@ -2030,9 +2016,9 @@ namespace Ethernet.ConfigCOMForm
         private MetroFramework.Controls.MetroTextBox txtGateway3;
         private MetroFramework.Controls.MetroTextBox txtGateway2;
         private MetroFramework.Controls.MetroTextBox txtGateway1;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton btnGrabarTiempo;
+        private MetroFramework.Controls.MetroButton btnActiva;
+        private MetroFramework.Controls.MetroButton btnDesactivar;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTextBox txtPort;
         private MetroFramework.Controls.MetroLabel metroLabel4;
