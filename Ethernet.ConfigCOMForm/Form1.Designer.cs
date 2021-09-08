@@ -190,7 +190,7 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox1.Controls.Add(this.btnConectar);
             this.groupBox1.Controls.Add(this.cmbPorts);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.groupBox1.Location = new System.Drawing.Point(191, 31);
+            this.groupBox1.Location = new System.Drawing.Point(191, 24);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -584,7 +584,7 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox6.Size = new System.Drawing.Size(344, 314);
             this.groupBox6.TabIndex = 99;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "DESACTIVADAS";
+            this.groupBox6.Text = "Desactivar Por Fecha";
             // 
             // btnDesactivar
             // 
@@ -695,44 +695,44 @@ namespace Ethernet.ConfigCOMForm
             // cmbDiaDesactivaSalida8
             // 
             this.cmbDiaDesactivaSalida8.FormattingEnabled = true;
-            this.cmbDiaDesactivaSalida8.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida8.ItemHeight = 23;
             this.cmbDiaDesactivaSalida8.Location = new System.Drawing.Point(115, 257);
             this.cmbDiaDesactivaSalida8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDiaDesactivaSalida8.Name = "cmbDiaDesactivaSalida8";
-            this.cmbDiaDesactivaSalida8.Size = new System.Drawing.Size(146, 30);
+            this.cmbDiaDesactivaSalida8.Size = new System.Drawing.Size(146, 29);
             this.cmbDiaDesactivaSalida8.TabIndex = 86;
             this.cmbDiaDesactivaSalida8.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida7
             // 
             this.cmbDiaDesactivaSalida7.FormattingEnabled = true;
-            this.cmbDiaDesactivaSalida7.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida7.ItemHeight = 23;
             this.cmbDiaDesactivaSalida7.Location = new System.Drawing.Point(115, 223);
             this.cmbDiaDesactivaSalida7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDiaDesactivaSalida7.Name = "cmbDiaDesactivaSalida7";
-            this.cmbDiaDesactivaSalida7.Size = new System.Drawing.Size(146, 30);
+            this.cmbDiaDesactivaSalida7.Size = new System.Drawing.Size(146, 29);
             this.cmbDiaDesactivaSalida7.TabIndex = 85;
             this.cmbDiaDesactivaSalida7.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida6
             // 
             this.cmbDiaDesactivaSalida6.FormattingEnabled = true;
-            this.cmbDiaDesactivaSalida6.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida6.ItemHeight = 23;
             this.cmbDiaDesactivaSalida6.Location = new System.Drawing.Point(115, 189);
             this.cmbDiaDesactivaSalida6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDiaDesactivaSalida6.Name = "cmbDiaDesactivaSalida6";
-            this.cmbDiaDesactivaSalida6.Size = new System.Drawing.Size(146, 30);
+            this.cmbDiaDesactivaSalida6.Size = new System.Drawing.Size(146, 29);
             this.cmbDiaDesactivaSalida6.TabIndex = 84;
             this.cmbDiaDesactivaSalida6.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaDesactivaSalida5
             // 
             this.cmbDiaDesactivaSalida5.FormattingEnabled = true;
-            this.cmbDiaDesactivaSalida5.ItemHeight = 24;
+            this.cmbDiaDesactivaSalida5.ItemHeight = 23;
             this.cmbDiaDesactivaSalida5.Location = new System.Drawing.Point(115, 158);
             this.cmbDiaDesactivaSalida5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDiaDesactivaSalida5.Name = "cmbDiaDesactivaSalida5";
-            this.cmbDiaDesactivaSalida5.Size = new System.Drawing.Size(146, 30);
+            this.cmbDiaDesactivaSalida5.Size = new System.Drawing.Size(146, 29);
             this.cmbDiaDesactivaSalida5.TabIndex = 83;
             this.cmbDiaDesactivaSalida5.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
@@ -1018,7 +1018,7 @@ namespace Ethernet.ConfigCOMForm
             this.groupBox5.Size = new System.Drawing.Size(341, 315);
             this.groupBox5.TabIndex = 98;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "ACTIVADAS";
+            this.groupBox5.Text = "Activar Por Fecha";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // btnActiva
@@ -1130,44 +1130,44 @@ namespace Ethernet.ConfigCOMForm
             // cmbDiaActivaSalida8
             // 
             this.cmbDiaActivaSalida8.FormattingEnabled = true;
-            this.cmbDiaActivaSalida8.ItemHeight = 24;
+            this.cmbDiaActivaSalida8.ItemHeight = 23;
             this.cmbDiaActivaSalida8.Location = new System.Drawing.Point(117, 258);
             this.cmbDiaActivaSalida8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDiaActivaSalida8.Name = "cmbDiaActivaSalida8";
-            this.cmbDiaActivaSalida8.Size = new System.Drawing.Size(146, 30);
+            this.cmbDiaActivaSalida8.Size = new System.Drawing.Size(146, 29);
             this.cmbDiaActivaSalida8.TabIndex = 78;
             this.cmbDiaActivaSalida8.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida7
             // 
             this.cmbDiaActivaSalida7.FormattingEnabled = true;
-            this.cmbDiaActivaSalida7.ItemHeight = 24;
+            this.cmbDiaActivaSalida7.ItemHeight = 23;
             this.cmbDiaActivaSalida7.Location = new System.Drawing.Point(117, 225);
             this.cmbDiaActivaSalida7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDiaActivaSalida7.Name = "cmbDiaActivaSalida7";
-            this.cmbDiaActivaSalida7.Size = new System.Drawing.Size(146, 30);
+            this.cmbDiaActivaSalida7.Size = new System.Drawing.Size(146, 29);
             this.cmbDiaActivaSalida7.TabIndex = 77;
             this.cmbDiaActivaSalida7.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida6
             // 
             this.cmbDiaActivaSalida6.FormattingEnabled = true;
-            this.cmbDiaActivaSalida6.ItemHeight = 24;
+            this.cmbDiaActivaSalida6.ItemHeight = 23;
             this.cmbDiaActivaSalida6.Location = new System.Drawing.Point(117, 193);
             this.cmbDiaActivaSalida6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDiaActivaSalida6.Name = "cmbDiaActivaSalida6";
-            this.cmbDiaActivaSalida6.Size = new System.Drawing.Size(146, 30);
+            this.cmbDiaActivaSalida6.Size = new System.Drawing.Size(146, 29);
             this.cmbDiaActivaSalida6.TabIndex = 76;
             this.cmbDiaActivaSalida6.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
             // cmbDiaActivaSalida5
             // 
             this.cmbDiaActivaSalida5.FormattingEnabled = true;
-            this.cmbDiaActivaSalida5.ItemHeight = 24;
+            this.cmbDiaActivaSalida5.ItemHeight = 23;
             this.cmbDiaActivaSalida5.Location = new System.Drawing.Point(117, 159);
             this.cmbDiaActivaSalida5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDiaActivaSalida5.Name = "cmbDiaActivaSalida5";
-            this.cmbDiaActivaSalida5.Size = new System.Drawing.Size(146, 30);
+            this.cmbDiaActivaSalida5.Size = new System.Drawing.Size(146, 29);
             this.cmbDiaActivaSalida5.TabIndex = 75;
             this.cmbDiaActivaSalida5.SelectedIndexChanged += new System.EventHandler(this.cmbDiaAll_SelectedIndexChanged);
             // 
@@ -1580,9 +1580,9 @@ namespace Ethernet.ConfigCOMForm
             this.metroLabel4.Location = new System.Drawing.Point(32, 99);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(38, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(33, 19);
             this.metroLabel4.TabIndex = 36;
-            this.metroLabel4.Text = "DNS:";
+            this.metroLabel4.Text = "Dns:";
             // 
             // metroLabel5
             // 
@@ -1673,9 +1673,9 @@ namespace Ethernet.ConfigCOMForm
             this.metroLabel3.Location = new System.Drawing.Point(32, 125);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(41, 19);
             this.metroLabel3.TabIndex = 26;
-            this.metroLabel3.Text = "MAC :";
+            this.metroLabel3.Text = "Mac :";
             // 
             // metroLabel2
             // 
