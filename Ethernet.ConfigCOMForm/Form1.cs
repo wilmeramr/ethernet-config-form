@@ -838,7 +838,7 @@ namespace Ethernet.ConfigCOMForm
                     byte[] gatewayIP = { Convert.ToByte(txtGateway1.Text), Convert.ToByte(txtGateway2.Text), Convert.ToByte(txtGateway3.Text), Convert.ToByte(txtGateway4.Text) };
                     //byte[] mac = { Convert.ToByte(txtMac1.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac2.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac3.Text.ToDecimalFromHexa())
                     //        , Convert.ToByte(txtMac4.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac5.Text.ToDecimalFromHexa()), Convert.ToByte(txtMac6.Text.ToDecimalFromHexa()) };
-                    //byte[] mascara = { Convert.ToByte(txtMascara1.Text), Convert.ToByte(txtMascara2.Text), Convert.ToByte(txtMascara3.Text), Convert.ToByte(txtMascara4.Text) };
+                    byte[] mascara = { Convert.ToByte(txtMascara1.Text), Convert.ToByte(txtMascara2.Text), Convert.ToByte(txtMascara3.Text), Convert.ToByte(txtMascara4.Text) };
                     byte[] dns = { Convert.ToByte(txtDns1.Text), Convert.ToByte(txtDns2.Text), Convert.ToByte(txtDns3.Text), Convert.ToByte(txtDns4.Text) };
 
                
