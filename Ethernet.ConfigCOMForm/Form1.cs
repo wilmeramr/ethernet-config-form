@@ -436,7 +436,7 @@ namespace Ethernet.ConfigCOMForm
             }
             else if (trama[0] == 2)
             {
-                MessageBox.Show(" Dirección IP Cambiada!!");
+                MessageBox.Show(" Se actualizó correctamente.!!");
 
             }
             else if (trama[0] == 3)
@@ -466,7 +466,7 @@ namespace Ethernet.ConfigCOMForm
             {
 
 
-                MessageBox.Show("Se fecha y hora actualizada.");
+                MessageBox.Show("Se actualizó fecha y hora correctamente.");
 
             }
             else if (trama[0] == 5)
@@ -1840,7 +1840,7 @@ namespace Ethernet.ConfigCOMForm
             var añopart2 = (byte)Convert.ToInt32(AñoBinary.Substring(8, 8), 2);
 
 
-            byte[] data = { 3, 3, 5,añopart1,añopart2,(byte)datMOdificar.Month,(byte)datMOdificar.Day,(byte)datMOdificar.Hour, (byte)datMOdificar.Minute, (byte)datMOdificar.Second };
+            byte[] data = { 3, 3, 7,añopart1,añopart2,(byte)datMOdificar.Month,(byte)datMOdificar.Day,(byte)datMOdificar.Hour, (byte)datMOdificar.Minute, (byte)datMOdificar.Second };
          //   data = data.Concat(TramaEnvio).ToArray();
             _port.Write(data, 0, data.Length);
         }
